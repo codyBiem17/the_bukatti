@@ -3,9 +3,9 @@ import {Container, Row, Col} from "reactstrap"
 
 const LandingPage = () => {
     return (
-        <Container id="bgImage">
-            <Row>
-                <Col xs="6"  id="logo">
+        <Container>
+            <Row xs="1">
+                <Col id="logo">
                     <p>the_bukattee</p>
                 </Col>
                 <Col id="bgText">
