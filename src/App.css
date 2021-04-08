@@ -9,15 +9,38 @@ html, body {
   overflow-x: hidden;
   height: 100%;
 }
-#bgImage{
-  background-image: url('./assets/images/pics1.jfif');
+#root{
+  background-image: url('./assets/images/banner4.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
   height: 100%;
   color: white;
-  /* font-size: 25px */
+  /* font-size: 25px; */
+  font-weight: 800;
+}
+.row{
+  position: relative;
 }
 #bgText{
   text-transform: uppercase;
+  border: 1px solid red;
+  text-align: center;
+  position: absolute;
+  margin: 0 auto;
+  top: 100px;
+  /* transform: translate(-50%, -50%); */
+}
+#bgText h1{
+  /* font-size:25px; */
+}
+#logo{
+  position: absolute;
+  /* left: 10px; */
+  font-size: 16px;
+}
+hr {
+  width: 40%;
+  margin: 0 auto;
+  border: 1px solid yellow;
 }
