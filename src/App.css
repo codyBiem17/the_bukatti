@@ -9,15 +9,30 @@ html, body {
   overflow-x: hidden;
   height: 100%;
 }
-#bgImage{
-  background-image: url('./assets/images/pics1.jfif');
+#root{
+  background-image: url('./assets/images/restaurant1.jfif');
   background-size: cover;
   background-position: center;
   position: relative;
   height: 100%;
   color: white;
-  /* font-size: 25px */
+  /* font-size: 25px; */
+  font-weight: 800;
 }
+
+/* 24af3a2f968d41ca829d97175367bb22 */
+/* 20248ce1-1702-4907-a328-83d918853b4d */
+
 #bgText{
   text-transform: uppercase;
+  border: 1px solid red;
+  text-align: center;
+}
+#bgText h1{
+  font-size:20px;
+}
+#logo{
+  position: absolute;
+  /* left: 10px; */
+  font-size: 16px;
 }
