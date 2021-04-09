@@ -10,7 +10,7 @@ html, body {
   height: 100%;
 }
 #root{
-  background-image: url('./assets/images/restaurant1.jfif');
+  background-image: url('./assets/images/table1.jfif');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -19,10 +19,15 @@ html, body {
   /* font-size: 25px; */
   font-weight: 800;
 }
-
-/* 24af3a2f968d41ca829d97175367bb22 */
-/* 20248ce1-1702-4907-a328-83d918853b4d */
-
+.App{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5);
+}
 #bgText{
   text-transform: uppercase;
   border: 1px solid red;
