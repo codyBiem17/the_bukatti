@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Container, Row, Col} from "reactstrap"
 
 
@@ -13,15 +13,25 @@ const getTimeLeft = () => {
         timeRemaining = {
             days: Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
             hours: Math.floor((timeDifference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((timeDifference / (1000 / 60)) % 24),
-            seconds: Math.floor((timeDifference / 1000) % 60)
+            minutes: Math.floor((timeDifference / 1000 / 60) % 60),
+            seconds: Math.floor((timeDifference % (1000 * 60)) / 1000)
         }
     }
-    return timeRemaining
+    return (timeRemaining.days + 'days ' + timeRemaining.hours + 'hours ' + timeRemaining.minutes + 'mins '
+            + timeRemaining.seconds + 'secs ')
     // https://www.digitalocean.com/community/tutorials/react-countdown-timer-react-hooks
 }
 
 const LandingPage = () => {
+    const [countDown, setCountdown] = useState(getTimeLeft())
+    const countDownTimer = () => {
+        setInterval(() => {
+            setCountdown(getTimeLeft())
+        }, 1000)
+    }
+    countDownTimer();
+
+
     return (
         <Container>
             <Row >
@@ -35,12 +45,11 @@ const LandingPage = () => {
                     <hr />
                     <p>23 days left</p>
                 </Col>
-                <Col id="countdown-column">
-                    <p id="countdown-timer">{getTimeLeft()}</p>
-                </Col>
             </Row>
             <Row>
-                
+                <Col id="countdown-column">
+                    <p id="countdown-timer">{countDown}</p>
+                </Col>
             </Row>
         </Container>
     )
