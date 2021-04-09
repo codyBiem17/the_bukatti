@@ -2,12 +2,13 @@ import React, {useState} from 'react'
 import {Container, Row, Col} from "reactstrap"
 
 
+let timeRemaining= {}
 const getTimeLeft = () => {
     const countdownExpiry = +new Date ("May 1, 2021");
     const currentDate = +new Date();
     const timeDifference = countdownExpiry - currentDate
     // return timeDifference;
-    let timeRemaining= {}
+    
     if(timeDifference > 0){
         // calculatedays, hours, minutes and secongs left
         timeRemaining = {
@@ -43,7 +44,7 @@ const LandingPage = () => {
                 <Col id="bgText">
                     <h1>Coming Soon</h1>
                     <hr />
-                    <p>23 days left</p>
+                    <p> {timeRemaining.days} days left</p>
                 </Col>
             </Row>
             <Row>
