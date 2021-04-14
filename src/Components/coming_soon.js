@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {NavLink} from 'react-router-dom'
 import {Container, Row, Col} from "reactstrap"
 
 
@@ -9,7 +10,7 @@ const getTimeLeft = () => {
     const timeDifference = countdownExpiry - currentDate
     // return timeDifference;
     
-    if(timeDifference > 0){
+    // if(timeDifference > 0){
         // calculatedays, hours, minutes and secongs left
         timeRemaining = {
             days: Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
@@ -17,27 +18,28 @@ const getTimeLeft = () => {
             minutes: Math.floor((timeDifference / 1000 / 60) % 60),
             seconds: Math.floor((timeDifference % (1000 * 60)) / 1000)
         }
-    }
+    // }
     return (timeRemaining.days + 'days ' + timeRemaining.hours + 'hours ' + timeRemaining.minutes + 'mins '
             + timeRemaining.seconds + 'secs ')
-    // https://www.digitalocean.com/community/tutorials/react-countdown-timer-react-hooks
 }
-
 const LandingPage = () => {
     const [countDown, setCountdown] = useState(getTimeLeft())
-    const countDownTimer = () => {
-        setInterval(() => {
-            setCountdown(getTimeLeft())
-        }, 1000)
+
+    let timer = setInterval(() => { setCountdown(getTimeLeft())}, 1000);
+    if(timeRemaining.days < 0){
+        clearInterval(timer());
+        alert('HURRAY!!! We are now OPEN FOR BUSINESS!')
     }
-    countDownTimer();
 
 
     return (
-        <Container>
+        <Container className="landing-page-container">
+            <div id="overlay"></div>
             <Row >
                 <Col id="logo">
-                    <p>the_bukattee</p>
+                    <p>
+                        <NavLink to="/homepage"> da_bukattee </NavLink>
+                    </p>
                 </Col>
             </Row>
             <Row>
@@ -49,10 +51,18 @@ const LandingPage = () => {
             </Row>
             <Row>
                 <Col id="countdown-column">
-                    <p id="countdown-timer">{countDown}</p>
+                    <p id="countdown-timer"> 
+                        {timeRemaining.days > 0 ? countDown : 
+                            <>
+                                {clearInterval(timer)}
+                                Click this NavLink to go to homepage
+                            </>
+                        }
+                    {/* {countDown} */}
+                    </p>
                 </Col>
             </Row>
         </Container>
     )
 }
-export {LandingPage}
+export default LandingPage
