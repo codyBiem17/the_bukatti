@@ -1,28 +1,40 @@
-import React, {useEffect, useState} from 'react'
-import {heroImages} from '../Components'
-import {Container, Row, Col, Navbar, NavbarBrand, NavbarToggler,
-    Nav, NavItem, NavLink, Collapse} from 'reactstrap'
+import React, { useEffect, useState } from 'react'
+import { heroImages } from '../Components'
+import { 
+            Carousel, CarouselItem, CarouselControl, CarouselIndicators,
+            CarouselCaptionContainer, Row, Col, Navbar, NavbarBrand, NavbarToggler,
+            Nav, NavItem, NavLink, Collapse
+        } from 'reactstrap'
 
 
 const HomePage = () => {
     const [collapsed, setCollapsed] = useState(true)
     const [currentImage, setCurrentImage] = useState(0)
 
+    // console.log(heroImages.length)
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
 
-    const imageSetter = () => {
-        if(currentImage < heroImages.length){
-            setCurrentImage(currentImage + 1)
-        }
-        else{
-            setCurrentImage(currentImage)
-        }
-    }
 
-    let imageSlider = setInterval(imageSetter, 1000)
+    // useEffect(() => {
+    //     const imageSetter = () => {
+    //         if(currentImage < heroImages.length - 1){
+    //             // setCurrentImage(prevImage => prevImage + 1)
+    //             setCurrentImage(currentImage + 1)
+    //         }
+    //         else{
+    //             setCurrentImage(0)
+    //         }
+    //         return currentImage;
+    //     }
+    //     setInterval(imageSetter, 5000)
+    // })
     
+
+
+    
+
 
     return (
         <Container className="homepage-container">
@@ -36,7 +48,9 @@ const HomePage = () => {
             </Row> */}
             <Row id="heroImg-wrapper" style={{"color": "red"}}>
                 {/* <Col className="this_homepage" id="heroImg-caption"></Col> */}
-                <Col className="this_homepage" id="heroImg">{currentImage}</Col>
+                <Col className="this_homepage" id="heroImg">
+                    <img src={} alt="heror-images" />
+                </Col>
             </Row>
         </Container>
     )
