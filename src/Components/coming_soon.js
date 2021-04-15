@@ -26,10 +26,10 @@ const LandingPage = () => {
     const [countDown, setCountdown] = useState(getTimeLeft())
 
     let timer = setInterval(() => { setCountdown(getTimeLeft())}, 1000);
-    if(timeRemaining.days < 0){
-        clearInterval(timer());
-        alert('HURRAY!!! We are now OPEN FOR BUSINESS!')
-    }
+    // if(timeRemaining.days < 0){
+    //     clearInterval(timer());
+    //     alert('HURRAY!!! We are now OPEN FOR BUSINESS!')
+    // }
 
 
     return (
