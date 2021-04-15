@@ -1,12 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import HomePage from './Components/homepage'
-import LandingPage from './Components/coming_soon'
+import {HomePage, LandingPage} from './Components'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App overlay">
       {/* <LandingPage /> */}
       <Router>
         <Switch>
