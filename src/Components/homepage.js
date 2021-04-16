@@ -1,39 +1,50 @@
 import React, { useEffect, useState } from 'react'
 import { heroImages } from '../Components'
 import { 
-            Carousel, CarouselItem, CarouselControl, CarouselIndicators,
-            CarouselCaptionContainer, Row, Col, Navbar, NavbarBrand, NavbarToggler,
-            Nav, NavItem, NavLink, Collapse
+            Carousel, CarouselItem, CarouselCaption, CarouselIndicators,
+            CarouselControl, Container, 
+            Row, Col, Navbar, NavbarBrand, NavbarToggler,
+            Nav, NavItem, NavLink, Collapse, UncontrolledCarousel
         } from 'reactstrap'
 
 
 const HomePage = () => {
     const [collapsed, setCollapsed] = useState(true)
     const [currentImage, setCurrentImage] = useState(0)
+    const [animation, setAnimation] = useState(false)
 
-    // console.log(heroImages.length)
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
-
-
-    // useEffect(() => {
-    //     const imageSetter = () => {
-    //         if(currentImage < heroImages.length - 1){
-    //             // setCurrentImage(prevImage => prevImage + 1)
-    //             setCurrentImage(currentImage + 1)
-    //         }
-    //         else{
-    //             setCurrentImage(0)
-    //         }
-    //         return currentImage;
-    //     }
-    //     setInterval(imageSetter, 5000)
-    // })
+    const next = () => {
+        if (animation){
+        const nextImage = currentImage === heroImages.length - 1 ? 0 : currentImage + 1
+        setCurrentImage(nextImage)
+        }
+    }
+    const prev = () => {
+        if(animation){
+            const prevImage = currentImage === 0 ? heroImages.length - 1 : currentImage - 1
+            setCurrentImage(prevImage)
+        }
+    }
+    const goToIndex = (newIndex) => {
+        if (animation) return;
+        setCurrentImage(newIndex);
+    }
     
-
-
-    
+    const imageSlides = heroImages.map( heroImg => {
+        return (
+        <CarouselItem
+            onExiting={() => setAnimation(true)}
+            onExited={() => setAnimation(false)}
+            key={heroImg.src}
+        >
+            <img src={heroImg.src} alt={heroImg.altText} />
+            <CarouselCaption captionText={heroImg.caption} captionHeader={heroImg.caption} />
+        </CarouselItem>
+        );
+    })
 
 
     return (
@@ -47,9 +58,18 @@ const HomePage = () => {
                 </Navbar>
             </Row> */}
             <Row id="heroImg-wrapper" style={{"color": "red"}}>
-                {/* <Col className="this_homepage" id="heroImg-caption"></Col> */}
-                <Col className="this_homepage" id="heroImg">
-                    <img src={} alt="heror-images" />
+                
+                <Col className="imageSlider" id="heroImg">
+                    <Carousel
+                        activeIndex={currentImage}
+                        next={next}
+                        prev={prev}
+                    >
+                        <CarouselIndicators items={heroImages} activeIndex={currentImage} onClickHandler={goToIndex} />
+                        {imageSlides}
+                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={prev} />
+                        <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+                    </Carousel>
                 </Col>
             </Row>
         </Container>
