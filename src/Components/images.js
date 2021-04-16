@@ -1,21 +1,21 @@
 import banner1 from '../assets/images/banner1.jpg'
-import banner4 from '../assets/images/banner4.jpg'
+import reserved_table from '../assets/images/table_service.jfif'
 import foodplainBg from '../assets/images/foodplainBg.jfif'
 
 const heroImages = [
     {
         src: banner1,
-        caption: 'banner1',
+        header: 'banner1',
         altText: 'banner1'
     },
     {
-        src: banner4,
-        caption: 'banner4',
-        altText: 'banner4'
+        src: reserved_table,
+        header: 'reserved_table',
+        altText: 'reserved_table'
     },
     {
         src: foodplainBg,
-        caption: 'foodPlainBg',
+        header: 'foodPlainBg',
         altText: 'foodPlainBg'
     }
 ]

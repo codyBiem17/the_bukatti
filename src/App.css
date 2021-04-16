@@ -64,9 +64,18 @@ hr {
 
 /* -------------------homepage css----------------
 ----------------------------------------------- */
-#homepage-container{
+.homepage-container{
   /* @media only screen */
-  color: red;
+  padding-left: 0;
+  padding-right: 0;
+}
+.carousel-item > img, img { 
+  width: 100%; 
+  height: auto;
+}
+.container-2{
+  background-color: white;
+  color: black;
 }
 #heroImg-wrapper{
   /* position: fixed;
