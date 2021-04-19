@@ -9,17 +9,17 @@ import delivery from '../assets/images/food-agent.png'
 export const heroImages = [
     {
         src: banner1,
-        header: 'Ac orci phasellus egestas tellus rutrum',
+        header: 'Home-made Meals',
         altText: 'banner1'
     },
     {
         src: reserved_table,
-        header: 'Ac orci phasellus egestas tellus rutrum',
+        header: 'Reaserve A Table',
         altText: 'reserved_table'
     },
     {
         src: foodplainBg,
-        header: 'Ac orci phasellus egestas tellus rutrum',
+        header: 'Try our Specials',
         altText: 'foodPlainBg'
     }
 ]

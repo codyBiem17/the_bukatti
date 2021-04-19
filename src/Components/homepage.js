@@ -1,39 +1,60 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { heroImages, services } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import { 
            Button, Container, Row, Col, 
-        //    Navbar, NavbarBrand, NavbarToggler,
-        //     Nav, NavItem, NavLink, Collapse, 
+           Navbar, NavbarBrand, NavbarToggler,
+            Nav, NavItem, NavLink, Collapse, 
             UncontrolledCarousel
         } from 'reactstrap'
 
 
 const HomePage = () => {
-    // const [collapsed, setCollapsed] = useState(true)
+    const [collapsed, setCollapsed] = useState(false)
     // const [currentImage, setCurrentImage] = useState(0)
 
-    // const toggleNavbar = () => {
-    //     setCollapsed(!collapsed)
-    // }
+    const toggleNavbar = () => {
+        setCollapsed(!collapsed)
+    }
    
 
     return (
         <>
-            <Container fluid={true} className="homepage-container">
-                    {/* <Row>
+            <Container fluid={true} className="nav-container">
+                <Row>
+                    <Col>
                         <Navbar color="dark" dark expand="md">
                             <NavbarBrand href="/">da_bukattee</NavbarBrand>
-                            <NavbarToggler />
-                            <Collapse>
+                            <NavbarToggler onClick={toggleNavbar} />
+                            <Collapse isOpen={collapsed} navbar>
+                                <Nav className="mr-auto" navbar>
+                                    <NavItem>
+                                        <NavLink href="/">Home</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="https://github.com/reactstrap/reactstrap">About</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="https://github.com/reactstrap/reactstrap">How it works</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="https://github.com/reactstrap/reactstrap">Order Now</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="https://github.com/reactstrap/reactstrap">Reservation</NavLink>
+                                    </NavItem>
+                                </Nav>
                             </Collapse>
                         </Navbar>
-                    </Row> */}
-                    <Row id="heroImg-wrapper">
-                        <Col className="imageSlider" id="heroImg">
-                            <UncontrolledCarousel items={heroImages} interval={3500} indicators={false} controls={false} />
-                        </Col>
-                    </Row>
+                    </Col>
+                </Row>
+            </Container>
+            <Container fluid={true} className="homepage-container">
+                <Row id="heroImg-wrapper">
+                    <Col className="imageSlider" id="heroImg">
+                        <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />
+                    </Col>
+                </Row>
             </Container>
             <Container className="container-2 containers" fluid={true}>
                 <Row className="row-1"> 
@@ -69,35 +90,29 @@ const HomePage = () => {
                                 <img src={services[0]} alt="serving-pate"/>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing...
-                                    <Button className="mt-2" outline color="info">Read More</Button> 
                                 </p>
+                                <Button className="mt-2" outline color="info">Read More</Button> 
                             </Col>
                             <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                                <div>
-                                    <img src={services[1]} alt="order-food-online"/>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing...
-                                        <Button className="mt-2" outline color="info">Read More</Button> 
-                                    </p>
-                                </div>
+                                <img src={services[1]} alt="order-food-online"/>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing...
+                                </p>
+                                <Button className="mt-2" outline color="info">Read More</Button> 
                             </Col>
                             <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                                <div>
-                                    <img src={services[2]} alt="delivery-agent"/>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing...
-                                        <Button className="mt-2" outline color="info">Read More</Button> 
-                                    </p>
-                                </div>
+                                <img src={services[2]} alt="delivery-agent"/>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing...
+                                </p>
+                                <Button className="mt-2" outline color="info">Read More</Button> 
                             </Col>
                             <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                                <div>
-                                    <img src={services[3]} alt="reserved-table"/>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing...
-                                        <Button className="mt-2" outline color="info">Read More</Button> 
-                                    </p>
-                                </div>
+                                <img src={services[3]} alt="reserved-table"/>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing...
+                                </p>
+                                <Button className="mt-2" outline color="info">Read More</Button> 
                             </Col>
                         </Row>
                     </Col>
@@ -106,7 +121,8 @@ const HomePage = () => {
             <Container className="container-4">
                 <Row>
                     <Col>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <Button className="mt-2 order" outline color="info">Order Now</Button>
                     </Col>
                 </Row>
             </Container>

@@ -58,7 +58,7 @@ hr {
 
 /* -------------------homepage css----------------
 ----------------------------------------------- */
-.homepage-container{
+.homepage-container, .nav-container{
   /* @media only screen */
   padding-left: 0;
   padding-right: 0;
@@ -73,21 +73,50 @@ hr {
   left: 0;
   display: block !important;
   width: 100%;
-  border: 1px solid red;
-  text-align: justify;
+  /* border: 1px solid red; */
+  /* text-align: justify; */
 }
 .carousel-caption h3{
-  border: 1px solid red;
-  position: absolute;
-  top: 15%;
-  left: 20%;
-  font-size: 1em;
-  width: 80%;
+  /* border: 1px solid red; */
+  color: white;
+  background-color: tomato;
+  position:absolute;
+  top: 0;
+  left: 0;
+  transform: translate(30px,70px);
+  font-size: 1.4em;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  /* letter-spacing: .2em; */
+  padding: 5px;
+  margin: 0 auto;
+  /* width: 60%; */
+  animation: animated-text 4s linear 1s 1 normal both,
+                animated-cursor 800ms linear infinite;
+}
+.carousel-item:nth-child(3) h3{
+  /* border: 1px solid red; */
+  position:absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(30px,80px);
+  /* text-align: center; */
+}
+
+/* Animation */
+@keyframes animated-text{
+  from{width: 0%;}
+  to{width: 100%;}
+}
+@keyframes animated-cursor {
+  from{border-right:2px solid transparent;}
+  to{border-right:2px solid #222;}
 }
 .containers{
   color: black;
   text-align: justify;
-  padding: 30px 20px;
+  padding: 10px 20px;
 }
 .container-2{
   background-color: white
@@ -111,7 +140,7 @@ hr {
   width: 50%;
 }
 .image-border{
-  border: 1px solid #D66D75;
+  border: 3px solid #D66D75;
   -webkit-border-radius: 14px 0px 14px 0px;
   -moz-border-radius: 14px 0px 14px 0px;
   border-radius: 14px 0px 14px 0px;
@@ -121,12 +150,16 @@ hr {
   background: #D66D75;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #E29587, #D66D75);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #E29587, #D66D75); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-color: white;
+  border-width: 0px;
+  color: white;
 }
 .image-border:nth-child(2), .image-border:nth-child(4){
   -webkit-border-radius: 0px 14px 0px 14px;
   -moz-border-radius: 0px 14px 0px 14px;
   border-radius: 0px 14px 0px 14px;
+}
+.image-border p {
+  margin-top: 20px;
 }
 .image-border button{
   color: #0D82E2;
@@ -146,7 +179,15 @@ color: white;
   text-transform: uppercase;
   padding: 100px 0;
 }
-
+.order{
+  text-transform: uppercase;
+  padding: 20px 40px;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+  background-color: #D66D75;
+  border-color: #D66D75;
+}
 /* @media only screen and (max-width : 767px){
   .carousel-caption{
    
