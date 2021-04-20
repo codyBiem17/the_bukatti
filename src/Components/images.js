@@ -5,6 +5,7 @@ import foodOrder from '../assets/images/food-order2.png'
 import dish from '../assets/images/image.png'
 import reserved from '../assets/images/reserved.png'
 import delivery from '../assets/images/food-agent.png'
+// import waiterServing from '../assets/images/waiter-setting-table.jpg'
 
 export const heroImages = [
     {
@@ -24,6 +25,5 @@ export const heroImages = [
     }
 ]
 
-
-
 export const services = [ dish, foodOrder, delivery, reserved]
+// export const WaiterServing = require('../assets/images/waiter-setting-table.jpg')

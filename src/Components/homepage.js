@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { heroImages, services } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
+import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 import { 
            Button, Container, Row, Col, 
            Navbar, NavbarBrand, NavbarToggler,
@@ -56,7 +57,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className="container-2 containers" fluid={true}>
+            <Container className="containers container-2" fluid={true}>
                 <Row className="row-1"> 
                     <Col xs="12">
                         <p className="para-header">Now You Are Here!</p> 
@@ -91,38 +92,48 @@ const HomePage = () => {
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing...
                                 </p>
-                                <Button className="mt-2" outline color="info">Read More</Button> 
+                                <Button className="mt-2" >Read More</Button> 
                             </Col>
                             <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
                                 <img src={services[1]} alt="order-food-online"/>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing...
                                 </p>
-                                <Button className="mt-2" outline color="info">Read More</Button> 
+                                <Button className="mt-2" >Read More</Button> 
                             </Col>
                             <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
                                 <img src={services[2]} alt="delivery-agent"/>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing...
                                 </p>
-                                <Button className="mt-2" outline color="info">Read More</Button> 
+                                <Button className="mt-2" >Read More</Button> 
                             </Col>
                             <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
                                 <img src={services[3]} alt="reserved-table"/>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing...
                                 </p>
-                                <Button className="mt-2" outline color="info">Read More</Button> 
+                                <Button className="mt-2" >Read More</Button> 
                             </Col>
                         </Row>
                     </Col>
                 </Row>
             </Container>
-            <Container className="container-4">
-                <Row>
+            <Container fluid={true} className="container-4">
+                <Row className="mb-4">
                     <Col>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <Button className="mt-2 order" outline color="info">Order Now</Button>
+                        <Button className="mt-2 order">Order Now</Button>
+                    </Col>
+                </Row>
+            </Container>
+            <Container className="container-5">
+                <Row className="reserved-table-section containers">
+                    <Col>
+                        
+                    </Col>
+                    <Col xs="12" sm="6">
+                        <img src={WaiterServing} alt="waiter-serving" />
                     </Col>
                 </Row>
             </Container>

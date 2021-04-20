@@ -58,6 +58,9 @@ hr {
 
 /* -------------------homepage css----------------
 ----------------------------------------------- */
+.navbar-dark .navbar-toggler{
+  border-color: #D66D75;
+}
 .homepage-container, .nav-container{
   /* @media only screen */
   padding-left: 0;
@@ -118,10 +121,10 @@ hr {
   text-align: justify;
   padding: 10px 20px;
 }
-.container-2{
+.container-2, .container-5{
   background-color: white
 }
-.row-1, .row-2{
+.row-1, .row-2, .reserved-table-section{
   margin: 50px 0;
   font-family: 'Tangerine', cursive;
 }
@@ -161,9 +164,16 @@ hr {
 .image-border p {
   margin-top: 20px;
 }
-.image-border button{
+.image-border .btn-secondary{
   color: #0D82E2;
   border-color: #0D82E2;
+  background-color: transparent;
+}
+.image-border .btn-secondary:not(:disabled):not(.disabled).active{
+  color: white;
+  background-color: #D66D75;
+  border-color: #D66D75;
+  outline: 0;
 }
 .image-border:hover button{
   color: white;
