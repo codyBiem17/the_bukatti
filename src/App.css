@@ -10,19 +10,23 @@ html, body {
   font-weight: 800;
   position: relative;
   background-image: url('./assets/images/table1.jfif');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  /* height: 100%; */
   color: white;
 }
 .App.overlay{
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  top:0;
+  left:0;
+  /* right: 0;
+  bottom: 0; */
+  width:100%;
+  height:100%;
   background-color: rgba(41, 40, 40, 0.4);
+  border: 1px solid red;
 }
 #bgText{
   text-transform: uppercase;
@@ -119,14 +123,10 @@ hr {
 .containers{
   color: black;
   text-align: justify;
-  padding: 10px 20px;
+  padding: 70px 20px 100px;
 }
 .container-2, .container-5{
   background-color: white
-}
-.row-1, .row-2, .reserved-table-section{
-  margin: 50px 0;
-  font-family: 'Tangerine', cursive;
 }
 .para-header{
   font-size: 1.3em;
@@ -135,6 +135,9 @@ hr {
 .welcome-caption{
   text-align: center;
   font-size: 0.8em;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  /* border: 1px solid red; */
 }
 .container-3{
   background-color: #f7f7f7;
@@ -184,12 +187,16 @@ hr {
   background-color: #D66D75;
   border-color: #D66D75;
 } 
-.container-4{
-  text-align: center;
+.container-4 .order-section{
   text-transform: uppercase;
-  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  left: 0;
+  transform: translate(5px, 40px);
+  color: white;
 }
-.order{
+button.order{
   text-transform: uppercase;
   padding: 20px 40px;
   font-size: 1.5em;
@@ -198,14 +205,12 @@ hr {
   background-color: #D66D75;
   border-color: #D66D75;
 }
-/* @media only screen and (max-width : 767px){
-  .carousel-caption{
-   
-  }
-  .carousel-caption h3{
-    font-size: 1em;
-  }
-} */
+button.order:hover{
+  color: #D66D75;
+  background-color: white;
+  border-color: white;
+}
+
 
 @media only screen and  (min-width: 768px){
   #bgText{

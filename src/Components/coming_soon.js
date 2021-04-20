@@ -31,7 +31,6 @@ const LandingPage = () => {
 
     return (
         <Container className="landing-page-container">
-            <div id="overlay"></div>
             <Row >
                 <Col id="logo">
                     <p>
