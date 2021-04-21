@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
-import { heroImages, services } from '../Components'
+import { heroImages, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 import { 
            Button, Container, Row, Col, 
            Navbar, NavbarBrand, NavbarToggler,
             Nav, NavItem, NavLink, Collapse, 
-            UncontrolledCarousel
+            UncontrolledCarousel,
+            Form, Input, InputGroup, InputGroupAddon, InputGroupText,
         } from 'reactstrap'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import ourServices from './images'
 
 const HomePage = () => {
     const [collapsed, setCollapsed] = useState(false)
@@ -17,6 +19,18 @@ const HomePage = () => {
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
+
+    const servicesSection = ourServices.map( service => {
+        return (
+            <Col xs="10" md="6" className="mb-4 mx-auto py-3 image-border">
+                <img src={service.src} alt={service.alt}/>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing...
+                </p>
+                <Button className="mt-2" >Read More</Button> 
+            </Col>
+        )})
+
    
 
     return (
@@ -36,7 +50,10 @@ const HomePage = () => {
                                         <NavLink href="https://github.com/reactstrap/reactstrap">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="https://github.com/reactstrap/reactstrap">How it works</NavLink>
+                                        <NavLink href="https://github.com/reactstrap/reactstrap">How It Works</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="https://github.com/reactstrap/reactstrap">Food Menu</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink href="https://github.com/reactstrap/reactstrap">Order Now</NavLink>
@@ -93,35 +110,8 @@ const HomePage = () => {
                         <p className="welcome-caption">Welcome to Da_Bukattee...our business is to serve you</p>
                     </Col>
                 </Row>
-                <Row>
-                    <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                        <img src={services[0]} alt="serving-pate"/>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing...
-                        </p>
-                        <Button className="mt-2" >Read More</Button> 
-                    </Col>
-                    <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                        <img src={services[1]} alt="order-food-online"/>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing...
-                        </p>
-                        <Button className="mt-2" >Read More</Button> 
-                    </Col>
-                    <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                        <img src={services[2]} alt="delivery-agent"/>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing...
-                        </p>
-                        <Button className="mt-2" >Read More</Button> 
-                    </Col>
-                    <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
-                        <img src={services[3]} alt="reserved-table"/>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing...
-                        </p>
-                        <Button className="mt-2" >Read More</Button> 
-                    </Col>
+                <Row> 
+                    {servicesSection} 
                 </Row>
             </Container>
             <Container fluid={true}  className="containers container-4">
@@ -133,12 +123,103 @@ const HomePage = () => {
                 </Row>
             </Container>
             <Container fluid={true} className="containers container-5">
-                <Row className="reserved-table-section ">
-                    <Col>
-
+                <Row className="reserved-table-section">
+                    <Col xs="12" sm="6" className="mb-4">
+                        <Form id="form-section">
+                            <Row form>
+                                <Col xs="12">
+                                    <h3>
+                                        Reserve A Table
+                                    </h3>
+                                </Col>
+                                <Col xs="12" sm="6" className="mb-4">
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon={['far', 'user']} />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input placeholder="Username" />
+                                    </InputGroup>
+                                </Col>
+                                <Col xs="12" sm="6" className="mb-4">
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon={['far', 'envelope']} />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input placeholder="Email" />
+                                    </InputGroup>
+                                </Col>
+                                <Col xs="12" sm="6" className="mb-4">
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon="mobile-alt" />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input placeholder="Phone no" />
+                                    </InputGroup>
+                                </Col>
+                                <Col xs="12" sm="6" className="mb-4">
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon={['far', 'calendar-alt']} />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input placeholder="Check-in-Date" />
+                                    </InputGroup>
+                                </Col>
+                                <Col xs="12" sm="6" className="mb-4">
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon="users" />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input placeholder="Nos of Guests" />
+                                    </InputGroup>
+                                </Col>
+                                <Col xs="12" sm="6" className="mb-4">
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon={['far', 'clock']} />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input type="select" placeholder="Time"> 
+                                            <option>9 A M TO 12PM</option>
+                                            <option>9 A M TO 12PM</option>
+                                            <option>9 A M TO 12PM</option>
+                                            <option>9 A M TO 12PM</option>
+                                        </Input>
+                                    </InputGroup>
+                                </Col>
+                            </Row>
+                            <Button className="mt-2 booking">Reserve A Table Now</Button>
+                        </Form>
                     </Col>
                     <Col xs="12" sm="6">
                         <img src={WaiterServing} alt="waiter-serving" />
+                    </Col>
+                </Row>
+            </Container>
+            <Container className="containers container-6">
+                <Row>
+                    <Col xs="12"> 
+                        <p className="para-header"> Our Food Menu </p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12">
+                        <p className="welcome-caption">Select desired food and place order</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs>
+                    
                     </Col>
                 </Row>
             </Container>
