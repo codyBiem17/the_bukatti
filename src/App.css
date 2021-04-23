@@ -176,7 +176,7 @@ hr {
   background-color: #D66D75;
   border-color: #D66D75;
 } 
-.container-4{
+.container-4, .container-7{
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -186,7 +186,7 @@ hr {
   color: white;
   /* border: 1px solid red; */
 }
-button.order{
+button.order, button.newsletter{
   text-transform: uppercase;
   padding: 20px 40px;
   font-size: 1.5em;
@@ -195,7 +195,11 @@ button.order{
   background-color: #D66D75;
   border-color: #D66D75;
 }
-button.order:hover{
+button.newsletter{
+  padding: 20px;
+  font-size: 1em;
+}
+button.order:hover, button.newsletter:hover{
   color: #D66D75;
   background-color: white;
   border-color: white;
@@ -215,6 +219,19 @@ button.booking{
   color: #D66D75;
   background-color: #e9ecef;
   border-color: #e9ecef;
+}
+.food-combo-drink{
+  border: 2px dotted #D66D75;
+}
+.food-only{
+  border: 2px dotted #D66D75;
+}
+.food-item-menu .food-item {
+  border-bottom: 1px dotted #D66D75;
+  padding-top: 10px;
+}
+.food-item-menu img{
+  border-radius: 50%;
 }
 
 @media only screen and  (min-width: 768px){
