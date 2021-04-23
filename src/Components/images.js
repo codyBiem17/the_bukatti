@@ -25,5 +25,22 @@ export const heroImages = [
     }
 ]
 
-export const services = [ dish, foodOrder, delivery, reserved]
-// export const WaiterServing = require('../assets/images/waiter-setting-table.jpg')
+export const ourServices = [
+    {
+        src: dish,
+        alt: 'serving-plate'
+    },
+    {
+        src: foodOrder,
+        alt: 'order-food-online'
+    },
+    {
+        src: delivery,
+        alt: 'delivery-agent'
+    },
+    {
+        src: reserved,
+        alt: 'reserved-table'
+    }
+]
+// export default ourServices
