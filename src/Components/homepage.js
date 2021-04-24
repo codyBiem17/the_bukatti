@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { foodMenu, heroImages, ourServices } from '../Components'
+import { customers, foodMenu, heroImages, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
-import PersonEating from '../assets/images/person-eating.jpg'
 import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 import { 
            Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
@@ -23,86 +22,122 @@ const HomePage = () => {
 
     const servicesSection = ourServices.map( service => {
         return (
-            <Col xs="10" md="6" className="mb-4 mx-auto py-3 image-border">
-                <img src={service.src} alt={service.alt}/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing...
-                </p>
-                <Button className="mt-2" >Read More</Button> 
+            <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
+                <div>
+                    <img src={service.src} alt={service.alt}/>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing...
+                    </p>
+                    <Button className="mt-2" >Read More</Button> 
+                </div>
             </Col>
         )
     })
-    const foodMenuSection = foodMenu.map( food => {
-
-        // alert(food[0].foodImg.src)
-            if(food.foodType === 'food-combo-drink'){
-                return ( <Col xs="12" className="food-item">
-                    <Row>
-                        <Col xs="3">
-                            <img src={food.foodImg.src} alt={food.foodImg.altText}/>
-                            <p className="text-center mt-3"> {decode(food.plus)} </p>
-                            <img src={food.drinkImg.src} alt={food.drinkImg.altText} />
-                        </Col>
-                        <Col xs="6">
-                            <p> {food.foodItemName} </p>
-                            <p> {food.foodItemMakeUp} </p>
-                        </Col>
-                        <Col xs="3"> <span className="amount"> {decode(food.amount)} </span></Col>
-                    </Row>
-                </Col>
+    const foodDrinkCombo = 
+        foodMenu.filter(foodOrder => foodOrder.foodType === 'food-combo-drink').map( filteredFoodType =>
+            {
+                return ( 
+                    <Col xs="12" className="food-item">
+                        <Row>
+                            <Col xs="3">
+                                <img src={filteredFoodType.foodImg.src} alt={filteredFoodType.foodImg.altText}/>
+                                <p className="text-center mt-3"> {decode(filteredFoodType.plus)} </p>
+                                <img src={filteredFoodType.drinkImg.src} alt={filteredFoodType.drinkImg.altText} />
+                            </Col>
+                            <Col xs="6">
+                                <p> {filteredFoodType.foodItemName} </p>
+                                <p> {filteredFoodType.foodItemMakeUp} </p>
+                            </Col>
+                            <Col xs="3"> <span className="amount"> {decode(filteredFoodType.amount)} </span></Col>
+                        </Row>
+                    </Col>
                 )
             }
-            
-            // else if(food.foodType === 'food-only') {
-            //     <Col xs="12" className="food-item">
-            //         <Row>
-            //             <Col xs="3">
-            //                 <img src={food.foodImg.src} alt={food.foodImg.altText}/>
-            //             </Col>
-            //             <Col xs="6">
-            //                 <p> {food.foodItemName} </p>
-            //                 <p> {food.foodItemMakeUp} </p>
-            //             </Col>
-            //             <Col xs="3"> <span className="amount"> {food.amount} </span></Col>
-            //         </Row>
-            //     </Col>
-                
-            // }
-            else{ 
-                return null
-            }
+        )       
     
+    const foodOnly = 
+        foodMenu.filter(foodOrder => foodOrder.foodType === 'food-only').map( filteredFoodType =>
+            {
+                return ( 
+                    <Col xs="12" className="food-item">
+                        <Row>
+                            <Col xs="3">
+                                <img src={filteredFoodType.foodImg.src} alt={filteredFoodType.foodImg.altText}/>
+                            </Col>
+                            <Col xs="6">
+                                <p> {filteredFoodType.foodItemName} </p>
+                                <p> {filteredFoodType.foodItemMakeUp} </p>
+                            </Col>
+                            <Col xs="3"> <span className="amount"> {decode(filteredFoodType.amount)} </span></Col>
+                        </Row>
+                    </Col>
+                )
+            }
+        )         
+    
+    const testimonies = customers.map( customer => {
+        return (
+            <Col xs="12" md="6" className="mb-4">
+                <Card>
+                    <CardImg src={customer.src} top width="100%" alt={customer.altText} />
+                    <CardBody>
+                        <CardTitle> Greg </CardTitle>
+                        <CardText>
+                            {customer.comment} {decode(customer.emoji)}
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </Col>
+        )
     })
-
    
 
     return (
         <>
+            <Container fluid={true} className="d-none d-lg-block container-topbar nav-container">
+                <Row>
+                    <Col lg="8">
+                        <p>
+                            Phone no: +2348088376911 or Email us: eat_here@bukattee.com
+                        </p>
+                    </Col>
+                    <Col lg="4">
+                        <span> Mon - Fri / 8am - 9pm / </span>
+                        <span className="social-icons">
+                            <a href="https://api.whatsapp.com/send?phone=2348088376911&amp;text=Hi there! Welcome to my page,let's chat"> 
+                                <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
+                            </a>
+                            <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
+                            <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
+                        </span>
+                    </Col>
+                </Row>
+            </Container>
             <Container fluid={true}  className="nav-container">
                 <Row>
                     <Col>
-                        <Navbar color="dark" dark expand="md">
+                        <Navbar color="dark" dark expand="md" sticky="top">
                             <NavbarBrand href="/">da_bukattee</NavbarBrand>
                             <NavbarToggler onClick={toggleNavbar} />
                             <Collapse isOpen={collapsed} navbar>
-                                <Nav className="mr-auto" navbar>
+                                <Nav className="ml-auto" navbar>
                                     <NavItem>
                                         <NavLink href="/">Home</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="https://github.com/reactstrap/reactstrap">About</NavLink>
+                                        <NavLink href="#">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="https://github.com/reactstrap/reactstrap">How It Works</NavLink>
+                                        <NavLink href="#">How It Works</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="https://github.com/reactstrap/reactstrap">Food Menu</NavLink>
+                                        <NavLink href="#">Menu</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="https://github.com/reactstrap/reactstrap">Order Now</NavLink>
+                                        <NavLink href="#">Order</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="https://github.com/reactstrap/reactstrap">Reservation</NavLink>
+                                        <NavLink href="#">Reservation</NavLink>
                                     </NavItem>
                                 </Nav>
                             </Collapse>
@@ -249,7 +284,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className="containers container-6">
+            <Container fluid={true} className="containers container-6">
                 <Row>
                     <Col xs="12"> 
                         <p className="para-header"> Our Food Menu </p>
@@ -268,15 +303,15 @@ const HomePage = () => {
                         </Row>
                         <Row>
                             {/* first column child in first column div */}
-                            <Col xs="12">
+                            <Col xs="12" md="6">
                                 <Row>
-                                    {foodMenuSection}
+                                    {foodDrinkCombo}
                                 </Row>
                             </Col>
                             {/* second column child in first column div */}
-                            <Col xs="12">
+                            <Col xs="12" md="6">
                                 <Row>
-                                    {foodMenuSection}
+                                    {foodDrinkCombo}
                                 </Row>
                             </Col>
                         </Row>
@@ -288,85 +323,80 @@ const HomePage = () => {
                             <Col className="mt-3 mb-4 text-center">Food-Only</Col>
                         </Row>
                         <Row>
-                            {foodMenuSection}
+                            {foodOnly}
                         </Row>
                     </Col>
-                        {/* second column child in first column div */}
-                        {/* <Col xs="12">
-                            <Row>
-                                <Col xs="12" className="food-item">
-                                    <Row>
-                                        <Col xs="3">
-                                            <img src={Jelof} alt="jelof-rice"/>
-                                            <p className="text-center mt-3"> &#43; </p>
-                                            <img src={PetCoke} alt="drink"/>
-                                        </Col>
-                                        <Col xs="6">
-                                            <p>Lorem Ipsum yenyen</p>
-                                            <p>Bla de bla, bla de bla</p>
-                                        </Col>
-                                        <Col xs="3"> <span className="amount"> &#8358;500 </span></Col>
-                                    </Row>
-                                </Col>
-                                <Col xs="12" className="food-item">
-                                    <Row>
-                                        <Col xs="3">
-                                            <img src={Jelof} alt="jelof-rice"/>
-                                            <p className="text-center mt-3"> &#43; </p>
-                                            <img src={PetCoke} alt="drink"/>
-                                        </Col>
-                                        <Col xs="6">
-                                            <p>Lorem Ipsum yenyen</p>
-                                            <p>Bla de bla, bla de bla</p>
-                                        </Col>
-                                        <Col xs="3"> <span className="amount"> &#8358;500 </span></Col>
-                                    </Row>
-                                </Col>
-                                <Col xs="12" className="food-item">
-                                    <Row>
-                                        <Col xs="3">
-                                            <img src={Jelof} alt="jelof-rice"/>
-                                            <p className="text-center mt-3"> &#43; </p>
-                                            <img src={PetCoke} alt="drink"/>
-                                        </Col>
-                                        <Col xs="6">
-                                            <p>Lorem Ipsum yenyen</p>
-                                            <p>Bla de bla, bla de bla</p>
-                                        </Col>
-                                        <Col xs="3"> <span className="amount"> &#8358;500 </span></Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                    </Col> */}
                 </Row>
             </Container>
-            <Container fluid={true}  className="containers container-7">
+            <Container fluid={true}  className="containers container-7 order-section">
                 <Row>
-                    <Col className="order-section">
+                    <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
-                        <Form>
-                           <InputGroup>
-                                <InputGroupAddon addonType="prepend">
-                                    <FontAwesomeIcon icon={['far', 'envelope']} />
-                                </InputGroupAddon>
-                           </InputGroup>
+                    </Col>
+                    <Col xs="12" md="8" className="mx-auto">
+                        <Form id="newsletter-form">
+                            <Row>
+                                <Col>
+                                    <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon={['far', 'envelope']} />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input type="email" placeholder="Enter your email" />
+                                    </InputGroup>
+                                </Col>
+                            </Row>
                         </Form>
                     </Col>
                 </Row>
             </Container>
-            <Container>
+            <Container fluid={true} className="containers container-8">
+                <Row> 
+                    <Col xs="12">
+                        <p className="para-header"> Testimonies </p> 
+                    </Col>
+                </Row>
                 <Row>
                     <Col xs="12">
-                        <Card>
-                            <CardImg src={PersonEating} top width="100%" alt="image-of-user" />
-                            <CardBody>
-                                <CardTitle> Name </CardTitle>
-                                <CardText>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a tristique leo. 
-                                    Duis et eleifend metus. Ut gravida bibendum mauris, tincidunt tempus odio
-                                </CardText>
-                            </CardBody>
-                        </Card>
+                        <p className="welcome-caption">What Our Customers say: </p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12"> Meet <span className="down-arrow"> &#8595;</span> </Col>
+                    {testimonies}
+                </Row>
+            </Container>
+            <Container fluid={true} className="containers container-9 footer">
+                <Row className="mb-3">
+                    <Col xs="12">
+                        <p className="para-header"> REACH US TODAY </p> 
+                    </Col>
+                    <Col xs="12">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                        </p>
+                    </Col>
+                </Row>
+                <Row className="mb-3">
+                    <Col xs="12" md="6">
+                        <p>OPENING DAYS</p>
+                        <p>Mon - Sat 8am - 9pm</p>
+                    </Col>
+                    <Col xs="12" md="6">
+                        <p>CONNECT WITH US</p>
+                        <p className="social-icons">
+                            <a href="https://api.whatsapp.com/send?phone=2348088376911&amp;text=Hi there! Welcome to my page,let's chat"> 
+                                <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
+                            </a>
+                            <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
+                            <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
+                        </p>
+                    </Col>
+                </Row>   
+                <Row className="pt-5">   
+                    <Col xs="12">
+                        Copyright &copy; 2021. Built by Yours truly &#9996;
                     </Col>
                 </Row>
             </Container>

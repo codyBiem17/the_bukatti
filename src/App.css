@@ -114,8 +114,16 @@ hr {
   text-align: justify;
   padding: 70px 20px 100px;
 }
-.container-2, .container-5{
-  background-color: white
+.container-topbar{
+  color: white;
+  padding: 20px;
+}
+.container-topbar .social-icons a{
+  font-size: 14px;
+  padding: 5px;
+} 
+.container-2, .container-5, .container-8{
+  background-color: white;
 }
 .para-header{
   font-size: 1.3em;
@@ -132,14 +140,18 @@ hr {
   background-color: #f7f7f7;
 }
 .container-3 img{
-  width: 50%;
+  width: 40%;
 }
 .image-border{
-  border: 3px solid #D66D75;
+  border: 5px solid #D66D75;
   -webkit-border-radius: 14px 0px 14px 0px;
   -moz-border-radius: 14px 0px 14px 0px;
   border-radius: 14px 0px 14px 0px;
   text-align: center;
+}
+.image-border div{
+  border: 2px dotted #D66D75;
+  padding: 10px;
 }
 .image-border:hover{
   background: #D66D75;  /* fallback for old browsers */
@@ -204,7 +216,7 @@ button.order:hover, button.newsletter:hover{
   background-color: white;
   border-color: white;
 }
-#form-section{
+#form-section, #newsletter-form{
   color: white;
   background-color: #D66D75;
   text-align: center;
@@ -226,14 +238,30 @@ button.booking{
 .food-only{
   border: 2px dotted #D66D75;
 }
-.food-item-menu .food-item {
+.food-item-menu .food-item{
   border-bottom: 1px dotted #D66D75;
-  padding-top: 10px;
+  padding: 10px;
 }
 .food-item-menu img{
   border-radius: 50%;
 }
-
+.down-arrow{
+  color: #D66D75;
+  font-size: 40px;
+}
+.card{
+  background-color: #e9ecef;
+}
+.social-icons a{
+  color: #D66D75;
+  padding: 10px;
+  font-size: 1.5em;
+}
+.footer{
+  color: white;
+  text-align: center;
+  background-color: #262526;
+}
 @media only screen and  (min-width: 768px){
   #bgText{
     font-size: 30px;
@@ -244,7 +272,36 @@ button.booking{
   #countdown-column{
     font-size: 30px;
   }
+  .para-header{
+    font-size: 1.7em;
+  }
+  .welcome-caption{
+    font-size: 1.3em;
+  }
+  .containers{
+    font-size: 1.3em;
+  }
+  .container-topbar{
+    font-size: 14px;
+  }
   .container-3 img{
-    width: 10%;
+    width: 20%;
+  }
+  .food-item-menu .food-item:last-child {
+    border-bottom-width: 0px;
+  }
+  .food-combo-drink .food-item{
+    padding: 20px;
+  }
+  .food-combo-drink .row:nth-child(2) > div:first-child {
+    border-right: 2px dotted #D66D75;
+  }
+  .food-only img{
+    width: 50%;
   }
 }
+/* @media only screen and  (min-width: 768px){
+  .container-3 img{
+    wid
+  }
+} */

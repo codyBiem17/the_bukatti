@@ -6,7 +6,8 @@ import dish from '../assets/images/image.png'
 import reserved from '../assets/images/reserved.png'
 import delivery from '../assets/images/food-agent.png'
 import Jelof from '../assets/images/jollof_rice_dodo.jpg'
-import PetCoke from '../assets/images/coke-pet.jpg'
+import PetCoke from '../assets/images/coke-pet-trans.png'
+import Customer from '../assets/images/person-eating.jpg'
 
 export const heroImages = [
     {
@@ -125,4 +126,29 @@ export const foodMenu = [
         amount: '&#8358;500',
     }
 ]
-
+export const customers = [
+    {
+        src: Customer,
+        altText: 'image-of-customer',
+        comment: 'Only tasty meals are sold ',
+        emoji: '&#128076;'
+    },
+    {
+        src: Customer,
+        altText: 'image-of-customer',
+        comment: 'Only tasty meals are sold ',
+        emoji: '&#128077;'
+    },
+    {
+        src: Customer,
+        altText: 'image-of-customer',
+        comment: 'Only tasty meals are sold ',
+        emoji: '&#128076;'
+    },
+    {
+        src: Customer,
+        altText: 'image-of-customer',
+        comment: 'Only tasty meals are sold ',
+        emoji: '&#128077;'
+    }
+]
