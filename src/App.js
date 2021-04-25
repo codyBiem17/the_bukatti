@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import {HomePage, LandingPage} from './Components'
+import {About, HomePage, Header, Footer} from './Components'
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -12,12 +12,14 @@ library.add(fab, far, fas)
 function App() {
   return (
     <div className="App overlay">
-      {/* <LandingPage /> */}
       <Router>
-        <Switch>
-          <Route exact path="/" component={LandingPage} /> 
-          <Route path="/homepage" component={HomePage} />
-        </Switch>
+        {/* <Route exact path="/" component={LandingPage} />    */}
+        <Header />
+          <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/about" component={About} />
+          </Switch>
+        <Footer />
       </Router>
     </div>
   );

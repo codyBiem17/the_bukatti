@@ -1,28 +1,24 @@
-import React, { useState } from 'react'
-import { customers, foodMenu, heroImages, ourServices } from '../Components'
+import React, {useState} from 'react'
+import { customers, foodMenu, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 import { 
            Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
-           Navbar, NavbarBrand, NavbarToggler,
-            Nav, NavItem, NavLink, Collapse, 
-            UncontrolledCarousel,
             Form, Input, InputGroup, InputGroupAddon, InputGroupText
         } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
 
 const HomePage = () => {
-    const [collapsed, setCollapsed] = useState(false)
-    // const [currentImage, setCurrentImage] = useState(0)
+    const [showBtn, setShowBtn] = useState(false)
 
-    const toggleNavbar = () => {
-        setCollapsed(!collapsed)
+    const ShowBtn = (e) => {
+       return e.target.id ? setShowBtn(!showBtn) :null
     }
 
     const servicesSection = ourServices.map( service => {
         return (
-            <Col xs="10" md="5" className="mb-4 mx-auto py-3 image-border">
+            <Col xs="10" md="5" key={service.src} className="mb-4 mx-auto py-3 image-border">
                 <div>
                     <img src={service.src} alt={service.alt}/>
                     <p>
@@ -37,7 +33,7 @@ const HomePage = () => {
         foodMenu.filter(foodOrder => foodOrder.foodType === 'food-combo-drink').map( filteredFoodType =>
             {
                 return ( 
-                    <Col xs="12" className="food-item">
+                    <Col xs="12" key={filteredFoodType.id} className="food-item" onClick={ShowBtn}>
                         <Row>
                             <Col xs="3">
                                 <img src={filteredFoodType.foodImg.src} alt={filteredFoodType.foodImg.altText}/>
@@ -48,7 +44,12 @@ const HomePage = () => {
                                 <p> {filteredFoodType.foodItemName} </p>
                                 <p> {filteredFoodType.foodItemMakeUp} </p>
                             </Col>
-                            <Col xs="3"> <span className="amount"> {decode(filteredFoodType.amount)} </span></Col>
+                            <Col xs="3"> 
+                                <span className="amount"> {decode(filteredFoodType.amount)} </span>
+                                {
+                                    showBtn ? <Button >Order</Button> : null    
+                                }
+                            </Col>
                         </Row>
                     </Col>
                 )
@@ -59,7 +60,7 @@ const HomePage = () => {
         foodMenu.filter(foodOrder => foodOrder.foodType === 'food-only').map( filteredFoodType =>
             {
                 return ( 
-                    <Col xs="12" className="food-item">
+                    <Col xs="12" key={filteredFoodType.id} className="food-item">
                         <Row>
                             <Col xs="3">
                                 <img src={filteredFoodType.foodImg.src} alt={filteredFoodType.foodImg.altText}/>
@@ -77,7 +78,7 @@ const HomePage = () => {
     
     const testimonies = customers.map( customer => {
         return (
-            <Col xs="12" md="6" className="mb-4">
+            <Col xs="12" md="6" key={customer.id} className="mb-4">
                 <Card>
                     <CardImg src={customer.src} top width="100%" alt={customer.altText} />
                     <CardBody>
@@ -94,64 +95,6 @@ const HomePage = () => {
 
     return (
         <>
-            <Container fluid={true} className="d-none d-lg-block container-topbar nav-container">
-                <Row>
-                    <Col lg="8">
-                        <p>
-                            Phone no: +2348088376911 or Email us: eat_here@bukattee.com
-                        </p>
-                    </Col>
-                    <Col lg="4">
-                        <span> Mon - Fri / 8am - 9pm / </span>
-                        <span className="social-icons">
-                            <a href="https://api.whatsapp.com/send?phone=2348088376911&amp;text=Hi there! Welcome to my page,let's chat"> 
-                                <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
-                            </a>
-                            <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
-                            <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
-                        </span>
-                    </Col>
-                </Row>
-            </Container>
-            <Container fluid={true}  className="nav-container">
-                <Row>
-                    <Col>
-                        <Navbar color="dark" dark expand="md" sticky="top">
-                            <NavbarBrand href="/">da_bukattee</NavbarBrand>
-                            <NavbarToggler onClick={toggleNavbar} />
-                            <Collapse isOpen={collapsed} navbar>
-                                <Nav className="ml-auto" navbar>
-                                    <NavItem>
-                                        <NavLink href="/">Home</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink href="#">About</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink href="#">How It Works</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink href="#">Menu</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink href="#">Order</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink href="#">Reservation</NavLink>
-                                    </NavItem>
-                                </Nav>
-                            </Collapse>
-                        </Navbar>
-                    </Col>
-                </Row>
-            </Container>
-            <Container fluid={true}  className="homepage-container">
-                <Row id="heroImg-wrapper">
-                    <Col className="imageSlider" id="heroImg">
-                        <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />
-                    </Col>
-                </Row>
-            </Container>
             <Container fluid={true} className="containers container-2" >
                 <Row> 
                     <Col xs="12">
@@ -328,7 +271,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid={true}  className="containers container-7 order-section">
+            <Container fluid={true}  className="containers container-7">
                 <Row>
                     <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
@@ -365,39 +308,6 @@ const HomePage = () => {
                 <Row>
                     <Col xs="12"> Meet <span className="down-arrow"> &#8595;</span> </Col>
                     {testimonies}
-                </Row>
-            </Container>
-            <Container fluid={true} className="containers container-9 footer">
-                <Row className="mb-3">
-                    <Col xs="12">
-                        <p className="para-header"> REACH US TODAY </p> 
-                    </Col>
-                    <Col xs="12">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
-                        </p>
-                    </Col>
-                </Row>
-                <Row className="mb-3">
-                    <Col xs="12" md="6">
-                        <p>OPENING DAYS</p>
-                        <p>Mon - Sat 8am - 9pm</p>
-                    </Col>
-                    <Col xs="12" md="6">
-                        <p>CONNECT WITH US</p>
-                        <p className="social-icons">
-                            <a href="https://api.whatsapp.com/send?phone=2348088376911&amp;text=Hi there! Welcome to my page,let's chat"> 
-                                <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
-                            </a>
-                            <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
-                            <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
-                        </p>
-                    </Col>
-                </Row>   
-                <Row className="pt-5">   
-                    <Col xs="12">
-                        Copyright &copy; 2021. Built by Yours truly &#9996;
-                    </Col>
                 </Row>
             </Container>
         </>

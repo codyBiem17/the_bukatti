@@ -48,6 +48,7 @@ export const ourServices = [
 
 export const foodMenu = [
     {
+        id: 1,
         foodType: 'food-combo-drink',
         foodImg: {
             src: Jelof,
@@ -63,6 +64,7 @@ export const foodMenu = [
         amount: '&#8358;500',
     },
     {
+        id: 2,
         foodType: 'food-combo-drink',
         foodImg: {
             src: Jelof,
@@ -78,6 +80,7 @@ export const foodMenu = [
         amount: '&#8358;500',
     },
     {
+        id: 3,
         foodType: 'food-combo-drink',
         foodImg: {
             src: Jelof,
@@ -93,6 +96,7 @@ export const foodMenu = [
         amount: '&#8358;500',
     },
     {
+        id: 4,
         foodType: 'food-only',
         foodImg: {
             src: Jelof,
@@ -104,6 +108,7 @@ export const foodMenu = [
         amount: '&#8358;500',
     },
     {
+        id: 5,
         foodType: 'food-only',
         foodImg: {
             src: Jelof,
@@ -115,6 +120,7 @@ export const foodMenu = [
         amount: '&#8358;500',
     },
     {
+        id: 6,
         foodType: 'food-only',
         foodImg: {
             src: Jelof,
@@ -128,24 +134,28 @@ export const foodMenu = [
 ]
 export const customers = [
     {
+        id: 1,
         src: Customer,
         altText: 'image-of-customer',
         comment: 'Only tasty meals are sold ',
         emoji: '&#128076;'
     },
     {
+        id:2,
         src: Customer,
         altText: 'image-of-customer',
         comment: 'Only tasty meals are sold ',
         emoji: '&#128077;'
     },
     {
+        id: 3,
         src: Customer,
         altText: 'image-of-customer',
         comment: 'Only tasty meals are sold ',
         emoji: '&#128076;'
     },
     {
+        id: 4,
         src: Customer,
         altText: 'image-of-customer',
         comment: 'Only tasty meals are sold ',

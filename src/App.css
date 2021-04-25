@@ -122,7 +122,7 @@ hr {
   font-size: 14px;
   padding: 5px;
 } 
-.container-2, .container-5, .container-8{
+.container-2, .container-5, .container-8, .aboutpage-container-bg-white{
   background-color: white;
 }
 .para-header{
@@ -136,7 +136,7 @@ hr {
   margin-bottom: 30px;
   /* border: 1px solid red; */
 }
-.container-3, .container-6{
+.container-3, .container-6, .aboutpage-container-bg-ash{
   background-color: #f7f7f7;
 }
 .container-3 img{
@@ -188,7 +188,7 @@ hr {
   background-color: #D66D75;
   border-color: #D66D75;
 } 
-.container-4, .container-7{
+.container-4, .container-7, .aboutpage-figures{
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -242,6 +242,11 @@ button.booking{
   border-bottom: 1px dotted #D66D75;
   padding: 10px;
 }
+.food-item-menu .food-item:hover{
+  cursor: pointer;
+  background-color: rgba(168, 165, 165, 0.4);
+  color: #D66D75;
+}
 .food-item-menu img{
   border-radius: 50%;
 }
@@ -262,6 +267,50 @@ button.booking{
   text-align: center;
   background-color: #262526;
 }
+
+/* -------------------About page css----------------
+----------------------------------------------- */
+.container-fluid.breadcrumbs{
+  background-color: #e9ecef;
+}
+.breadcrumb{
+  margin-bottom: 0;
+  border-radius: 0;
+  font-size: 1.3em;
+}
+li.breadcrumb-item a{
+  color: #6c757d;
+  text-decoration: underline;
+}
+li.breadcrumb-item.active{
+  color: #007bff;
+}
+.restaurant-stats{
+  margin-bottom: 30px;
+}
+.figures{
+  font-size: 2em;
+  line-height: 12px;
+}
+.order-and-book{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #D66D75;
+  background-color: transparent;
+  border-color: #D66D75;
+}
+.order-and-book:hover{
+  color: white;
+  background-color: #D66D75;
+  border-color: #D66D75;
+}
+.what-we-do{
+  margin-bottom: 30px;
+}
+
+
+/* -------------------media queries----------------
+----------------------------------------------- */
 @media only screen and  (min-width: 768px){
   #bgText{
     font-size: 30px;
@@ -271,6 +320,10 @@ button.booking{
   }
   #countdown-column{
     font-size: 30px;
+  }
+  .carousel-item:nth-child(3) h3{
+    top: 0;
+    transform: translate(30px,70px);
   }
   .para-header{
     font-size: 1.7em;
@@ -298,6 +351,16 @@ button.booking{
   }
   .food-only img{
     width: 50%;
+  }
+  .breadcrumb{
+    font-size: 1.5em;
+  }
+  .order-and-book{
+    padding: 30px 20px;
+    font-size: 1.4em;
+  }
+  .restaurant-stats{
+    margin-bottom: 60px;
   }
 }
 /* @media only screen and  (min-width: 768px){
