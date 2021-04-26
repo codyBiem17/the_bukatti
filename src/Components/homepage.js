@@ -13,7 +13,7 @@ const HomePage = () => {
     const [showBtn, setShowBtn] = useState(false)
 
     const ShowBtn = (e) => {
-       return e.target.id ? setShowBtn(!showBtn) :null
+       setShowBtn(!showBtn)
     }
 
     const servicesSection = ourServices.map( service => {
