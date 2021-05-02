@@ -1,19 +1,40 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
+import { HashLink as Link } from 'react-router-hash-link'
 import { customers, foodMenu, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 import { 
            Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
-            Form, Input, InputGroup, InputGroupAddon, InputGroupText
+            Form, Input, InputGroup, InputGroupAddon, InputGroupText,
         } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
 
 const HomePage = () => {
     const [showBtn, setShowBtn] = useState(false)
-
+    
     const ShowBtn = (e) => {
-       setShowBtn(!showBtn)
+        const filter = e.currentTarget
+        // const checkClick = foodItemDevRef.current.focus()
+        // const currentId = e.currentTarget.id
+        // return currentId ? setShowBtn(!showBtn) : null
+        
+        if(filter){
+            if(showBtn){
+                return null
+            }
+            else{
+                setShowBtn(true)
+            }
+            // alert('gfjcfjgg')
+            // console.log(filter)
+        }
+        // const id = foodMenu.filter( item => item.id === 2)
+        // if(currentId){
+        // // alert(currentId)
+        //     setShowBtn('<Button> Order </Button>')
+
+        // }
     }
 
     const servicesSection = ourServices.map( service => {
@@ -24,7 +45,7 @@ const HomePage = () => {
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing...
                     </p>
-                    <Button className="mt-2" >Read More</Button> 
+                    <Button tag={Link} smooth to={`/how_it_works#${service.id}`} className="mt-2">Read More</Button> 
                 </div>
             </Col>
         )
@@ -33,7 +54,7 @@ const HomePage = () => {
         foodMenu.filter(foodOrder => foodOrder.foodType === 'food-combo-drink').map( filteredFoodType =>
             {
                 return ( 
-                    <Col xs="12" key={filteredFoodType.id} className="food-item" onClick={ShowBtn}>
+                    <Col onClick={ShowBtn} xs="12" key={filteredFoodType.id} id={filteredFoodType.id} className="food-item" >
                         <Row>
                             <Col xs="3">
                                 <img src={filteredFoodType.foodImg.src} alt={filteredFoodType.foodImg.altText}/>
@@ -46,9 +67,6 @@ const HomePage = () => {
                             </Col>
                             <Col xs="3"> 
                                 <span className="amount"> {decode(filteredFoodType.amount)} </span>
-                                {
-                                    showBtn ? <Button >Order</Button> : null    
-                                }
                             </Col>
                         </Row>
                     </Col>
@@ -103,7 +121,7 @@ const HomePage = () => {
                 </Row>
                 <Row>
                     <Col xs="12">
-                        <p className="welcome-caption">Welcome to Da_Bukattee...our tasty foods, way to your stomach</p>
+                        <p className="welcome-caption">Welcome to Da_Bukatti...our tasty foods, way to your stomach</p>
                     </Col>
                 </Row>
                 <Row>
@@ -241,8 +259,13 @@ const HomePage = () => {
                 <Row className="food-item-menu mx-auto">
                     {/* first column */}
                     <Col xs="12" className="food-combo-drink">
-                        <Row>
-                            <Col className="mt-3 mb-4 text-center">Food-Combo-Drink</Col>
+                        <Row className="mx-auto text-justify">
+                            <Col xs="8" className="mt-4 mb-3">Food-Combo-Drink</Col>
+                            <Col xs="4" className="mt-3 mb-4">
+                                {
+                                    showBtn ? <Button> Order </Button> : null   
+                                }
+                            </Col>
                         </Row>
                         <Row>
                             {/* first column child in first column div */}
@@ -262,8 +285,13 @@ const HomePage = () => {
 
                     {/* second column */}
                     <Col xs="12" className="food-only mt-4">
-                        <Row>
-                            <Col className="mt-3 mb-4 text-center">Food-Only</Col>
+                        <Row className="mx-auto text-center">
+                            <Col xs="8" className="mt-4">Food-Only</Col>
+                            <Col xs="4" className="my-4">
+                                {
+                                    showBtn ? <Button> Order </Button> : null   
+                                }
+                            </Col>
                         </Row>
                         <Row>
                             {foodOnly}
