@@ -136,7 +136,7 @@ hr {
   margin-bottom: 30px;
   /* border: 1px solid red; */
 }
-.container-3, .container-6, .aboutpage-container-bg-ash{
+.container-3, .container-6, .aboutpage-container-bg-ash, .how_it_works{
   background-color: #f7f7f7;
 }
 .container-3 img{
@@ -309,6 +309,26 @@ li.breadcrumb-item.active{
 }
 
 
+/* -------------------How It Works page css----------------
+----------------------------------------------- */
+.how_it_works .heading{
+  font-size: 1.3em;
+  text-align: justify;
+  font-weight: 800;
+}
+.how_it_works .row:not(:first-child) img{
+  width: 70%;
+}
+.how_it_works hr {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #D66D75;
+}
+
+.how_it_works .row:last-child hr{
+  display: none;
+}
+
 /* -------------------media queries----------------
 ----------------------------------------------- */
 @media only screen and  (min-width: 768px){
@@ -362,9 +382,19 @@ li.breadcrumb-item.active{
   .restaurant-stats{
     margin-bottom: 60px;
   }
+  .how_it_works hr{
+    display: none;
+  }
+  .how_it_works .row{
+    margin-top: 30px;
+  }
+  .how_it_works .row:not(:first-child) img{
+    width: 80%;
+  }
 }
-/* @media only screen and  (min-width: 768px){
-  .container-3 img{
-    wid
+
+/* @media only screen and  (min-width: 992px){
+  .how_it_works .row:not(:first-child) img{
+    width: 80%;
   }
 } */

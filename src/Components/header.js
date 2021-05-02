@@ -44,7 +44,7 @@ const Header = () => {
                 <Row>
                     <Col>
                         <Navbar color="dark" dark expand="md" sticky="top">
-                            <NavbarBrand href="/">da_bukattee</NavbarBrand>
+                            <NavbarBrand href="/">da_bukatti</NavbarBrand>
                             <NavbarToggler onClick={toggleNavbar} />
                             <Collapse isOpen={collapsed} navbar>
                                 <Nav className="ml-auto" navbar>
@@ -55,7 +55,7 @@ const Header = () => {
                                         <NavLink href="/about">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">How It Works</NavLink>
+                                        <NavLink href="#">Faq</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink href="#">Menu</NavLink>
