@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import { customers, foodMenu, ourServices } from '../Components'
+import AddToCartBtn from './addToCartBtn'
 import Waiter from '../assets/images/waiter.jfif'
 import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 import { 
@@ -9,16 +10,16 @@ import {
         } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
-// import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 const HomePage = () => {
-    const [showBtnText, setShowBtn] = useState({text: 'Added to cart', icon: null})
+    // const [showBtnText, setShowBtn] = useState({text: 'Added to cart', icon: null})
+    const [isClicked, setIsClicked] = useState(false)
     // const [currentBtn, setCurrentBtn] = useState(null)
     
-    const handleAddToCart = () => {
-        const checkIcon = <FontAwesomeIcon icon="check" />
-        setShowBtn({text: 'Added', icon: checkIcon})
-    }
+    // const handleAddToCart = () => {
+    //     const checkIcon = <FontAwesomeIcon icon="check" />
+    //     setShowBtn({text: 'Added', icon: checkIcon})
+    // }
 
     const servicesSection = ourServices.map( service => {
         return (
@@ -51,10 +52,14 @@ const HomePage = () => {
                             <Col xs="3"> 
                                 <span className="amount"> {decode(filteredFoodType.amount)} </span>
                             </Col>
-                            <Col xs="8" className="my-4 mx-auto">  
-                                <Button onClick={handleAddToCart} className="p-3"> 
+                            <Col xs="8" className="my-4 mx-auto"> 
+                                
+                                    <AddToCartBtn isClicked={isClicked} setIsClicked={setIsClicked} />
+                                
+                               
+                                {/* <Button onClick={handleAddToCart} className="p-3"> 
                                     {showBtnText.text} {showBtnText.icon} 
-                                </Button> 
+                                </Button>  */}
                             </Col>
                         </Row>
                     </Col>
