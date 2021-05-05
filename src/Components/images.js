@@ -115,6 +115,54 @@ export const foodMenu = [
         foodItemMakeUp: 'Bla de bla, bla de bla',
         amount: '&#8358;500',
     },
+    // {
+    //     id: 4,
+    //     foodType: 'food-combo-drink',
+    //     foodImg: {
+    //         src: Jelof,
+    //         altText: 'jelof-rice'
+    //     },
+    //     drinkImg: {
+    //         src: PetCoke,
+    //         altText: 'drink'
+    //     },
+    //     plus: '&#43;',
+    //     foodItemName: 'Lorem Ipsum yenyen',
+    //     foodItemMakeUp: 'Bla de bla, bla de bla',
+    //     amount: '&#8358;500',
+    // },
+    // {
+    //     id: 5,
+    //     foodType: 'food-combo-drink',
+    //     foodImg: {
+    //         src: Jelof,
+    //         altText: 'jelof-rice'
+    //     },
+    //     drinkImg: {
+    //         src: PetCoke,
+    //         altText: 'drink'
+    //     },
+    //     plus: '&#43;',
+    //     foodItemName: 'Lorem Ipsum yenyen',
+    //     foodItemMakeUp: 'Bla de bla, bla de bla',
+    //     amount: '&#8358;500',
+    // },
+    // {
+    //     id: 6,
+    //     foodType: 'food-combo-drink',
+    //     foodImg: {
+    //         src: Jelof,
+    //         altText: 'jelof-rice'
+    //     },
+    //     drinkImg: {
+    //         src: PetCoke,
+    //         altText: 'drink'
+    //     },
+    //     plus: '&#43;',
+    //     foodItemName: 'Lorem Ipsum yenyen',
+    //     foodItemMakeUp: 'Bla de bla, bla de bla',
+    //     amount: '&#8358;500',
+    // },
     {
         id: 4,
         foodType: 'food-combo-drink',
