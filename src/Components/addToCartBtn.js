@@ -16,6 +16,7 @@ const AddToCartBtn = () =>{
         setShowBtn({text: 'Added', icon: checkIcon})
         setShowMessage('View Cart')
     }
+    
 
     const style = {
         backgroundColor: '#198754',
