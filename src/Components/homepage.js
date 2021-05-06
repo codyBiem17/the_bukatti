@@ -270,6 +270,10 @@ const HomePage = () => {
                     {testimonies}
                 </Row>
             </Container>
+
+            <div className="floating-arrow">
+                <ArrowUp />
+            </div>
         </>
     )
 }
