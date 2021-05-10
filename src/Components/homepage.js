@@ -11,15 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
 
 const HomePage = () => {
-    // const [showBtnText, setShowBtn] = useState({text: 'Added to cart', icon: null})
-    const [isClicked, setIsClicked] = useState(false)
-    // const [currentBtn, setCurrentBtn] = useState(null)
-    
-    // const handleAddToCart = () => {
-    //     const checkIcon = <FontAwesomeIcon icon="check" />
-    //     setShowBtn({text: 'Added', icon: checkIcon})
-    // }
-
+  
     const servicesSection = ourServices.map( service => {
         return (
             <Col xs="10" md="5" key={service.src} className="mb-4 mx-auto py-3 image-border">
@@ -51,14 +43,8 @@ const HomePage = () => {
                             <Col xs="3"> 
                                 <span className="amount"> {decode(filteredFoodType.amount)} </span>
                             </Col>
-                            <Col xs="8" className="my-4 mx-auto"> 
-                                
-                                <AddToCartBtn isClicked={isClicked} setIsClicked={setIsClicked} />
-                                
-                               
-                                {/* <Button onClick={handleAddToCart} className="p-3"> 
-                                    {showBtnText.text} {showBtnText.icon} 
-                                </Button>  */}
+                            <Col xs="12" className="my-4 text-center"> 
+                                <AddToCartBtn />
                             </Col>
                         </Row>
                     </Col>
@@ -80,8 +66,8 @@ const HomePage = () => {
                                 <p> {filteredFoodType.foodItemMakeUp} </p>
                             </Col>
                             <Col xs="3"> <span className="amount"> {decode(filteredFoodType.amount)} </span></Col>
-                            <Col xs="8" className="my-4 mx-auto">  
-                                <Button className="p-3"> Add to cart </Button> 
+                            <Col xs="12" className="my-4 text-center"> 
+                                <AddToCartBtn />
                             </Col>
                         </Row>
                     </Col>
@@ -108,7 +94,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Container fluid={true} className="containers container-2" >
+            <Container className="containers container-2" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Now You Are Here!</p> 
@@ -133,7 +119,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid={true} className="containers container-3" >
+            <Container className="containers container-3" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Our Services</p> 
@@ -148,7 +134,7 @@ const HomePage = () => {
                     {servicesSection} 
                 </Row>
             </Container>
-            <Container fluid={true}  className="containers container-4">
+            <Container  className="containers container-4">
                 <Row>
                     <Col className="order-section">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -156,10 +142,10 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid={true} className="containers container-5">
+            <Container className="containers container-5">
                 <HomePageBookTable />
             </Container>
-            <Container fluid={true} className="containers container-6">
+            <Container className="containers container-6">
                 <Row>
                     <Col xs="12"> 
                         <p className="para-header"> Our Food Menu </p>
@@ -203,7 +189,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid={true}  className="containers container-7">
+            <Container  className="containers container-7">
                 <Row>
                     <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
@@ -226,7 +212,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid={true} className="containers container-8">
+            <Container className="containers container-8">
                 <Row> 
                     <Col xs="12">
                         <p className="para-header"> Testimonies </p> 
