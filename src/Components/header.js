@@ -43,7 +43,7 @@ const Header = () => {
             <Container fluid={true}  className="nav-container">
                 <Row>
                     <Col>
-                        <Navbar color="dark" dark expand="md" sticky="top">
+                        <Navbar color="dark" dark expand="md">
                             <NavbarBrand href="/">da_bukatti</NavbarBrand>
                             <NavbarToggler onClick={toggleNavbar} />
                             <Collapse isOpen={collapsed} navbar>

@@ -54,6 +54,13 @@ hr {
 .navbar-dark .navbar-toggler{
   border-color: #D66D75;
 }
+nav.navbar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
 .homepage-container, .nav-container, .App.overlay{
   /* @media only screen */
   padding-left: 0;
@@ -267,7 +274,9 @@ button.booking{
   text-align: center;
   background-color: #262526;
 }
-
+a.view-cart{
+  text-decoration: underline;
+}
 /* -------------------About page css----------------
 ----------------------------------------------- */
 .container-fluid.breadcrumbs{
@@ -393,8 +402,10 @@ li.breadcrumb-item.active{
   }
 }
 
-/* @media only screen and  (min-width: 992px){
-  .how_it_works .row:not(:first-child) img{
-    width: 80%;
+@media only screen and  (min-width: 992px){
+  nav.navbar{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
   }
-} */
+}
