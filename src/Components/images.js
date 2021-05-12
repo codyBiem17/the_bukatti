@@ -17,7 +17,7 @@ export const heroImages = [
     },
     {
         src: reserved_table,
-        header: 'Reaserve A Table',
+        header: 'Reserve A Table',
         altText: 'reserved_table'
     },
     {
@@ -115,54 +115,6 @@ export const foodMenu = [
         foodItemMakeUp: 'Bla de bla, bla de bla',
         amount: '&#8358;500',
     },
-    // {
-    //     id: 4,
-    //     foodType: 'food-combo-drink',
-    //     foodImg: {
-    //         src: Jelof,
-    //         altText: 'jelof-rice'
-    //     },
-    //     drinkImg: {
-    //         src: PetCoke,
-    //         altText: 'drink'
-    //     },
-    //     plus: '&#43;',
-    //     foodItemName: 'Lorem Ipsum yenyen',
-    //     foodItemMakeUp: 'Bla de bla, bla de bla',
-    //     amount: '&#8358;500',
-    // },
-    // {
-    //     id: 5,
-    //     foodType: 'food-combo-drink',
-    //     foodImg: {
-    //         src: Jelof,
-    //         altText: 'jelof-rice'
-    //     },
-    //     drinkImg: {
-    //         src: PetCoke,
-    //         altText: 'drink'
-    //     },
-    //     plus: '&#43;',
-    //     foodItemName: 'Lorem Ipsum yenyen',
-    //     foodItemMakeUp: 'Bla de bla, bla de bla',
-    //     amount: '&#8358;500',
-    // },
-    // {
-    //     id: 6,
-    //     foodType: 'food-combo-drink',
-    //     foodImg: {
-    //         src: Jelof,
-    //         altText: 'jelof-rice'
-    //     },
-    //     drinkImg: {
-    //         src: PetCoke,
-    //         altText: 'drink'
-    //     },
-    //     plus: '&#43;',
-    //     foodItemName: 'Lorem Ipsum yenyen',
-    //     foodItemMakeUp: 'Bla de bla, bla de bla',
-    //     amount: '&#8358;500',
-    // },
     {
         id: 4,
         foodType: 'food-only',
@@ -200,6 +152,7 @@ export const foodMenu = [
         amount: '&#8358;500',
     }
 ]
+
 export const customers = [
     {
         id: 1,
@@ -228,5 +181,142 @@ export const customers = [
         altText: 'image-of-customer',
         comment: 'Only tasty meals are sold ',
         emoji: '&#128077;'
+    }
+]
+
+
+export const mainFoodMenu = [
+    {
+        id: 1,
+        foodType: 'food-combo-drink',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        drinkImg: {
+            src: PetCoke,
+            altText: 'drink'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        category: 'Breakfast',
+        amount: '&#8358;500',
+    },
+    {
+        id: 2,
+        foodType: 'food-combo-drink',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        drinkImg: {
+            src: PetCoke,
+            altText: 'drink'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 3,
+        foodType: 'food-combo-drink',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        drinkImg: {
+            src: PetCoke,
+            altText: 'drink'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 4,
+        foodType: 'food-combo-drink',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        drinkImg: {
+            src: PetCoke,
+            altText: 'drink'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 5,
+        foodType: 'food-combo-drink',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        drinkImg: {
+            src: PetCoke,
+            altText: 'drink'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 6,
+        foodType: 'food-combo-drink',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        drinkImg: {
+            src: PetCoke,
+            altText: 'drink'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 7,
+        foodType: 'food-only',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 8,
+        foodType: 'food-only',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
+    },
+    {
+        id: 9,
+        foodType: 'food-only',
+        foodImg: {
+            src: Jelof,
+            altText: 'jelof-rice'
+        },
+        plus: '&#43;',
+        foodItemName: 'Lorem Ipsum yenyen',
+        foodItemMakeUp: 'Bla de bla, bla de bla',
+        amount: '&#8358;500',
     }
 ]

@@ -28,7 +28,7 @@ const Header = () => {
                             Phone no: +2348088376911 or Email us: eat_here@bukattee.com
                         </p>
                     </Col>
-                    <Col lg="4">
+                    <Col lg="4" className="topbar-socials">
                         <span> Mon - Fri / 8am - 9pm / </span>
                         <span className="social-icons">
                             <a href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
@@ -57,11 +57,11 @@ const Header = () => {
                                     <NavItem>
                                         <NavLink href="#">Faq</NavLink>
                                     </NavItem>
-                                    <NavItem>
+                                    {/* <NavItem>
                                         <NavLink href="#">Menu</NavLink>
-                                    </NavItem>
+                                    </NavItem> */}
                                     <NavItem>
-                                        <NavLink href="#">Order</NavLink>
+                                        <NavLink href="/order">Order</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink href="#">Reservation</NavLink>
