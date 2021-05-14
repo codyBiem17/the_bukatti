@@ -7,5 +7,7 @@ export {default as Guides} from './how_it_works'
 export {default as HomePage} from './homepage' 
 export {default as HomePageBookTable} from './homepage_book_table'
 export {default as Header} from './header'
+export {default as AddToCartBtn} from './addToCartBtn'
+export {default as Order} from './order'
 
 export * from './images';

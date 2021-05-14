@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
-import { customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
-import AddToCartBtn from './addToCartBtn'
+import {AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import { 
            Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
@@ -94,7 +93,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Container className="containers container-2" >
+            <Container fluid={true} className="containers container-2" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Now You Are Here!</p> 
@@ -119,7 +118,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className="containers container-3" >
+            <Container fluid={true} className="containers container-3" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Our Services</p> 
@@ -142,10 +141,10 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className="containers container-5">
+            <Container fluid={true} className="containers container-5">
                 <HomePageBookTable />
             </Container>
-            <Container className="containers container-6">
+            <Container fluid={true} className="containers container-6">
                 <Row>
                     <Col xs="12"> 
                         <p className="para-header"> Our Food Menu </p>
@@ -212,7 +211,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container className="containers container-8">
+            <Container fluid={true} className="containers container-8">
                 <Row> 
                     <Col xs="12">
                         <p className="para-header"> Testimonies </p> 

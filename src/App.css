@@ -55,11 +55,11 @@ hr {
   border-color: #D66D75;
 }
 nav.navbar{
-  position: fixed;
+  /* position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 15; */
 }
 .homepage-container, .nav-container, .App.overlay{
   /* @media only screen */
@@ -124,12 +124,21 @@ nav.navbar{
 .container-topbar{
   color: white;
   padding: 20px;
+  position: relative;
+  top: 10px;
+  left: 30px;
+  transform: translate(20px, -5px);
+  /* right: 30px; */
+}
+.topbar-socials{
+
 }
 .container-topbar .social-icons a{
   font-size: 14px;
   padding: 5px;
 } 
-.container-2, .container-5, .container-8, .aboutpage-container-bg-white{
+.container-2, .container-5, .container-8, .aboutpage-container-bg-white,
+.order-container-bg-white{
   background-color: white;
 }
 .para-header{
@@ -143,7 +152,8 @@ nav.navbar{
   margin-bottom: 30px;
   /* border: 1px solid red; */
 }
-.container-3, .container-6, .aboutpage-container-bg-ash, .how_it_works{
+.container-3, .container-6, .aboutpage-container-bg-ash, .how_it_works,
+.order-container-bg-ash{
   background-color: #f7f7f7;
 }
 .container-3 img{
@@ -338,6 +348,20 @@ li.breadcrumb-item.active{
   display: none;
 }
 
+
+/* -------------------Order page css----------------
+----------------------------------------------- */
+#search-button{
+  background-color: #D66D75;
+  border-color: #D66D75;
+}
+.nav-link.dialer{
+  display: inline-block;
+}
+select:focus{
+  border-color: red;
+}
+
 /* -------------------media queries----------------
 ----------------------------------------------- */
 @media only screen and  (min-width: 768px){
@@ -404,8 +428,8 @@ li.breadcrumb-item.active{
 
 @media only screen and  (min-width: 992px){
   nav.navbar{
-    position: sticky;
+    /* position: sticky;
     position: -webkit-sticky;
-    top: 0;
+    top: 0; */
   }
 }
