@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
-import {AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
+import {AddToCartBtn, ArrowUp, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
@@ -236,6 +236,10 @@ const HomePage = () => {
                     {testimonies}
                 </Row>
             </Container>
+
+            <div className="floating-arrow">
+                <ArrowUp />
+            </div>
         </>
     )
 }
