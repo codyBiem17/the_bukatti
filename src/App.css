@@ -301,35 +301,23 @@ a.view-cart{
   display: flex;
   justify-content: center;
 }
-<<<<<<< HEAD
 .floating-arrow:hover{
   cursor: pointer;
 }
-=======
->>>>>>> 3036220 (breakfast component done)
 .arrow-to-top{
   position: relative;
   bottom: 12px;
   color: white;
 }
-<<<<<<< HEAD
 .floating-arrow .svg-inline--fa {
   font-size: 1em;
-=======
-.svg-inline--fa {
->>>>>>> 3036220 (breakfast component done)
   position: relative;
   animation: arrow-bounce 1s linear infinite alternate;
   animation-play-state: running;
 }
-<<<<<<< HEAD
 .floating-arrow .svg-inline--fa:hover{
   cursor: pointer;
   /* color: white; */
-=======
-.svg-inline--fa:hover{
-  cursor: pointer;
->>>>>>> 3036220 (breakfast component done)
 }
 
 @keyframes arrow-bounce {
@@ -417,11 +405,7 @@ li.breadcrumb-item.active{
 select:focus{
   border-color: red;
 }
-<<<<<<< HEAD
 .breakfast-food .card-img-top {
-=======
-.card-img-top {
->>>>>>> 3036220 (breakfast component done)
   border-radius: 50%;
 }
 
