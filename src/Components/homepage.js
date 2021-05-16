@@ -2,12 +2,15 @@ import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import {AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
-import { 
-           Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
-            Form, Input, InputGroup, InputGroupAddon, InputGroupText,
-        } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
+
+import { 
+    Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
+     Form, Input, InputGroup, InputGroupAddon, InputGroupText,
+ } from 'reactstrap'
+
+
 
 const HomePage = () => {
   
@@ -77,7 +80,7 @@ const HomePage = () => {
     const testimonies = customers.map( customer => {
         return (
             <Col xs="12" md="6" key={customer.id} className="mb-4">
-                <Card>
+                <Card className="user-testimony">
                     <CardImg src={customer.src} top width="100%" alt={customer.altText} />
                     <CardBody>
                         <CardTitle> Greg </CardTitle>
@@ -118,6 +121,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true} className="containers container-3" >
                 <Row> 
                     <Col xs="12">
@@ -133,6 +137,7 @@ const HomePage = () => {
                     {servicesSection} 
                 </Row>
             </Container>
+
             <Container  className="containers container-4">
                 <Row>
                     <Col className="order-section">
@@ -141,9 +146,11 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true} className="containers container-5">
                 <HomePageBookTable />
             </Container>
+
             <Container fluid={true} className="containers container-6">
                 <Row>
                     <Col xs="12"> 
@@ -188,6 +195,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container  className="containers container-7">
                 <Row>
                     <Col xs="12">
@@ -211,6 +219,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true} className="containers container-8">
                 <Row> 
                     <Col xs="12">

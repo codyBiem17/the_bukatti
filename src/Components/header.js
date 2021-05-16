@@ -40,6 +40,7 @@ const Header = () => {
                     </Col>
                 </Row>
             </Container>
+            
             <Container fluid={true}  className="nav-container">
                 <Row>
                     <Col>
@@ -55,13 +56,10 @@ const Header = () => {
                                         <NavLink href="/about">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Faq</NavLink>
-                                    </NavItem>
-                                    {/* <NavItem>
-                                        <NavLink href="#">Menu</NavLink>
-                                    </NavItem> */}
-                                    <NavItem>
                                         <NavLink href="/order">Order</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="#">Faq</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink href="#">Reservation</NavLink>
@@ -72,6 +70,7 @@ const Header = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true}  className="homepage-container">
                 <Row id="heroImg-wrapper">
                     <Col className="imageSlider" id="heroImg">
