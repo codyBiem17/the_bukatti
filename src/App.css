@@ -271,7 +271,7 @@ button.booking{
   color: #D66D75;
   font-size: 40px;
 }
-.card{
+.card.user-testimony{
   background-color: #e9ecef;
 }
 .social-icons a{
@@ -287,6 +287,44 @@ button.booking{
 a.view-cart{
   text-decoration: underline;
 }
+.floating-arrow{
+  position: fixed;
+  right: 0.5em;
+  bottom: 0.5em;
+  width: 37px;
+  height: 37px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: #D66D75;
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+}
+.arrow-to-top{
+  position: relative;
+  bottom: 12px;
+  color: white;
+}
+.svg-inline--fa {
+  position: relative;
+  animation: arrow-bounce 1s linear infinite alternate;
+  animation-play-state: running;
+}
+.svg-inline--fa:hover{
+  cursor: pointer;
+}
+
+@keyframes arrow-bounce {
+  0% {
+    top: 0px;
+  }
+  100%{
+    top: 5px;
+  }
+}
+
+
+
 /* -------------------About page css----------------
 ----------------------------------------------- */
 .container-fluid.breadcrumbs{
@@ -360,6 +398,9 @@ li.breadcrumb-item.active{
 }
 select:focus{
   border-color: red;
+}
+.card-img-top {
+  border-radius: 50%;
 }
 
 /* -------------------media queries----------------

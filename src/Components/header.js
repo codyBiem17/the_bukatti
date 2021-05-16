@@ -40,6 +40,7 @@ const Header = () => {
                     </Col>
                 </Row>
             </Container>
+            
             <Container fluid={true}  className="nav-container">
                 <Row>
                     <Col>
@@ -72,6 +73,7 @@ const Header = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true}  className="homepage-container">
                 <Row id="heroImg-wrapper">
                     <Col className="imageSlider" id="heroImg">
