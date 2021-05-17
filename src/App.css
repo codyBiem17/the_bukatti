@@ -122,6 +122,7 @@ nav.navbar{
   padding: 70px 20px 100px;
 }
 .container-topbar{
+  font-size: 14px;
   color: white;
   padding: 20px;
   position: relative;
@@ -130,9 +131,9 @@ nav.navbar{
   transform: translate(20px, -5px);
   /* right: 30px; */
 }
-.topbar-socials{
+/* .topbar-socials{
 
-}
+} */
 .container-topbar .social-icons a{
   font-size: 14px;
   padding: 5px;
@@ -271,7 +272,7 @@ button.booking{
   color: #D66D75;
   font-size: 40px;
 }
-.card{
+.card.user-testimony{
   background-color: #e9ecef;
 }
 .social-icons a{
@@ -287,6 +288,49 @@ button.booking{
 a.view-cart{
   text-decoration: underline;
 }
+.floating-arrow{
+  position: fixed;
+  right: 0.5em;
+  bottom: 0.5em;
+  width: 37px;
+  height: 37px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: #D66D75;
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+}
+.floating-arrow:hover{
+  cursor: pointer;
+}
+.arrow-to-top{
+  position: relative;
+  bottom: 12px;
+  color: white;
+}
+.floating-arrow .svg-inline--fa {
+  font-size: 1em;
+  position: relative;
+  animation: arrow-bounce 1s linear infinite alternate;
+  animation-play-state: running;
+}
+.floating-arrow .svg-inline--fa:hover{
+  cursor: pointer;
+  /* color: white; */
+}
+
+@keyframes arrow-bounce {
+  0% {
+    top: 0px;
+  }
+  100%{
+    top: 5px;
+  }
+}
+
+
+
 /* -------------------About page css----------------
 ----------------------------------------------- */
 .container-fluid.breadcrumbs{
@@ -361,6 +405,9 @@ li.breadcrumb-item.active{
 select:focus{
   border-color: red;
 }
+.breakfast-food .card-img-top {
+  border-radius: 50%;
+}
 
 /* -------------------media queries----------------
 ----------------------------------------------- */
@@ -386,9 +433,6 @@ select:focus{
   }
   .containers{
     font-size: 1.3em;
-  }
-  .container-topbar{
-    font-size: 14px;
   }
   .container-3 img{
     width: 20%;

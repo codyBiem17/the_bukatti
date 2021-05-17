@@ -36,9 +36,6 @@ const AddToCartBtn = () =>{
             {showBtnText.text}
        </Button> 
     )
-    // {/* {            
-    //             isClicked && <span> <NavLink to="#">{showMessage}</NavLink></span>
-    //         } */}
 
 }
 
