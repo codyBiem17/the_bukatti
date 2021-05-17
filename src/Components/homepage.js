@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
+import { useHistory } from 'react-router-dom'
 import {AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,6 +14,12 @@ import {
 
 
 const HomePage = () => {
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/order')
+    }
   
     const servicesSection = ourServices.map( service => {
         return (
@@ -142,7 +149,12 @@ const HomePage = () => {
                 <Row>
                     <Col className="order-section">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <Button className="mt-2 order">Order Now</Button>
+                        {/* <Link to='/order'> */}
+                            <Button type="button" onClick={handleClick} className="mt-2 order">
+                                Order Now
+                            </Button>
+                        {/* </Link> */}
+                        {/* <Button tag={link} to='/order' className="mt-2 order">Order Now</Button> */}
                     </Col>
                 </Row>
             </Container>
