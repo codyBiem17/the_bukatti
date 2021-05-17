@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import {ourServices} from '../Components'
 import { 
     Breadcrumb, BreadcrumbItem, Button, Container, Row, Col,
@@ -6,6 +7,13 @@ import {
 } from 'reactstrap'
 
 const Guides = () => {
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/order')
+    }
+  
     const listOfSteps =  ourServices.map( steps => {
         return (
 
@@ -58,7 +66,9 @@ const Guides = () => {
                 <Row>
                     <Col className="order-section">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <Button className="mt-2 order">Order Now</Button>
+                        <Button type="button" onClick={handleClick} className="mt-2 order">
+                            Order Now
+                        </Button>
                     </Col>
                 </Row>
             </Container>
