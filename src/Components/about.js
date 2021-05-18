@@ -1,4 +1,5 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import { 
     Breadcrumb, BreadcrumbItem, Button, Container, Row, Col,
     // NavLink 
@@ -7,6 +8,12 @@ import chef from '../assets/images/chef.jpg'
 import people from '../assets/images/people-in-a-restaurant.jfif'
 
 const About = () => {
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/order')
+    }
 
     return (
         <>
@@ -62,7 +69,7 @@ const About = () => {
                         <p> We Make Delicious &amp; Nutritious Food </p>
                     </Col>
                     <Col xs="6">
-                        <Button className="order-and-book"> Order Food Now</Button>
+                        <Button onClick={handleClick} className="order-and-book"> Order Food Now</Button>
                     </Col>
                     <Col xs="6">
                         <Button className="order-and-book"> Book A Table Now </Button>
