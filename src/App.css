@@ -59,6 +59,11 @@ hr {
 
 .navbar-dark .navbar-toggler{
   border-color: #D66D75;
+
+}
+.add-transition{
+  transition-duration: 2s;
+  transition-timing-function: linear
 }
 .homepage-container, .navbar-container, .App.overlay{
   padding-left: 0;
@@ -69,6 +74,10 @@ hr {
   top: 0;
   left: 0;
   z-index: 10;
+}
+.carousel-container{
+  position: relative;
+  top: 50px;
 }
 .carousel-item > img, img { 
   width: 100%; 

@@ -18,8 +18,7 @@ const Header = () => {
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
-
-    
+ 
 
     useEffect(()=>{
         const handleScroll = () => {
@@ -42,7 +41,7 @@ const Header = () => {
                 <Row>
                     <Col lg="8">
                         <p>
-                            Phone no: +2348088376911 or Email us: eat_here@bukattee.com
+                            Phone no: +234-8088376911 or Email us: eat_here@bukattee.com
                         </p>
                     </Col>
                     <Col lg="4" className="topbar-socials">
@@ -94,13 +93,13 @@ const Header = () => {
                 </Row>
             </Container>
 
-            {/* <Container fluid={true}  className="homepage-container">
+            <Container fluid={true}  className="homepage-container carousel-container">
                 <Row id="heroImg-wrapper">
                     <Col className="imageSlider" id="heroImg">
                         <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />
                     </Col>
                 </Row>
-            </Container> */}
+            </Container> 
         </>
     )
 }
