@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { heroImages } from '../Components'
 import { 
         Container, Row, Col, 
@@ -12,11 +12,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = () => {
     const [collapsed, setCollapsed] = useState(false)
-    // const [currentImage, setCurrentImage] = useState(0)
+    const [scrolled, setScrolled] = useState(false)
 
+    const mediaMatch = window.matchMedia('(min-width: 992px)')
+   
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
+ 
+
+    const handleScroll = () => {
+        const pageYOffset = window.pageYOffset
+
+        if(pageYOffset > 200 ){
+            setScrolled(true)
+        }
+        else{
+            setScrolled(false)
+        }
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    })
    
 
     return (
@@ -25,7 +43,7 @@ const Header = () => {
                 <Row>
                     <Col lg="8">
                         <p>
-                            Phone no: +2348088376911 or Email us: eat_here@bukattee.com
+                            Phone no: +234-8088376911 or Email us: eat_here@bukattee.com
                         </p>
                     </Col>
                     <Col lg="4" className="topbar-socials">
@@ -41,7 +59,11 @@ const Header = () => {
                 </Row>
             </Container>
             
-            <Container fluid={true}  className="nav-container">
+            <Container fluid={true}  className={ 
+                                                scrolled && mediaMatch.matches ? 'sticky' : 
+                                                scrolled && mediaMatch.matches === false ? 'navbar-container' :
+                                                'navbar-container'
+                                                }>
                 <Row>
                     <Col>
                         <Navbar color="dark" dark expand="md">
@@ -59,10 +81,16 @@ const Header = () => {
                                         <NavLink href="/order">Order</NavLink>
                                     </NavItem>
                                     <NavItem>
+                                        <NavLink href="#">Reservation</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="#">Testimonies</NavLink>
+                                    </NavItem>
+                                    <NavItem>
                                         <NavLink href="#">Faq</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Reservation</NavLink>
+                                        <NavLink href="#" id="sign-up-navbar">Sign Up</NavLink>
                                     </NavItem>
                                 </Nav>
                             </Collapse>
@@ -71,7 +99,7 @@ const Header = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true}  className="homepage-container">
+            <Container fluid={true}  className="homepage-container carousel-container">
                 <Row id="heroImg-wrapper">
                     <Col className="imageSlider" id="heroImg">
                         <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />

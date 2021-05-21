@@ -8,13 +8,12 @@
 html, body {
   overflow-x: hidden;
   font-weight: 800;
-  position: relative;
+  /* position: relative; */
   background-image: linear-gradient(rgba(41, 40, 40, 0.4), rgba(41, 40, 40, 0.4)), url('./assets/images/table1.jfif');
-  /* height: 100%; */
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
+  /* height: 100%; */
   color: white;
 }
 #bgText{
@@ -49,22 +48,36 @@ hr {
   border: 1px solid yellow;
 }
 
+/* -------------------header css----------------
+----------------------------------------------- */
+.navbar .nav-link.active{
+  color: red;
+}
+
 /* -------------------homepage css----------------
 ----------------------------------------------- */
+
 .navbar-dark .navbar-toggler{
   border-color: #D66D75;
+
 }
-nav.navbar{
-  /* position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 15; */
+.add-transition{
+  transition-duration: 2s;
+  transition-timing-function: linear
 }
-.homepage-container, .nav-container, .App.overlay{
-  /* @media only screen */
+.homepage-container, .navbar-container, .App.overlay{
   padding-left: 0;
   padding-right: 0;
+}
+.navbar-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.carousel-container{
+  position: relative;
+  top: 50px;
 }
 .carousel-item > img, img { 
   width: 100%; 
@@ -124,7 +137,7 @@ nav.navbar{
 .container-topbar{
   font-size: 14px;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   position: relative;
   top: 10px;
   left: 30px;
@@ -335,6 +348,8 @@ a.view-cart{
 ----------------------------------------------- */
 .container-fluid.breadcrumbs{
   background-color: #e9ecef;
+  position: relative;
+  top: 50px;
 }
 .breadcrumb{
   margin-bottom: 0;
@@ -471,9 +486,19 @@ select:focus{
 }
 
 @media only screen and  (min-width: 992px){
-  nav.navbar{
-    /* position: sticky;
-    position: -webkit-sticky;
-    top: 0; */
+  .sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar-container{
+    position: relative;
+  }
+  .carousel-container, .container-fluid.breadcrumbs{
+    position: relative;
+    top: 0;
   }
 }
