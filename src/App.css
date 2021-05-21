@@ -497,7 +497,7 @@ select:focus{
   .navbar-container{
     position: relative;
   }
-  .carousel-container{
+  .carousel-container, .container-fluid.breadcrumbs{
     position: relative;
     top: 0;
   }
