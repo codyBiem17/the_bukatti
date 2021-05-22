@@ -13,23 +13,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Header = () => {
     const [collapsed, setCollapsed] = useState(false)
     const [scrolled, setScrolled] = useState(false)
-    // const [currentImage, setCurrentImage] = useState(0)
 
+    const mediaMatch = window.matchMedia('(min-width: 992px)')
+   
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
  
 
-    useEffect(()=>{
-        const handleScroll = () => {
-            const pageYOffset = window.pageYOffset
-            if(pageYOffset > 200){
-                setScrolled(true)
-            }
-            else{
-                setScrolled(false)
-            }
+    const handleScroll = () => {
+        const pageYOffset = window.pageYOffset
+
+        if(pageYOffset > 200 ){
+            setScrolled(true)
         }
+        else{
+            setScrolled(false)
+        }
+    }
+    useEffect(()=>{
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
     })
@@ -57,7 +59,11 @@ const Header = () => {
                 </Row>
             </Container>
             
-            <Container fluid={true}  className={scrolled ? 'sticky' : 'navbar-container'}>
+            <Container fluid={true}  className={ 
+                                                scrolled && mediaMatch.matches ? 'sticky' : 
+                                                scrolled && mediaMatch.matches === false ? 'navbar-container' :
+                                                'navbar-container'
+                                                }>
                 <Row>
                     <Col>
                         <Navbar color="dark" dark expand="md">

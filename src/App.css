@@ -73,7 +73,7 @@ hr {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 .carousel-container{
   position: relative;
@@ -348,6 +348,8 @@ a.view-cart{
 ----------------------------------------------- */
 .container-fluid.breadcrumbs{
   background-color: #e9ecef;
+  position: relative;
+  top: 50px;
 }
 .breadcrumb{
   margin-bottom: 0;
@@ -494,5 +496,9 @@ select:focus{
   }
   .navbar-container{
     position: relative;
+  }
+  .carousel-container, .container-fluid.breadcrumbs{
+    position: relative;
+    top: 0;
   }
 }
