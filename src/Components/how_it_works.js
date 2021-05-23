@@ -59,9 +59,11 @@ const Guides = () => {
                     </Col>
                 </Row>
             </Container>
+            
             <Container fluid={true} className="containers how_it_works">
                 {listOfSteps}
             </Container>
+
             <Container fluid={true}  className="containers container-4">
                 <Row>
                     <Col className="order-section">

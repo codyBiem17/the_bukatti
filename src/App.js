@@ -1,6 +1,8 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import {About, ArrowUp, HomePage, Header, Footer, Guides, Order} from './Components'
+import {
+  About, ArrowUp, HomePage, Header, Footer, Guides, Order, Reservation
+} from './Components'
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -20,6 +22,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/how_it_works" component={Guides} />
           <Route path="/order" component={Order} />
+          <Route path="/reservation" component={Reservation} />
         </Switch>
         <ArrowUp />
         <Footer />
