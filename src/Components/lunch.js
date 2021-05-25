@@ -7,14 +7,14 @@ import {
 } from 'reactstrap'
 
 
-const Breakfast = () => {
+const Lunch = () => {
     let foodCombo, foodOnly, Soups, Desserts, Drinks;
     
-    foodCombo =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    foodCombo =  mainFoodMenu.filter(menu => menu.category === 'Lunch')
+    .map(filteredLunchMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredLunchMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Food-Combo-Drink')
                 .map(filteredFoodType => {
                     return(
@@ -58,11 +58,11 @@ const Breakfast = () => {
         }
     )
 
-    foodOnly =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    foodOnly =  mainFoodMenu.filter(menu => menu.category === 'Lunch')
+    .map(filteredLunchMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredLunchMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Food-Only')
                 .map(filteredFoodType => {
                     return(
@@ -96,11 +96,11 @@ const Breakfast = () => {
         }
     )
 
-    Desserts =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    Desserts =  mainFoodMenu.filter(menu => menu.category === 'Lunch')
+    .map(filteredLunchMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredLunchMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Desserts')
                 .map(filteredFoodType => {
                     return(
@@ -134,11 +134,11 @@ const Breakfast = () => {
         }
     )
 
-    Soups =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    Soups =  mainFoodMenu.filter(menu => menu.category === 'Lunch')
+    .map(filteredLunchMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredLunchMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Soups')
                 .map(filteredFoodType => {
                     return(
@@ -172,11 +172,11 @@ const Breakfast = () => {
         }
     )
 
-    Drinks =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    Drinks =  mainFoodMenu.filter(menu => menu.category === 'Lunch')
+    .map(filteredLunchMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredLunchMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Drinks & Beverages')
                 .map(filteredFoodType => {
                     return(
@@ -212,7 +212,7 @@ const Breakfast = () => {
     )
 
     return(
-        <div className="breakfast-category">
+        <div className="Lunch-category">
             {foodCombo}
             {foodOnly}
             {Desserts}
@@ -222,4 +222,4 @@ const Breakfast = () => {
     )
 }
 
-export default Breakfast
+export default Lunch

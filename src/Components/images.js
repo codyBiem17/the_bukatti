@@ -6,9 +6,12 @@ import dish from '../assets/images/image.png'
 import reserved from '../assets/images/reserved.png'
 import delivery from '../assets/images/food-agent.png'
 import Jelof from '../assets/images/jollof_rice_dodo.jpg'
+import VegSoup from '../assets/images/veg-soup.jpg'
+import IceCream from '../assets/images/ice-cream-dessert.jpg'
 import PetCoke from '../assets/images/coke-pet-trans.png'
-import Chapman from '../assets/images/chapman-drink.JPG'
-import SodaLemon from '../assets/images/soda-lemon.jpg'
+import CanCoke from '../assets/images/coca-cola-can.jpg'
+import Chapman from '../assets/images/cocktail.jpg'
+import ChiExotic from '../assets/images/chi-exotic.jpg'
 import Customer from '../assets/images/person-eating.jpg'
 
 export const heroImages = [
@@ -191,6 +194,7 @@ export const customers = [
 
 
 export const mainFoodMenu = [
+
     {
         category: 'Breakfast',
         foodItem:[
@@ -229,6 +233,21 @@ export const mainFoodMenu = [
                     },
                     {
                         id: 3,
+                        foodImg: {
+                            src: Jelof,
+                            altText: 'jelof-rice'
+                        },
+                        drinkImg: {
+                            src: PetCoke,
+                            altText: 'drink'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
                         foodImg: {
                             src: Jelof,
                             altText: 'jelof-rice'
@@ -281,6 +300,17 @@ export const mainFoodMenu = [
                         foodItemMakeUp: 'Bla de bla, bla de bla',
                         amount: '&#8358;500',
                     },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: Jelof,
+                            altText: 'jelof-rice'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
                 ]
             },
 
@@ -290,8 +320,8 @@ export const mainFoodMenu = [
                     {
                         id: 1,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: IceCream,
+                            altText: 'ice-cream'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -301,8 +331,8 @@ export const mainFoodMenu = [
                     {
                         id: 2,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: IceCream,
+                            altText: 'ice-cream'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -312,8 +342,19 @@ export const mainFoodMenu = [
                     {
                         id: 3,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: IceCream,
+                            altText: 'ice-cream'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: IceCream,
+                            altText: 'ice-cream'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -329,8 +370,8 @@ export const mainFoodMenu = [
                     {
                         id: 1,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -340,8 +381,8 @@ export const mainFoodMenu = [
                     {
                         id: 2,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -351,8 +392,19 @@ export const mainFoodMenu = [
                     {
                         id: 3,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -379,8 +431,8 @@ export const mainFoodMenu = [
                     {
                         id: 2,
                         drinkImg: {
-                            src: PetCoke,
-                            altText: 'petcoke'
+                            src: CanCoke,
+                            altText: 'cancoke'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -390,8 +442,19 @@ export const mainFoodMenu = [
                     {
                         id: 3,
                         drinkImg: {
-                            src: SodaLemon,
-                            altText: 'soda-lemon'
+                            src: ChiExotic,
+                            altText: 'chiexotic'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        drinkImg: {
+                            src: ChiExotic,
+                            altText: 'chiexotic'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -402,11 +465,12 @@ export const mainFoodMenu = [
             }
         ]
     },
+
     {
         category: 'Lunch',
         foodItem:[
             {
-                foodType: 'food-combo-drink',
+                foodType: 'Food-Combo-Drink',
                 foodDetails:[
                     {
                         id: 1,
@@ -453,10 +517,26 @@ export const mainFoodMenu = [
                         foodItemMakeUp: 'Bla de bla, bla de bla',
                         amount: '&#8358;500',
                     },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: Jelof,
+                            altText: 'jelof-rice'
+                        },
+                        drinkImg: {
+                            src: PetCoke,
+                            altText: 'drink'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
                 ]
             },
+
             {
-                foodType: 'food-only',
+                foodType: 'Food-Only',
                 foodDetails:[
                     {
                         id: 1,
@@ -491,16 +571,28 @@ export const mainFoodMenu = [
                         foodItemMakeUp: 'Bla de bla, bla de bla',
                         amount: '&#8358;500',
                     },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: Jelof,
+                            altText: 'jelof-rice'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
                 ]
             },
+
             {
-                foodType: 'Dessert',
+                foodType: 'Desserts',
                 foodDetails:[
                     {
                         id: 1,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: IceCream,
+                            altText: 'ice-cream'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -510,8 +602,8 @@ export const mainFoodMenu = [
                     {
                         id: 2,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: IceCream,
+                            altText: 'ice-cream'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -521,8 +613,19 @@ export const mainFoodMenu = [
                     {
                         id: 3,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: IceCream,
+                            altText: 'ice-cream'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: IceCream,
+                            altText: 'ice-cream'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -531,14 +634,15 @@ export const mainFoodMenu = [
                     },
                 ]
             },
+
             {
                 foodType: 'Soups',
                 foodDetails:[
                     {
                         id: 1,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -548,8 +652,8 @@ export const mainFoodMenu = [
                     {
                         id: 2,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -559,8 +663,19 @@ export const mainFoodMenu = [
                     {
                         id: 3,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -569,14 +684,15 @@ export const mainFoodMenu = [
                     },
                 ]
             },
+
             {
-                foodType: 'Drinks',
+                foodType: 'Drinks & Beverages',
                 foodDetails:[
                     {
                         id: 1,
-                        foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                        drinkImg: {
+                            src: Chapman,
+                            altText: 'chapman-drink'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -585,9 +701,9 @@ export const mainFoodMenu = [
                     },
                     {
                         id: 2,
-                        foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                        drinkImg: {
+                            src: CanCoke,
+                            altText: 'cancoke'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -596,9 +712,20 @@ export const mainFoodMenu = [
                     },
                     {
                         id: 3,
-                        foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                        drinkImg: {
+                            src: ChiExotic,
+                            altText: 'chiexotic'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        drinkImg: {
+                            src: ChiExotic,
+                            altText: 'chiexotic'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -609,11 +736,12 @@ export const mainFoodMenu = [
             }
         ]
     },
+
     {
         category: 'Dinner',
         foodItem:[
             {
-                foodType: 'food-combo-drink',
+                foodType: 'Food-Combo-Drink',
                 foodDetails:[
                     {
                         id: 1,
@@ -647,6 +775,21 @@ export const mainFoodMenu = [
                     },
                     {
                         id: 3,
+                        foodImg: {
+                            src: Jelof,
+                            altText: 'jelof-rice'
+                        },
+                        drinkImg: {
+                            src: PetCoke,
+                            altText: 'drink'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
                         foodImg: {
                             src: Jelof,
                             altText: 'jelof-rice'
@@ -662,8 +805,9 @@ export const mainFoodMenu = [
                     },
                 ]
             },
+
             {
-                foodType: 'food-only',
+                foodType: 'Food-Only',
                 foodDetails:[
                     {
                         id: 1,
@@ -689,6 +833,17 @@ export const mainFoodMenu = [
                     },
                     {
                         id: 3,
+                        foodImg: {
+                            src: Jelof,
+                            altText: 'jelof-rice'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
                         foodImg: {
                             src: Jelof,
                             altText: 'jelof-rice'
@@ -700,14 +855,15 @@ export const mainFoodMenu = [
                     },
                 ]
             },
+
             {
-                foodType: 'Drinks & Beverage',
+                foodType: 'Soups',
                 foodDetails:[
                     {
                         id: 1,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -717,8 +873,8 @@ export const mainFoodMenu = [
                     {
                         id: 2,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
@@ -728,8 +884,69 @@ export const mainFoodMenu = [
                     {
                         id: 3,
                         foodImg: {
-                            src: Jelof,
-                            altText: 'jelof-rice'
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        foodImg: {
+                            src: VegSoup,
+                            altText: 'vegetable-soup'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                ]
+            },
+
+            {
+                foodType: 'Drinks & Beverages',
+                foodDetails:[
+                    {
+                        id: 1,
+                        drinkImg: {
+                            src: Chapman,
+                            altText: 'chapman-drink'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 2,
+                        drinkImg: {
+                            src: CanCoke,
+                            altText: 'cancoke'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 3,
+                        drinkImg: {
+                            src: ChiExotic,
+                            altText: 'chiexotic'
+                        },
+                        plus: '&#43;',
+                        foodItemName: 'Lorem Ipsum yenyen',
+                        foodItemMakeUp: 'Bla de bla, bla de bla',
+                        amount: '&#8358;500',
+                    },
+                    {
+                        id: 4,
+                        drinkImg: {
+                            src: ChiExotic,
+                            altText: 'chiexotic'
                         },
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',

@@ -1,7 +1,10 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import { useHistory } from 'react-router-dom'
-import {AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
+import 
+{
+    AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices 
+} from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'

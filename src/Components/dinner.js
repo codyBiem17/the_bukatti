@@ -7,14 +7,14 @@ import {
 } from 'reactstrap'
 
 
-const Breakfast = () => {
-    let foodCombo, foodOnly, Soups, Desserts, Drinks;
+const Dinner = () => {
+    let foodCombo, foodOnly, Soups, Drinks;
     
-    foodCombo =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    foodCombo =  mainFoodMenu.filter(menu => menu.category === 'Dinner')
+    .map(filteredDinnerMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredDinnerMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Food-Combo-Drink')
                 .map(filteredFoodType => {
                     return(
@@ -58,11 +58,11 @@ const Breakfast = () => {
         }
     )
 
-    foodOnly =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    foodOnly =  mainFoodMenu.filter(menu => menu.category === 'Dinner')
+    .map(filteredDinnerMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredDinnerMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Food-Only')
                 .map(filteredFoodType => {
                     return(
@@ -96,49 +96,11 @@ const Breakfast = () => {
         }
     )
 
-    Desserts =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    Soups =  mainFoodMenu.filter(menu => menu.category === 'Dinner')
+    .map(filteredDinnerMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
-                .filter(filterItem => filterItem.foodType === 'Desserts')
-                .map(filteredFoodType => {
-                    return(
-                        <Row key={filteredFoodType.foodType}>
-                            <Col xs="12" className="my-4">
-                                {filteredFoodType.foodType}
-                            </Col>
-                            {
-                                filteredFoodType.foodDetails.map(foodMenuDetails => {
-                                    return (
-                                        <Col xs="12" sm="6" xl="4">
-                                            <Card className="mb-4 p-3 food-type" key={foodMenuDetails.id}>
-                                                <CardImg src={foodMenuDetails.foodImg.src} alt={foodMenuDetails.foodImg.altText} top width="100%" />
-                                                <CardBody>
-                                                    <CardTitle tag="h5">{foodMenuDetails.foodItemName}</CardTitle>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{foodMenuDetails.foodItemMakeUp}</CardSubtitle>
-                                                    <CardText>{decode(foodMenuDetails.amount)}</CardText>
-                                                    <p className="text-justify">
-                                                        <AddToCartBtn />
-                                                    </p>
-                                                </CardBody>
-                                            </Card>
-                                        </Col>
-                                    )
-                                })
-                            }
-                        </Row>
-                    )
-                })
-            )
-        }
-    )
-
-    Soups =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
-        {
-            return (
-                filteredBreakFastMeal.foodItem
+                filteredDinnerMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Soups')
                 .map(filteredFoodType => {
                     return(
@@ -172,11 +134,11 @@ const Breakfast = () => {
         }
     )
 
-    Drinks =  mainFoodMenu.filter(menu => menu.category === 'Breakfast')
-    .map(filteredBreakFastMeal => 
+    Drinks =  mainFoodMenu.filter(menu => menu.category === 'Dinner')
+    .map(filteredDinnerMeal => 
         {
             return (
-                filteredBreakFastMeal.foodItem
+                filteredDinnerMeal.foodItem
                 .filter(filterItem => filterItem.foodType === 'Drinks & Beverages')
                 .map(filteredFoodType => {
                     return(
@@ -212,14 +174,13 @@ const Breakfast = () => {
     )
 
     return(
-        <div className="breakfast-category">
+        <div className="dinner-category">
             {foodCombo}
             {foodOnly}
-            {Desserts}
             {Soups}
             {Drinks}
         </div>
     )
 }
 
-export default Breakfast
+export default Dinner

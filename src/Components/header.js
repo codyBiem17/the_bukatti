@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import {NavLink as RRNavLink} from 'react-router-dom'
 import { heroImages } from '../Components'
 import { 
-        Container, Row, Col, 
+        Button, Container, Row, Col, 
         Navbar, NavbarBrand, NavbarToggler,
         Nav, NavItem, NavLink, Collapse, 
         UncontrolledCarousel,
@@ -49,21 +50,24 @@ const Header = () => {
                     <Col lg="4" className="topbar-socials">
                         <span> Mon - Fri / 8am - 9pm / </span>
                         <span className="social-icons">
-                            <a href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
+                            <NavLink href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
                                 <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
-                            </a>
-                            <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
-                            <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
+                            </NavLink>
+                            <NavLink href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </NavLink>
+                            <NavLink href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </NavLink>
                         </span>
                     </Col>
                 </Row>
             </Container>
             
-            <Container fluid={true}  className={ 
-                                                scrolled && mediaMatch.matches ? 'sticky' : 
-                                                scrolled && mediaMatch.matches === false ? 'navbar-container' :
-                                                'navbar-container'
-                                                }>
+            <Container 
+                fluid={true}  
+                className={ 
+                    scrolled && mediaMatch.matches ? 'sticky' : 
+                    scrolled && mediaMatch.matches === false ? 'navbar-container' :
+                    'navbar-container'
+                }
+            >
                 <Row>
                     <Col>
                         <Navbar color="dark" dark expand="md">
@@ -72,25 +76,27 @@ const Header = () => {
                             <Collapse isOpen={collapsed} navbar>
                                 <Nav className="ml-auto" navbar>
                                     <NavItem>
-                                        <NavLink href="/">Home</NavLink>
+                                        <NavLink tag={RRNavLink} exact activeClassName="active" to="/">Home</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="/about">About</NavLink>
+                                        <NavLink tag={RRNavLink} activeClassName="active" to="/about">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="/order">Order</NavLink>
+                                        <NavLink tag={RRNavLink} activeClassName="active" to="/order">Order</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Reservation</NavLink>
+                                        <NavLink tag={RRNavLink} activeClassName="active" to="/reservation">Reservation</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Testimonies</NavLink>
+                                        <NavLink tag={RRNavLink} activeClassName="active" to="/testimonies">Testimonies</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Faq</NavLink>
+                                        <NavLink tag={RRNavLink} activeClassName="active" to="/faq">Faq</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#" id="sign-up-navbar">Sign Up</NavLink>
+                                        <Button type="button" id="signup" >
+                                            Sign Up
+                                        </Button>
                                     </NavItem>
                                 </Nav>
                             </Collapse>
@@ -105,7 +111,7 @@ const Header = () => {
                         <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />
                     </Col>
                 </Row>
-            </Container>
+            </Container> 
         </>
     )
 }

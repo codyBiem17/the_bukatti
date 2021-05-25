@@ -1,47 +1,43 @@
-import React from 'react'
-// import {NavLink} from 'reactstrap'
+import React, { useEffect, useState } from 'react'
+import {Button} from 'reactstrap'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ArrowUp = ()=> {
-    // const [visibility, setVisibility] = useState(false)
+    const [scrollToTop, setScrollToTop] = useState(false)
 
-    // const handleScroll = (e) => {
-    //     e.preventDefault()
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: 'smooth'
-    //     })
-        // setVisibility(true)
-        // // window.pageYOffset > 10 ? setVisibility(true) : setVisibility(false)
-    // }
+    const handleScroll = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
 
-    // useEffect(() => {
-    //     const handleToggleVisibility = () => {
-    //         if (window.pageYOffset > 100) {
-    //           setVisibility(true);
-    //         } else {
-    //           setVisibility(false);
-    //         }
-    //       };
-        
+    useEffect(() => {
 
-    //     window.addEventListener("scroll", handleToggleVisibility);
-
-    //     return () => window.removeEventListener("scroll", handleToggleVisibility);
-
-    // }, [])
+        const scrolled = () =>{
+            const pageYOffset = window.pageYOffset
+            if(pageYOffset > 2000) {
+                setScrollToTop(true)
+            }
+            else{
+                setScrollToTop(false)
+            }
+        }
+        window.addEventListener('scroll', scrolled)
+        return () => window.removeEventListener("scroll", scrolled)
+    })
 
 
     return(
-   
-        // <NavLink href="#" className="arrow-to-top" onClick={handleScroll}>
-        //     <FontAwesomeIcon icon="arrow-up" />
-        // </NavLink>
-        <div className="floating-arrow">
-          <FontAwesomeIcon icon="arrow-up" />
-      </div>
-
+        <>
+            {
+                scrollToTop && 
+                <Button onClick={handleScroll} className="floating-arrow">
+                    <FontAwesomeIcon icon="arrow-up" />
+                </Button>
+            }
+        </>
     )
 }
 

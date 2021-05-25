@@ -2,10 +2,9 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import { 
     Breadcrumb, BreadcrumbItem, Button, Container, Row, Col,
-    // NavLink 
 } from 'reactstrap'
-import chef from '../assets/images/chef.jpg'
-import people from '../assets/images/people-in-a-restaurant.jfif'
+import chef from '../assets/images/black-chef.jpg'
+import restaurant from '../assets/images/restaurant.jpg'
 
 const About = () => {
 
@@ -29,6 +28,7 @@ const About = () => {
                     </Col>
                 </Row>
             </Container>
+            
             <Container fluid={true} className="containers aboutpage-container-bg-white">
                 <Row> 
                     <Col xs="12">
@@ -36,21 +36,21 @@ const About = () => {
                     </Col>
                 </Row>
                 <Row  className="mb-4">
-                    <Col xs="12" md="6">
+                    <Col xs="12" md="6" className="mt-3">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra massa pretium, 
                             condimentum dui a, lobortis lorem. Sed ultrices ex sit amet augue faucibus, n
                         </p>
                     </Col>
-                    <Col xs="12" md="6" className="mb-4">
+                    <Col xs="12" md="6" className="mb-4 mt-3">
                         <img src={chef} alt="chef-in-restaurant" />
                     </Col>
                 </Row>
                 <Row className="mt-5">
                     <Col xs="12" md="6" className="mt-5">
-                        <img src={people} alt="people-in-restaurant" />
+                        <img src={restaurant} alt="restaurant" />
                     </Col>
-                    <Col xs="12" md="6" className="mt-3">
+                    <Col xs="12" md="6" className="mt-5">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra massa pretium, 
                             condimentum dui a, lobortis lorem. Sed ultrices ex sit amet augue faucibus, n
@@ -58,6 +58,7 @@ const About = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true} className="containers aboutpage-container-bg-ash">
                 <Row> 
                     <Col xs="12">
@@ -76,6 +77,7 @@ const About = () => {
                     </Col>
                 </Row>
             </Container>
+
             <Container fluid={true} className="containers aboutpage-figures">
                 <Row>
                     <Col xs="12" md="6" lg="3" className="restaurant-stats">
