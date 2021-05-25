@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const HomePageBookTable = () => {
     const [value, setValue] = useState('')
-    const [isChecked, setIsChecked] = useState(false)
+    // const [isChecked, setIsChecked] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -115,7 +115,7 @@ const HomePageBookTable = () => {
                         </Col>
                     </Row>
                     <FormGroup check>
-                        <Input type="checkbox" name="reserve" id="reserve" checked={isChecked} className="my-2" />
+                        <Input type="checkbox" name="reserve" id="reserve"  className="my-2" />
                         <Label for="reserve" check className="reserve-label"> 
                             Send reservation details to my email
                         </Label>
