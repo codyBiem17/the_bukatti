@@ -10,30 +10,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const HomePageBookTable = () => {
-    const [value, setValue] = useState('')
-    // const [isChecked, setIsChecked] = useState(false)
+    // const [value, setValue] = useState({
+    //     fullname: '',
+    //     email: '',
+    //     time: ''
+    // })
+    const [isChecked, setIsChecked] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // const inputValue = e.target.value
-        if(value === ''){
-            alert('Please enter all field values')
-        //     if(isChecked === false){
-        //         alert('Please check the box')
-        //     }
-        //     else{
-        //         setIsChecked(true)
-        //     }
+        if(isChecked === true){
+            alert('hooorraayy')
         }
-        // else{
-        //     setValue(e.target.value)
-        //     alert('Yaay! You have successfully made a table reservation')
-        // }
+        else{
+            alert('Agree by checking the box')
+        }
     }
 
-    const handleChange = (e) => {
-        setValue(e.target.value)
+    const handleChange = () => {
+        setIsChecked(!isChecked)      
     }
+
+    // const handleCheck = () => {
+    //     setIsChecked(!isChecked)
+    // }
 
     return(
         <Row className="reserved-table-section">
@@ -52,7 +52,7 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon={['far', 'user']} />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="text" value={value} onChange={handleChange} placeholder="FullName" />
+                                <Input type="text" placeholder="FullName" />
                             </InputGroup>
                             <FormText>
                                 Enter Firstname and Lastname
@@ -65,7 +65,7 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon={['far', 'envelope']} />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="email" value={value} placeholder="Email" />
+                                <Input type="email"  placeholder="Email" />
                             </InputGroup>
                         </Col>
                         <Col xs="12" sm="6" className="mb-4">
@@ -75,7 +75,7 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon="mobile-alt" />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input  type="number" value={value} placeholder="Phone no" />
+                                <Input  type="number" placeholder="Phone no" />
                             </InputGroup>
                         </Col>
                         <Col xs="12" sm="6" className="mb-4">
@@ -85,7 +85,7 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon={['far', 'calendar-alt']} />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="date" value={value} placeholder="Check-in-Date" />
+                                <Input type="date" placeholder="Check-in-Date" />
                             </InputGroup>
                         </Col>
                         <Col xs="12" sm="6" className="mb-4">
@@ -95,7 +95,7 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon="users" />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="number" value={value} placeholder="No_ of Guests" />
+                                <Input type="number" placeholder="No_ of Guests" />
                             </InputGroup>
                         </Col>
                         <Col xs="12" sm="6" className="mb-4">
@@ -105,17 +105,17 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon={['far', 'clock']} />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="select" value={value} onChange={handleChange} placeholder="Time"> 
-                                    <option>9 A M TO 12PM</option>
-                                    <option>9 A M TO 12PM</option>
-                                    <option>9 A M TO 12PM</option>
-                                    <option>9 A M TO 12PM</option>
+                                <Input type="select" placeholder="Time"> 
+                                    <option value="9 A M TO 12PM">9 A M TO 12PM</option>
+                                    <option value="9 A M TO 12PM">9 A M TO 12PM</option>
+                                    <option value="9 A M TO 12PM">9 A M TO 12PM</option>
+                                    <option value="9 A M TO 12PM">9 A M TO 12PM</option>
                                 </Input>
                             </InputGroup>
                         </Col>
                     </Row>
                     <FormGroup check>
-                        <Input type="checkbox" name="reserve" id="reserve"  className="my-2" />
+                        <Input type="checkbox" checked={isChecked} onChange={handleChange} name="reserve" className="my-2" />
                         <Label for="reserve" check className="reserve-label"> 
                             Send reservation details to my email
                         </Label>

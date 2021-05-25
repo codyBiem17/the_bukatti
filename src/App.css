@@ -452,9 +452,11 @@ select.form-control, .form-control:focus{
 /* -------------------Reservation css----------------
 ----------------------------------------------- */
 .form-text.text-muted{
-  color: rgb(155, 30, 9) !important;
-  font-size: 0.97em;
-  font-weight: 700;
+  color: black !important;
+  font-style: italic;
+  /* color: rgb(155, 30, 9) !important; */
+  /* font-size: 0.97em; */
+  /* font-weight: 700; */
 }
 label.reserve-label{
   display: inline;
