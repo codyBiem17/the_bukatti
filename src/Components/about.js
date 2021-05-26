@@ -3,8 +3,8 @@ import {useHistory} from 'react-router-dom'
 import { 
     Breadcrumb, BreadcrumbItem, Button, Container, Row, Col,
 } from 'reactstrap'
-import chef from '../assets/images/black-chef.jpg'
-import restaurant from '../assets/images/restaurant.jpg'
+import chef from '../assets/images/black-chef-min.jpg'
+import restaurant from '../assets/images/restaurant-min.jpg'
 
 const About = () => {
 

@@ -14,20 +14,21 @@ const HomePageBookTable = () => {
         fullname: '',
         email: '',
         phone: '',
+        date: '',
         guests: '',
         time: ''
     })
-    const {fullname, email, time, guests, phone} = value
+    const {fullname, email, phone, date, guests, time} = value
     const [isChecked, setIsChecked] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(isChecked === true){
-            alert('hooorraayy')
-            console.log(value)
+        if(isChecked === false && e.target.name === ''){
+            alert('Agree by checking the box of Fill form details')
         }
         else{
-            alert('Agree by checking the box')
+            alert('hooorraayy')
+            console.log(value)
         }
     }
 
@@ -91,7 +92,7 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon={['far', 'calendar-alt']} />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="date" placeholder="Check-in-Date" />
+                                <Input type="date" value={date} name="date" onChange={handleChange} placeholder="Check-in-Date" />
                             </InputGroup>
                         </Col>
                         <Col xs="12" sm="6" className="mb-4">
@@ -101,7 +102,8 @@ const HomePageBookTable = () => {
                                         <FontAwesomeIcon icon="users" />
                                     </InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="select" value={guests} name="guests" onChange={handleChange} placeholder="No_ of Guests"> 
+                                <Input type="select" value={guests} name="guests" onChange={handleChange} placeholder="No of Guests"> 
+                                    <option value="choose">No of guests </option>
                                     <option value="2">2</option>
                                     <option value="5">5</option>
                                     <option value="8">8</option>
@@ -117,6 +119,7 @@ const HomePageBookTable = () => {
                                     </InputGroupText>
                                 </InputGroupAddon>
                                 <Input type="select" value={time} name="time" onChange={handleChange} placeholder="Time"> 
+                                    <option value="time">Choose a time</option>
                                     <option value="9AM TO 11AM">9AM TO 11AM</option>
                                     <option value="11:30AM TO 12:30PM">11:30AM TO 12:30PM</option>
                                     <option value="3PM TO 5PM">3PM TO 5PM</option>

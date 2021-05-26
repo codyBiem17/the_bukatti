@@ -475,6 +475,11 @@ form#form-section .form-check{
  .reserved-table-section .form-control:focus{
   border-left-color: #e9ecef;
 }
+.booking.btn-secondary:not(:disabled):not(.disabled):active{
+  color: #D66D75;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}
 
 
 
