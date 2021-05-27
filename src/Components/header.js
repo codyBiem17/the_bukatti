@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import {NavLink as RRNavLink} from 'react-router-dom'
+// import {NavLink as RRNavLink} from 'react-router-dom'
 import { heroImages } from '../Components'
 import { 
         Button, Container, Row, Col, 
         Navbar, NavbarBrand, NavbarToggler,
         Nav, NavItem, NavLink, Collapse, 
         UncontrolledCarousel,
-           
         } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -76,22 +75,22 @@ const Header = () => {
                             <Collapse isOpen={collapsed} navbar>
                                 <Nav className="ml-auto" navbar>
                                     <NavItem>
-                                        <NavLink tag={RRNavLink} exact activeClassName="active" to="/">Home</NavLink>
+                                        <NavLink  href="/">Home</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={RRNavLink} activeClassName="active" to="/about">About</NavLink>
+                                        <NavLink  href="/about">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={RRNavLink} activeClassName="active" to="/order">Order</NavLink>
+                                        <NavLink  href="/order">Order</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={RRNavLink} activeClassName="active" to="/reservation">Reservation</NavLink>
+                                        <NavLink  href="/reservation">Reservation</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={RRNavLink} activeClassName="active" to="/testimonies">Testimonies</NavLink>
+                                        <NavLink  href="/testimonies">Testimonies</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={RRNavLink} activeClassName="active" to="/faq">Faq</NavLink>
+                                        <NavLink  href="/faq">Faq</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <Button type="button" id="signup" >

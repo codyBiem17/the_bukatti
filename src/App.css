@@ -56,7 +56,7 @@ hr {
   transition-duration: 2s;
   transition-timing-function: linear
 } */
-.navbar-dark .navbar-nav .nav-link.active{
+.navbar-dark .navbar-nav .nav-link:active{
   color: tomato;
 }
 #signup{
@@ -244,7 +244,7 @@ button.order:hover, button.newsletter:hover{
   border-radius: 5px;
   padding: 20px;
 }
-button.booking{
+button.booking, .btn.modify-reservation{
   text-transform: uppercase;
   padding: 20px 15px;
   font-size: 1em;
@@ -480,6 +480,45 @@ form#form-section .form-check{
   background-color: #e9ecef;
   border-color: #e9ecef;
 }
+.modal-content, .divSlide{
+  color: black;
+  font-size: 12px;
+  background-color: #D66D75;
+  border-radius: 5px;
+  animation: divSlideMeIn .7s ease-in;
+}
+
+@keyframes divSlideMeIn {
+  0%{
+    transform: translateY(100px);
+  }
+  /* 100%{
+    transform: skew(0deg);
+  } */
+}
+.btn.modify-reservation{
+  width: 100%;
+}
+.btn.cancel{
+  background-color: rgb(238, 38, 38);
+  border-color: rgb(238, 38, 38);
+  color: white;
+}
+.form-hide-and-show{
+  animation: formSlideOut .7s ease-in;
+}
+@keyframes formSlideOut {
+  from{
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(-100px);
+    display: none;
+  }
+}
+/* .modal-footer{
+  border-top-width: 0px;
+} */
 
 
 
