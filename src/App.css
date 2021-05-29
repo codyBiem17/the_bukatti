@@ -485,16 +485,18 @@ form#form-section .form-check{
   font-size: 12px;
   background-color: #D66D75;
   border-radius: 5px;
-  animation: divSlideMeIn .7s ease-in;
+  -webkit-animation: ivSlideMeIn 1.2s ease-in;
+  animation: divSlideMeIn 1.2s ease-in;
 }
 
 @keyframes divSlideMeIn {
   0%{
     transform: translateY(100px);
+    opacity: 0.5;
   }
-  /* 100%{
-    transform: skew(0deg);
-  } */
+  100%{
+    opacity: 1;
+  }
 }
 .btn.modify-reservation{
   width: 100%;
@@ -505,16 +507,23 @@ form#form-section .form-check{
   color: white;
 }
 .form-hide-and-show{
-  animation: formSlideOut .7s ease-in;
+  -webkit-animation: formSlideOut 1.2s ease-in both;
+  animation: formSlideOut 1.2s ease-in both;
 }
 @keyframes formSlideOut {
-  from{
+  0% { 
+    opacity: 0.5;
     transform: translateY(0px);
+    /* display: flex; */
   }
-  to{
+  100%{
+    opacity: 0;
+    display:none;
+    position: fixed;
+    z-index: -5;
     transform: translateY(-100px);
-    display: none;
   }
+
 }
 /* .modal-footer{
   border-top-width: 0px;
