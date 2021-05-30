@@ -211,7 +211,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers container-7">
+            <Container  className="containers container-7" id="newsletter-section">
                 <Row>
                     <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>

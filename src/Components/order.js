@@ -38,7 +38,7 @@ const Order = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers order-container-bg-white">
+            <Container fluid={true} className="containers container-bg-white">
                 <Row> 
                     <Col xs="12">
                         <p className="">Order Now and Get It Delivered before you say Jack Robinson</p> 

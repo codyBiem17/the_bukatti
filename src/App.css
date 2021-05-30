@@ -7,7 +7,6 @@
 
 html, body {
   overflow-x: hidden;
-  /* font-weight: 800; */
   background-image: linear-gradient(rgba(41, 40, 40, 0.4), rgba(41, 40, 40, 0.4)), url('./assets/images/table1.jfif');
   background-position: center;
   background-size: cover;
@@ -108,11 +107,11 @@ hr {
   animation: animated-text 4s linear 1s 1 normal both,
                 animated-cursor 800ms linear infinite;
 }
-.carousel-item:nth-child(3) h3{
+.carousel-item:first-child h3{
   position:absolute;
-  top: 50%;
+  top: 20px;
   left: 0;
-  transform: translate(30px,80px);
+  transform: translate(30px,-10px);
 }
 
 /* Animation */
@@ -127,7 +126,7 @@ hr {
 .containers{
   color: black;
   text-align: justify;
-  padding: 70px 20px 100px;
+  padding: 70px 20px;
 }
 .container-topbar{
   font-size: 14px;
@@ -142,8 +141,8 @@ hr {
   font-size: 14px;
   padding: 5px;
 } 
-.container-2, .container-5, .container-8, .aboutpage-container-bg-white,
-.order-container-bg-white{
+.container-2, .container-5, .container-8, .container-bg-white,
+.container-bg-white{
   background-color: white;
 }
 .para-header{
@@ -157,8 +156,7 @@ hr {
   margin-top: -10px;
   margin-bottom: 30px;
 }
-.container-3, .container-6, .aboutpage-container-bg-ash, .how_it_works,
-.order-container-bg-ash{
+.container-3, .container-6, .container-bg-ash, .how_it_works{
   background-color: #f7f7f7;
 }
 .container-3 img{
@@ -454,9 +452,6 @@ select.form-control, .form-control:focus{
 .form-text.text-muted{
   color: black !important;
   font-style: italic;
-  /* color: rgb(155, 30, 9) !important; */
-  /* font-size: 0.97em; */
-  /* font-weight: 700; */
 }
 label.reserve-label{
   display: inline;
@@ -480,9 +475,9 @@ form#form-section .form-check{
   background-color: #e9ecef;
   border-color: #e9ecef;
 }
-.modal-content, .divSlide{
+.divSlide{
   color: black;
-  font-size: 12px;
+  font-size: 14px;
   background-color: #D66D75;
   border-radius: 5px;
   -webkit-animation: ivSlideMeIn 1.2s ease-in;
@@ -498,6 +493,9 @@ form#form-section .form-check{
     opacity: 1;
   }
 }
+.reservation-buttons{
+  padding-left: 70px;
+}
 .btn.modify-reservation{
   width: 100%;
 }
@@ -506,7 +504,7 @@ form#form-section .form-check{
   border-color: rgb(238, 38, 38);
   color: white;
 }
-.form-hide-and-show{
+.form-hide{
   -webkit-animation: formSlideOut 1.2s ease-in both;
   animation: formSlideOut 1.2s ease-in both;
 }
@@ -523,12 +521,45 @@ form#form-section .form-check{
     z-index: -5;
     transform: translateY(-100px);
   }
-
 }
-/* .modal-footer{
-  border-top-width: 0px;
-} */
+.form-show{
+  -webkit-animation: formSlideOut 1.2s ease-in both;
+  animation: formSlideIn 1.2s ease-in both;
+}
+@keyframes formSlideIn {
+  0% { 
+    transform: translateY(-100px);
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+button.close{
+  font-weight: 400;
+  position: relative;
+  bottom: 16px;
+  left: 16px;
+  padding: 5px;
+  border-top-right-radius: 5px;
+  opacity: .7;
+}
+button.close span{
+  font-size: 2em;
+  color: white;
+}
+button.close:hover{
+  background-color: rgb(238, 38, 38);
+  color: white;
+}
 
+
+
+/* -------------------FAQ css----------------
+----------------------------------------------- */
+.faq-content{
+  color: black;
+}
 
 
 
@@ -549,7 +580,7 @@ form#form-section .form-check{
   #countdown-column{
     font-size: 30px;
   }
-  .carousel-item:nth-child(3) h3{
+  .carousel-item:first-child h3{
     top: 0;
     transform: translate(30px,70px);
   }
@@ -595,6 +626,9 @@ form#form-section .form-check{
   }
   .how_it_works .row:not(:first-child) img{
     width: 80%;
+  }
+  .divSlide{
+    font-size: 1em;
   }
 }
 

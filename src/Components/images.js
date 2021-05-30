@@ -1,6 +1,6 @@
 import banner1 from '../assets/images/banner1.jpg'
 import reserved_table from '../assets/images/table_service.jfif'
-import foodplainBg from '../assets/images/foodplainBg.jfif'
+import tastyFood from '../assets/images/tastyfood.jfif'
 import foodOrder from '../assets/images/food-order2.png'
 import dish from '../assets/images/image.png'
 import reserved from '../assets/images/reserved.png'
@@ -16,10 +16,10 @@ import Customer from '../assets/images/person-eating.jpg'
 
 export const heroImages = [
     {
-        src: banner1,
-        header: 'Home-made Meals',
+        src: tastyFood,
+        header: 'Try our Specials',
         caption: "",
-        altText: 'banner1'
+        altText: 'tastyFood'
     },
     {
         src: reserved_table,
@@ -28,10 +28,10 @@ export const heroImages = [
         altText: 'reserved_table'
     },
     {
-        src: foodplainBg,
-        header: 'Try our Specials',
+        src: banner1,
+        header: 'Home-made Meals',
         caption: "",
-        altText: 'foodPlainBg'
+        altText: 'banner1'
     }
 ]
 

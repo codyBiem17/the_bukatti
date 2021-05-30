@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import {NavLink as RRNavLink} from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import { heroImages } from '../Components'
 import { 
         Button, Container, Row, Col, 
@@ -15,12 +15,18 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false)
 
     const mediaMatch = window.matchMedia('(min-width: 992px)')
+
+    
+    const signupBtn = () => {
+        if(collapsed){
+            setCollapsed(false)
+        }
+    }
    
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
  
-
     const handleScroll = () => {
         const pageYOffset = window.pageYOffset
 
@@ -86,14 +92,14 @@ const Header = () => {
                                     <NavItem>
                                         <NavLink  href="/reservation">Reservation</NavLink>
                                     </NavItem>
-                                    <NavItem>
+                                    {/* <NavItem>
                                         <NavLink  href="/testimonies">Testimonies</NavLink>
-                                    </NavItem>
+                                    </NavItem> */}
                                     <NavItem>
                                         <NavLink  href="/faq">Faq</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <Button type="button" id="signup" >
+                                        <Button type="button" onClick={signupBtn} tag={Link} smooth to="/#newsletter-section" id="signup" >
                                             Sign Up
                                         </Button>
                                     </NavItem>

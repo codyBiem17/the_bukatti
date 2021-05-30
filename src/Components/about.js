@@ -10,8 +10,12 @@ const About = () => {
 
     const history = useHistory();
 
-    const handleClick = () => {
+    const handleOrder = () => {
         history.push('/order')
+    }
+
+    const handleBooking = () => {
+        history.push('/reservation')
     }
 
     return (
@@ -29,7 +33,7 @@ const About = () => {
                 </Row>
             </Container>
             
-            <Container fluid={true} className="containers aboutpage-container-bg-white">
+            <Container fluid={true} className="containers container-bg-white">
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Who We Are</p> 
@@ -59,7 +63,7 @@ const About = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers aboutpage-container-bg-ash">
+            <Container fluid={true} className="containers container-bg-ash">
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">What We Do</p> 
@@ -70,10 +74,10 @@ const About = () => {
                         <p> We Make Delicious &amp; Nutritious Food </p>
                     </Col>
                     <Col xs="6">
-                        <Button onClick={handleClick} className="order-and-book"> Order Food Now</Button>
+                        <Button onClick={handleOrder} className="order-and-book"> Order Food Now</Button>
                     </Col>
                     <Col xs="6">
-                        <Button className="order-and-book"> Book A Table Now </Button>
+                        <Button onClick={handleBooking}  className="order-and-book"> Book A Table Now </Button>
                     </Col>
                 </Row>
             </Container>
