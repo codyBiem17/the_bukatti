@@ -174,7 +174,7 @@ const HomePageBookTable = () => {
                                 You will receive a confirmation receipt of your Reservation within the next 24 hours
                             </p>
                         </Col>
-                        <Col xs="12" className="text-center reservation-buttons">
+                        <Col xs="12" className="reservation-buttons">
                             <Row>
                                 <Col xs="12">
                                         Want to Reschedule or Cancel?
@@ -190,32 +190,6 @@ const HomePageBookTable = () => {
                     </Row>
                 </Col>
             }
-            {/* <Col xs="12">
-                <Modal isOpen={modal} toggle={toggleModal}>
-                    <ModalBody>
-                        <p>
-                            Hello {value.fullname}, thank you for successfully making a table reservation request
-                        </p>
-                        <p>
-                            You will receive a confirmation receipt of your Reservation within the next 24 hours
-                        </p>
-                    </ModalBody>
-                   
-                   <ModalFooter>
-                    <Row>
-                        <Col xs="12">
-                                Want to Reschedule or Cancel?
-                        </Col>
-                            <Col xs="12" className="my-3">
-                                <Button type="button" className="modify-reservation">Reschedule Reservation</Button>
-                        </Col>
-                        <Col xs="12">
-                                <Button type="button" className="modify-reservation cancel">Cancel Reservation</Button>
-                        </Col>
-                    </Row>
-                   </ModalFooter>
-                </Modal>
-            </Col> */}
         </Row>
     )
 }

@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { faqArrayList, SingleFaq} from '../Components'
 import { 
     Breadcrumb, BreadcrumbItem, Container, Row, Col,
-    Collapse, Card, CardHeader, CardBody
 } from 'reactstrap'
 
+
 const Faq = () => {
-
-    const [isOpen, setIsOpen] = useState(true)
-
-    const toggleQA = () => {
-        setIsOpen(!isOpen)
-    }
-
-
     return (
         <>
             <Container fluid={true} className="breadcrumbs">
@@ -37,56 +30,11 @@ const Faq = () => {
                 
                 <Row>
                     <Col xs="12">
-                        <Collapse isOpen={isOpen}>
-                            <Card className="faq-content">
-                                <CardHeader className="faq-header" onClick={toggleQA}>
-                                    Do you have a physical restaurant to eat-in?
-                                </CardHeader>
-                                <CardBody className="faq-body">
-                                    Yes, we do have a physical restaurant in 3 states within Nigeria
-                                </CardBody>
-                            </Card>
-                        </Collapse>
-                        <Collapse isOpen={isOpen}>
-                            <Card className="faq-content">
-                                <CardHeader className="faq-header" onClick={toggleQA}>
-                                    Do you have a physical restaurant to eat-in?
-                                </CardHeader>
-                                <CardBody className="faq-body">
-                                    Yes, we do have a physical restaurant in 3 states within Nigeria
-                                </CardBody>
-                            </Card>
-                        </Collapse>
-                        <Collapse isOpen={isOpen}>
-                            <Card className="faq-content">
-                                <CardHeader className="faq-header" onClick={toggleQA}>
-                                    Do you have a physical restaurant to eat-in?
-                                </CardHeader>
-                                <CardBody className="faq-body">
-                                    Yes, we do have a physical restaurant in 3 states within Nigeria
-                                </CardBody>
-                            </Card>
-                        </Collapse>
-                        <Collapse isOpen={isOpen}>
-                            <Card className="faq-content">
-                                <CardHeader className="faq-header" onClick={toggleQA}>
-                                    Do you have a physical restaurant to eat-in?
-                                </CardHeader>
-                                <CardBody className="faq-body">
-                                    Yes, we do have a physical restaurant in 3 states within Nigeria
-                                </CardBody>
-                            </Card>
-                        </Collapse>
-                        <Collapse isOpen={isOpen}>
-                            <Card className="faq-content">
-                                <CardHeader className="faq-header" onClick={toggleQA}>
-                                    Do you have a physical restaurant to eat-in?
-                                </CardHeader>
-                                <CardBody className="faq-body">
-                                    Yes, we do have a physical restaurant in 3 states within Nigeria
-                                </CardBody>
-                            </Card>
-                        </Collapse>
+                        {
+                            faqArrayList.map( question => (
+                                <SingleFaq key={question.id} faqHeader={question.faqHeader} faqBody={question.faqBody} />
+                            ))
+                        }
                     </Col>
                 </Row>
             </Container>
