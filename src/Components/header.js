@@ -92,11 +92,11 @@ const Header = () => {
                                     <NavItem>
                                         <NavLink  href="/reservation">Reservation</NavLink>
                                     </NavItem>
-                                    {/* <NavItem>
-                                        <NavLink  href="/testimonies">Testimonies</NavLink>
-                                    </NavItem> */}
                                     <NavItem>
                                         <NavLink  href="/faq">Faq</NavLink>
+                                    </NavItem>
+                                     <NavItem>
+                                        <NavLink  href="/auth" id="signin">Sign in</NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <Button type="button" onClick={signupBtn} tag={Link} smooth to="/#newsletter-section" id="signup" >
@@ -112,9 +112,10 @@ const Header = () => {
 
             <Container fluid={true}  className="homepage-container carousel-container">
                 <Row id="heroImg-wrapper">
-                    <Col className="imageSlider" id="heroImg">
+                    <Col xs="12" className="imageSlider" id="heroImg">
                         <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />
                     </Col>
+                    <Col xs="12" className="wavyPattern"></Col>
                 </Row>
             </Container> 
         </>

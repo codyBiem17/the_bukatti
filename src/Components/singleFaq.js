@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { 
-    Button, Card, CardHeader, CardBody, Row, Col
+    Card, CardHeader, CardBody, Row, Col
 } from 'reactstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
@@ -10,22 +10,19 @@ const SingleFaq = (props) => {
 
     
     const toggleQA = () => {
-        // if(e.target.id){
-            setIsOpen(!isOpen)
-        // }
-        // setIsOpen(!isOpen)
+        setIsOpen(!isOpen)
     }
 
     return (
         <Card className="mb-3 faq-content">
             <CardHeader id="faq-header" className="faq-header" onClick={toggleQA}>
                 <Row>
-                    <Col xs="10"> {props.faqHeader} </Col>
+                    <Col xs="10" md="11"> {props.faqHeader} </Col>
                     {
                         isOpen ? 
-                        <Button xs="2" className="my-3 angle-up-down"> <FontAwesomeIcon icon='angle-down' /> </Button>
+                        <Col xs="2" md="1" className="my-3 angle-up-down"> <FontAwesomeIcon icon='angle-down' /> </Col>
                         :
-                        <Button xs="2" className="my-3 angle-up-down"> <FontAwesomeIcon icon='angle-up' /> </Button>
+                        <Col xs="2" md="1" className="my-3 angle-up-down"> <FontAwesomeIcon icon='angle-up' /> </Col>
                     }
                 </Row>
             </CardHeader>

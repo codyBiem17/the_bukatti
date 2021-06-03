@@ -113,6 +113,13 @@ hr {
   left: 0;
   transform: translate(30px,-10px);
 }
+.wavyPattern{
+  background: url('./assets/images/wave.png') repeat-x;
+  height: 46px;
+  position: relative;
+  z-index: 100;
+  margin: -10px 0 0 0;
+}
 
 /* Animation */
 @keyframes animated-text{
@@ -566,15 +573,18 @@ button.close:hover{
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .angle-up-down{
-  background-color: #D66D75;
-  border-color: #D66D75;
   /* font-size: 1.3em; */
-  color: white;
-  border-radius: 50%;
-  /* padding: 5px 8px; */
+  color: #D66D75;
   cursor: pointer;
 }
 
+
+/* -------------------SignUp-SignIn css----------------
+----------------------------------------------- */
+#signin{
+  color: #D66D75;
+  font-weight: 700;
+}
 
 
 /* -------------------media queries----------------

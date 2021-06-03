@@ -3,6 +3,7 @@
 export {default as About} from './about'
 export {default as AddToCartBtn} from './addToCartBtn'
 export {default as ArrowUp} from './arrow-up'
+export {default as Authentication} from './auth'
 export {default as Breakfast} from './breakfast'
 export {default as Dinner} from './dinner'
 export {default as Footer} from './footer'
