@@ -22,6 +22,7 @@ const HomePageBookTable = () => {
     const [isChecked, setIsChecked] = useState(false)
     const [divSlideIn, setDivSlideIn ] = useState(false)
     const [isClicked, setIsClicked] = useState(true)
+    const [seats, setSeats] = useState(10)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -41,10 +42,13 @@ const HomePageBookTable = () => {
         setValue({ ...value, [e.target.name]: e.target.value})  
     }
 
-    const buttonClose = () => {
+    const buttonClose = (e) => {
         setDivSlideIn(false)
         setIsClicked(false)
+        setSeats(prevSeat => prevSeat - 1)
+        setValue({ ...value, [e.target.name]: ""})
     }
+
 
     return(
         <Row className="reserved-table-section">
@@ -60,9 +64,13 @@ const HomePageBookTable = () => {
                     <Form id="form-section" onSubmit={handleSubmit}>
                         <Row form>
                             <Col xs="12">
-                                <h4>
-                                    Reserve A Table
-                                </h4>
+                                <h4> Reserve A Table </h4>
+                                <p> 
+                                    Available seats:
+                                    <span id="no-of-seats">
+                                        {seats} 
+                                    </span>
+                                </p>
                             </Col>
                             <Col xs="12" sm="6" className="mb-4">
                                 <InputGroup>
@@ -157,7 +165,7 @@ const HomePageBookTable = () => {
             {
                 divSlideIn &&
 
-                <Col xs="11" md="8" className="divSlide mx-auto p-4">
+                <Col xs="11" md="8" className="divSlide mx-auto p-3">
                     <Row>
                         {
                             isClicked && 
@@ -179,11 +187,11 @@ const HomePageBookTable = () => {
                                 <Col xs="12">
                                         Want to Reschedule or Cancel?
                                 </Col>
-                                    <Col xs="12" lg="6" className="my-3">
-                                        <Button type="button" className="modify-reservation reschedule">Reschedule Reservation</Button>
+                                <Col xs="12" lg="6" className="my-3">
+                                    <Button type="button" className="modify-reservation reschedule">Reschedule Reservation</Button>
                                 </Col>
                                 <Col xs="12" lg="5" className="my-3">
-                                        <Button type="button" className="modify-reservation cancel">Cancel Reservation</Button>
+                                    <Button type="button" className="modify-reservation cancel">Cancel Reservation</Button>
                                 </Col>
                             </Row>
                         </Col>

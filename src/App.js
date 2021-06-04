@@ -19,6 +19,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/about" component={About} />
+          {/* <Route path="/auth" component={Authentication} /> */}
           <Route path="/how_it_works" component={Guides} />
           <Route exact path="/faq" component={Faq} />
           <Route exact path="/" component={HomePage} />

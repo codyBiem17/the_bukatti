@@ -113,6 +113,13 @@ hr {
   left: 0;
   transform: translate(30px,-10px);
 }
+.wavyPattern{
+  background: url('./assets/images/wave.png') repeat-x;
+  height: 46px;
+  position: relative;
+  z-index: 100;
+  margin: -10px 0 0 0;
+}
 
 /* Animation */
 @keyframes animated-text{
@@ -494,7 +501,7 @@ form#form-section .form-check{
   }
 }
 .reservation-buttons{
-  padding-left: 70px;
+  /* padding-left: 70px; */
 }
 .btn.modify-reservation{
   width: 100%;
@@ -552,7 +559,11 @@ button.close:hover{
   background-color: rgb(238, 38, 38);
   color: white;
 }
-
+#no-of-seats{
+  color: #000;
+  font-size: 1.1em;
+  font-weight: 700;
+}
 
 
 /* -------------------FAQ css----------------
