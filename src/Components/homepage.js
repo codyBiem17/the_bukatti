@@ -106,7 +106,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Container fluid={true} className="containers container-2" >
+            <Container fluid={true} className="containers container-bg-white" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Now You Are Here!</p> 
@@ -132,7 +132,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-3" >
+            <Container fluid={true} className="containers container-3 container-bg-ash" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Our Services</p> 
@@ -148,7 +148,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers container-4">
+            <Container  className="containers bgImg-container">
                 <Row>
                     <Col className="order-section">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -162,11 +162,11 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-5">
+            <Container fluid={true} className="containers container-bg-white">
                 <HomePageBookTable />
             </Container>
 
-            <Container fluid={true} className="containers container-6">
+            <Container fluid={true} className="containers container-bg-ash">
                 <Row>
                     <Col xs="12"> 
                         <p className="para-header"> Our Food Menu </p>
@@ -211,7 +211,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers container-7" id="newsletter-section">
+            <Container  className="containers bgImg-container" id="newsletter-section">
                 <Row>
                     <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
@@ -235,7 +235,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-8">
+            <Container fluid={true} className="containers container-bg-white">
                 <Row> 
                     <Col xs="12">
                         <p className="para-header"> Testimonies </p> 

@@ -3,11 +3,12 @@ import { faqArrayList, SingleFaq} from '../Components'
 import { 
     Breadcrumb, BreadcrumbItem, Container, Row, Col,
 } from 'reactstrap'
+import QuestionImg from '../assets/images/question-mark.jpg'
 
 
 const Faq = () => {
     return (
-        <>
+        <div className="faq-container">
             <Container fluid={true} className="breadcrumbs">
                 <Row>
                     <Col xs="12">
@@ -29,7 +30,10 @@ const Faq = () => {
                 </Row>
                 
                 <Row>
-                    <Col xs="12">
+                    <Col lg="4" className="d-none d-lg-block">
+                        <img src={QuestionImg} alt="question-mark-icon" />
+                    </Col>
+                    <Col xs="12" lg="8">
                         {
                             faqArrayList.map( question => (
                                 <SingleFaq key={question.id} faqHeader={question.faqHeader} faqBody={question.faqBody} />
@@ -38,7 +42,7 @@ const Faq = () => {
                     </Col>
                 </Row>
             </Container>
-        </>
+        </div>
     )
 }
 

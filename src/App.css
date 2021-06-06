@@ -148,7 +148,6 @@ hr {
   font-size: 14px;
   padding: 5px;
 } 
-.container-2, .container-5, .container-8, .container-bg-white,
 .container-bg-white{
   background-color: white;
 }
@@ -163,7 +162,7 @@ hr {
   margin-top: -10px;
   margin-bottom: 30px;
 }
-.container-3, .container-6, .container-bg-ash, .how_it_works{
+.container-bg-ash, .how_it_works{
   background-color: #f7f7f7;
 }
 .container-3 img{
@@ -215,7 +214,7 @@ hr {
   background-color: #D66D75;
   border-color: #D66D75;
 } 
-.container-4, .container-7, .aboutpage-figures{
+.bgImg-container{
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -500,9 +499,6 @@ form#form-section .form-check{
     opacity: 1;
   }
 }
-.reservation-buttons{
-  /* padding-left: 70px; */
-}
 .btn.modify-reservation{
   width: 100%;
 }
@@ -564,6 +560,22 @@ button.close:hover{
   font-size: 1.1em;
   font-weight: 700;
 }
+#goto-payment{
+  color: white;
+}
+#goto-payment a{
+  font-weight: 700;
+  text-decoration: underline;
+}
+.payment-btn{
+  padding: 20px;
+  /* font-size: 1.5em; */
+  font-weight: 700;
+  color: white;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
 
 
 /* -------------------FAQ css----------------
@@ -657,6 +669,7 @@ button.close:hover{
   }
   .divSlide{
     font-size: 1em;
+    padding: 30px !important;
   }
 }
 

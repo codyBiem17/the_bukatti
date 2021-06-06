@@ -82,7 +82,7 @@ const About = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers aboutpage-figures">
+            <Container fluid={true} className="containers bgImg-container">
                 <Row>
                     <Col xs="12" md="6" lg="3" className="restaurant-stats">
                         <p className="figures">20+</p>

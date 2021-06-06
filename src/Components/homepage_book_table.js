@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {HashLink as NavLink} from 'react-router-hash-link'
 import WaiterServing from '../assets/images/waiter-setting-table.jpg'
 
 import { 
@@ -7,6 +8,7 @@ import {
     InputGroupAddon, InputGroupText, Label
  } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 const HomePageBookTable = () => {
@@ -26,13 +28,13 @@ const HomePageBookTable = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(isChecked === false && e.target.name === ''){
-            alert('Agree by checking the box of Fill form details')
-        }
-        else{
+        // if(isChecked === false && e.target.name === ''){
+        //     alert('Agree by checking the box of Fill form details')
+        // }
+        // else{
             setDivSlideIn(true)
             setIsClicked(true)
-        }
+        // }
     }
 
     const handleChange = (e) => {
@@ -46,7 +48,14 @@ const HomePageBookTable = () => {
         setDivSlideIn(false)
         setIsClicked(false)
         setSeats(prevSeat => prevSeat - 1)
-        setValue({ ...value, [e.target.name]: ""})
+        setValue({
+            fullname: '',
+            email: '',
+            phone: '',
+            date: '',
+            guests: '',
+            time: ''
+        })
     }
 
 
@@ -138,8 +147,8 @@ const HomePageBookTable = () => {
                                             <FontAwesomeIcon icon={['far', 'clock']} />
                                         </InputGroupText>
                                     </InputGroupAddon>
-                                    <Input type="select" value={time} name="time" onChange={handleChange} placeholder="Time"> 
-                                        <option value="time">Choose a time</option>
+                                    <Input type="select" value={time} name="time" onChange={handleChange} placeholder="Check-in-time"> 
+                                        <option value="time">Check-in-time</option>
                                         <option value="9AM TO 11AM">9AM TO 11AM</option>
                                         <option value="11:30AM TO 12:30PM">11:30AM TO 12:30PM</option>
                                         <option value="3PM TO 5PM">3PM TO 5PM</option>
@@ -178,22 +187,9 @@ const HomePageBookTable = () => {
                             <p>
                                 Hello {value.fullname}, thank you for successfully making a table reservation request
                             </p>
-                            <p>
-                                You will receive a confirmation receipt of your Reservation within the next 24 hours
+                            <p id="goto-payment">
+                                Please proceed to make <NavLink smooth to="/reservation#payment">payment</NavLink>
                             </p>
-                        </Col>
-                        <Col xs="12" className="reservation-buttons">
-                            <Row>
-                                <Col xs="12">
-                                        Want to Reschedule or Cancel?
-                                </Col>
-                                <Col xs="12" lg="6" className="my-3">
-                                    <Button type="button" className="modify-reservation reschedule">Reschedule Reservation</Button>
-                                </Col>
-                                <Col xs="12" lg="5" className="my-3">
-                                    <Button type="button" className="modify-reservation cancel">Cancel Reservation</Button>
-                                </Col>
-                            </Row>
                         </Col>
                     </Row>
                 </Col>
