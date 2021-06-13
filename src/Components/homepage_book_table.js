@@ -28,13 +28,14 @@ const HomePageBookTable = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // if(isChecked === false && e.target.name === ''){
-        //     alert('Agree by checking the box of Fill form details')
-        // }
-        // else{
+        if(isChecked === false || (fullname === '' || email === '' || phone === '' ||
+            date === '' || guests === '' || time === '')){
+            alert('Agree by checking the box and Fill form details')
+        }
+        else{
             setDivSlideIn(true)
             setIsClicked(true)
-        // }
+        }
     }
 
     const handleChange = (e) => {

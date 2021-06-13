@@ -47,12 +47,12 @@ const Header = () => {
         <>
             <Container fluid={true} className="d-none d-lg-block container-topbar nav-container">
                 <Row>
-                    <Col lg="8">
+                    <Col lg="8" xl="9">
                         <p>
-                            Phone no: +234-8088376911 or Email us: eat_here@bukattee.com
+                            Phone no: +234-8088376911 or Email us: eat_here@dabukatti.com
                         </p>
                     </Col>
-                    <Col lg="4" className="topbar-socials">
+                    <Col lg="4" xl="3" className="topbar-socials">
                         <span> Mon - Fri / 8am - 9pm / </span>
                         <span className="social-icons">
                             <NavLink href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 

@@ -1,9 +1,10 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {
-  About, ArrowUp, HomePage, Header, Faq, Footer, Guides, Order, Reservation
+  About, ArrowUp, HomePage, Header, Faq, Footer, Guides, Order, 
+  Reservation, ViewCart
 } from './Components'
-import './App.css';
+// import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -13,7 +14,7 @@ library.add(fab, far, fas)
 
 function App() {
   return (
-    <div className="App overlay">
+    <div className="App">
       <Router>
         {/* <Route exact path="/" component={LandingPage} />    */}
         <Header />
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/order" component={Order} />
           <Route path="/reservation" component={Reservation} />
+          <Route path="/view-cart-page" component={ViewCart} />
         </Switch>
         <ArrowUp />
         <Footer />

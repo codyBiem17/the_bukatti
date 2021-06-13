@@ -25,8 +25,8 @@ const Breakfast = () => {
                             {
                                 filteredFoodType.foodDetails.map(foodMenuDetails => {
                                     return (
-                                        <Col xs="12" sm="6" xl="4">
-                                            <Card className="mb-4 food-type food-combo" key={foodMenuDetails.id}>
+                                        <Col xs="12" sm="6" xl="4" key={foodMenuDetails.id}>
+                                            <Card className="mb-4 food-type food-combo" >
                                                 <Row className="p-3">
                                                     <Col xs="6">
                                                         <CardImg src={foodMenuDetails.foodImg.src} alt={foodMenuDetails.foodImg.altText} top width="100%" />
@@ -73,8 +73,8 @@ const Breakfast = () => {
                             {
                                 filteredFoodType.foodDetails.map(foodMenuDetails => {
                                     return (
-                                        <Col xs="12" sm="6" xl="4">
-                                            <Card className="mb-4 p-3 food-type" key={foodMenuDetails.id}>
+                                        <Col xs="12" sm="6" xl="4" key={foodMenuDetails.id}>
+                                            <Card className="mb-4 p-3 food-type">
                                                 <CardImg src={foodMenuDetails.foodImg.src} alt={foodMenuDetails.foodImg.altText} top width="100%" />
                                                 <CardBody>
                                                     <CardTitle tag="h5">{foodMenuDetails.foodItemName}</CardTitle>
@@ -111,8 +111,8 @@ const Breakfast = () => {
                             {
                                 filteredFoodType.foodDetails.map(foodMenuDetails => {
                                     return (
-                                        <Col xs="12" sm="6" xl="4">
-                                            <Card className="mb-4 p-3 food-type" key={foodMenuDetails.id}>
+                                        <Col xs="12" sm="6" xl="4" key={foodMenuDetails.id}>
+                                            <Card className="mb-4 p-3 food-type" >
                                                 <CardImg src={foodMenuDetails.foodImg.src} alt={foodMenuDetails.foodImg.altText} top width="100%" />
                                                 <CardBody>
                                                     <CardTitle tag="h5">{foodMenuDetails.foodItemName}</CardTitle>
@@ -149,8 +149,8 @@ const Breakfast = () => {
                             {
                                 filteredFoodType.foodDetails.map(foodMenuDetails => {
                                     return (
-                                        <Col xs="12" sm="6" xl="4">
-                                            <Card className="mb-4 p-3 food-type" key={foodMenuDetails.id}>
+                                        <Col xs="12" sm="6" xl="4" key={foodMenuDetails.id}>
+                                            <Card className="mb-4 p-3 food-type">
                                                 <CardImg src={foodMenuDetails.foodImg.src} alt={foodMenuDetails.foodImg.altText} top width="100%" />
                                                 <CardBody>
                                                     <CardTitle tag="h5">{foodMenuDetails.foodItemName}</CardTitle>
@@ -187,8 +187,8 @@ const Breakfast = () => {
                             {
                                 filteredFoodType.foodDetails.map(foodMenuDetails => {
                                     return (
-                                        <Col xs="12" sm="6" xl="4">
-                                            <Card className="mb-4 p-3 food-type" key={foodMenuDetails.id}>
+                                        <Col xs="12" sm="6" xl="4" key={foodMenuDetails.id}>
+                                            <Card className="mb-4 p-3 food-type">
                                                 <CardImg src={foodMenuDetails.drinkImg.src} alt={foodMenuDetails.drinkImg.altText} top width="100%" />
                                                 <CardBody>
                                                     <CardTitle tag="h5">{foodMenuDetails.foodItemName}</CardTitle>
