@@ -82,8 +82,9 @@ const About = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers bgImg-container">
-                <Row>
+            <Container fluid={true} className="containers bgImg-container1 containersImg">
+                <div className="overlay"></div>
+                <Row className="inner-section our-stats">
                     <Col xs="12" md="6" lg="3" className="restaurant-stats">
                         <p className="figures">20+</p>
                         <p> Tasty Dishes </p>
@@ -96,7 +97,7 @@ const About = () => {
                         <p className="figures">5</p>
                         <p> Restaurants </p>
                     </Col>
-                    <Col xs="12" md="6" className="restaurant-stats">
+                    <Col xs="12" md="6" lg="3" className="restaurant-stats">
                         <p className="figures">1000+</p>
                         <p> Happy Customers </p>
                     </Col>

@@ -148,9 +148,10 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers bgImg-container">
-                <Row>
-                    <Col className="order-section">
+            <Container fluid={true}  className="containers bgImg-container1 containersImg">
+                <div className="overlay"></div>
+                <Row className="inner-section">
+                    <Col>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                         {/* <Link to='/order'> */}
                             <Button type="button" onClick={handleClick} className="mt-2 order">
@@ -211,8 +212,9 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers bgImg-container" id="newsletter-section">
-                <Row>
+            <Container fluid={true}  className="containers bgImg-container2 containersImg" id="newsletter-section">
+                <div className="overlay"></div>
+                <Row className="inner-section">
                     <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
                     </Col>

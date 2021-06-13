@@ -61,10 +61,10 @@ const Order = () => {
                     </Col>
                     <Form xs="12" sm="6" onSubmit={handleSubmit}>
                         <FormGroup row className="mx-auto">
-                            <Label for="categories" xs="12" md="7">
+                            <Label for="categories" xs="12">
                                 Select Food Category
                             </Label>
-                            <Col xs="12" md="5">
+                            <Col xs="12">
                                 <InputGroup>
                                     <Input type="select" value={value} onChange={handleChange} id="categories" placeholder="Category"> 
                                         <option value="Breakfast">Breakfast</option>
