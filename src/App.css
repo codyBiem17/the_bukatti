@@ -270,6 +270,10 @@ button.order:hover, button.newsletter:hover{
   border-radius: 5px;
   padding: 20px;
 }
+#newsletter-caption{
+  color: white !important;
+  text-transform: capitalize;
+}
 button.booking, .btn.modify-reservation{
   text-transform: uppercase;
   padding: 20px 15px;
@@ -656,17 +660,26 @@ button.close-modal span{
 
 /* -------------------View-Cart page css----------------
 ----------------------------------------------- */
-.table-foodItems img{
-  width: 50%;
-  height: auto;
-}
-
 td.plus-or-minus span:nth-child(2) svg{
   margin: 0 10px;
 }
+.hide-show-th-tb p:nth-child(2){
+  color: tomato;
+}
+.hide-show-th-tb p:nth-child(2), .hide-show-th-tb p:nth-child(3){
+  line-height: .5em
+}
+
+
 
 /* -------------------media queries----------------
 ----------------------------------------------- */
+@media only screen and (max-width: 767px){
+  .hide-show-th-tb{
+    display: none;
+  }
+}
+
 @media only screen and  (min-width: 768px){
   #signup{
     margin-top: 0;
@@ -740,6 +753,12 @@ td.plus-or-minus span:nth-child(2) svg{
   }
 }
 
+@media only screen and (max-width: 991px){
+  .foodItemImg{
+    display: none;
+  }
+}
+
 @media only screen and  (min-width: 992px){
   .sticky{
     position: fixed;
@@ -756,8 +775,7 @@ td.plus-or-minus span:nth-child(2) svg{
     position: relative;
     top: 0;
   }
-  .carousel-item > img{ 
-    width: 100%; 
+  .carousel-item > img{  
     height: 600px;
   }
   .containersImg{
@@ -772,6 +790,22 @@ td.plus-or-minus span:nth-child(2) svg{
     position: relative;
     top: 100px;
     transform: translate(5px, 50px);
+  }
+  .hide-show-th-tb p:nth-child(2), .hide-show-th-tb p:nth-child(3){
+    line-height: .8em
+  }
+  .foodItemImg{
+    width: 30%;
+  }
+  .foodItemImg img{
+    max-width: 20%;
+    height: auto;
+  }  
+}
+
+@media only screen and (min-width: 1200px){
+  .carousel-item > img{  
+    height: 900px;
   }
 }
 

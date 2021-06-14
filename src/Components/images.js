@@ -89,7 +89,7 @@ export const foodMenu = [
         plus: '&#43;',
         foodItemName: 'Lorem Ipsum yenyen',
         foodItemMakeUp: 'Bla de bla, bla de bla',
-        amount: '&#8358;500',
+        amount: '&#8358; 500',
     },
     {
         id: 2,
@@ -105,7 +105,7 @@ export const foodMenu = [
         plus: '&#43;',
         foodItemName: 'Lorem Ipsum yenyen',
         foodItemMakeUp: 'Bla de bla, bla de bla',
-        amount: '&#8358;500',
+        amount: '&#8358; 500',
     },
     {
         id: 3,
@@ -121,7 +121,7 @@ export const foodMenu = [
         plus: '&#43;',
         foodItemName: 'Lorem Ipsum yenyen',
         foodItemMakeUp: 'Bla de bla, bla de bla',
-        amount: '&#8358;500',
+        amount: '&#8358; 500',
     },
     {
         id: 4,
@@ -133,7 +133,7 @@ export const foodMenu = [
         plus: '&#43;',
         foodItemName: 'Lorem Ipsum yenyen',
         foodItemMakeUp: 'Bla de bla, bla de bla',
-        amount: '&#8358;500',
+        amount: '&#8358; 500',
     },
     {
         id: 5,
@@ -145,7 +145,7 @@ export const foodMenu = [
         plus: '&#43;',
         foodItemName: 'Lorem Ipsum yenyen',
         foodItemMakeUp: 'Bla de bla, bla de bla',
-        amount: '&#8358;500',
+        amount: '&#8358; 500',
     },
     {
         id: 6,
@@ -157,7 +157,7 @@ export const foodMenu = [
         plus: '&#43;',
         foodItemName: 'Lorem Ipsum yenyen',
         foodItemMakeUp: 'Bla de bla, bla de bla',
-        amount: '&#8358;500',
+        amount: '&#8358; 500',
     }
 ]
 
@@ -214,7 +214,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -229,7 +229,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -244,7 +244,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -259,7 +259,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -276,7 +276,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -287,7 +287,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -298,7 +298,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -309,7 +309,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -326,7 +326,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -337,7 +337,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -348,7 +348,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -359,7 +359,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -376,7 +376,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -387,7 +387,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -398,7 +398,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -409,7 +409,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -426,7 +426,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -437,7 +437,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -448,7 +448,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -459,7 +459,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             }
@@ -485,7 +485,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -500,7 +500,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -515,7 +515,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -530,7 +530,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -547,7 +547,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -558,7 +558,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -569,7 +569,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -580,7 +580,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -597,7 +597,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -608,7 +608,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -619,7 +619,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -630,7 +630,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -647,7 +647,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -658,7 +658,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -669,7 +669,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -680,7 +680,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -697,7 +697,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -708,7 +708,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -719,7 +719,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -730,7 +730,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             }
@@ -756,7 +756,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -771,7 +771,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -786,7 +786,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -801,7 +801,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -818,7 +818,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -829,7 +829,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -840,7 +840,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -851,7 +851,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -868,7 +868,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -879,7 +879,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -890,7 +890,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -901,7 +901,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             },
@@ -918,7 +918,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 2,
@@ -929,7 +929,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 3,
@@ -940,7 +940,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                     {
                         id: 4,
@@ -951,7 +951,7 @@ export const mainFoodMenu = [
                         plus: '&#43;',
                         foodItemName: 'Lorem Ipsum yenyen',
                         foodItemMakeUp: 'Bla de bla, bla de bla',
-                        amount: '&#8358;500',
+                        amount: '&#8358; 500',
                     },
                 ]
             }

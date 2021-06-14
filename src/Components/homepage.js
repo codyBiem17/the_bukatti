@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import { useHistory } from 'react-router-dom'
 import 
@@ -11,12 +11,28 @@ import { decode } from 'html-entities'
 
 import { 
     Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
-     Form, Input, InputGroup, InputGroupAddon, InputGroupText,
+     Form, Input, InputGroup, InputGroupAddon, FormText,
  } from 'reactstrap'
 
 
 
 const HomePage = () => {
+    const [email, setEmail] = useState('')
+
+    const handleChange = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handleSubmitEmail = (e) => {
+        e.preventDefault()
+        if (email === ''){
+            alert('Please enter your email')
+        }
+        else{
+            alert('Thank you for subscribing for our weekly newsletters')
+            setEmail('')
+        }
+    }
 
     const history = useHistory();
 
@@ -219,16 +235,17 @@ const HomePage = () => {
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
                     </Col>
                     <Col xs="12" md="8" className="mx-auto">
-                        <Form id="newsletter-form">
+                        <Form id="newsletter-form" onSubmit={handleSubmitEmail}>
                             <Row>
                                 <Col>
+                                    <FormText id="newsletter-caption">Please enter a valid email account</FormText>
                                     <InputGroup>
-                                        <InputGroupAddon addonType="prepend">
-                                            <InputGroupText>
+                                        <Input type="email" value={email} onChange={handleChange} placeholder="Enter your email" />
+                                        <InputGroupAddon addonType="append">
+                                            <Button type="submit" id="envelope-button">
                                                 <FontAwesomeIcon icon={['far', 'envelope']} />
-                                            </InputGroupText>
+                                            </Button>
                                         </InputGroupAddon>
-                                        <Input type="email" placeholder="Enter your email" />
                                     </InputGroup>
                                 </Col>
                             </Row>

@@ -11,11 +11,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const ViewCart = () => {
     const [value, setValue] = useState(1)
     const [subtotalValue, setSubtotalValue] = useState(500)
+    
 
     const plusIcon = () => {
         if(value < 25){
-            setValue(prevState => prevState + 1)
-            setSubtotalValue( subtotalValue * value)
+            let nextVal = value + 1
+            setValue(nextVal)
+            setSubtotalValue( 500 * nextVal)
         }
         else{
             alert('Daily food order can not be more than 25')
@@ -24,12 +26,13 @@ const ViewCart = () => {
 
     const minusIcon = () => {
         if(value > 1){
-            setValue(prevState => prevState - 1)
-            setSubtotalValue( subtotalValue * value)
+            let prevVal = value - 1
+            setValue(prevVal)
+            setSubtotalValue( 500 * prevVal)
         }
         else{
             setValue(1)
-            setSubtotalValue( subtotalValue * value)
+            setSubtotalValue(500)
         }
         
     }
@@ -53,15 +56,39 @@ const ViewCart = () => {
                 <Row>
                     <Col xs="12">
                         <Table>
-                            <thead className="d-none">
+                            <thead className="hide-show-th-tb">
                                 <tr>
                                     <th>FoodItem</th>
+                                    <th className="foodItemImg">FoodItem Image</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
-                                    <th>{subtotalValue}</th>
+                                    <th>Subtotal</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="hide-show-th-tb">
+                                <td>
+                                    <p>Jollof Rice + Coke</p>
+                                    <p> Expect: </p> 
+                                    <p>(JollofRice, Chicken and Pet Coke) </p>
+                                </td>
+                                <td className="foodItemImg">
+                                    <img src={Jelof} alt="jollof-rice" />
+                                    <img src={PetCoke} alt="pet-coke" />
+                                </td>
+                                <td>
+                                    {decode('&#8358;')} 500
+                                </td>
+                                <td className="plus-or-minus">
+                                    <span> {value} </span>
+                                    <span>
+                                        <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} />
+                                        <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} />
+                                    </span>
+                                </td>
+                                <td>{decode('&#8358;')} {subtotalValue}</td>
+                            </tbody>
+
+                            <tbody className="d-md-none">
                                 <tr>
                                     <td>FoodItem</td>
                                     <td>
@@ -94,7 +121,7 @@ const ViewCart = () => {
                                 <tr>
                                     <td>Subtotal</td>
                                     <td>
-                                        {decode('&#8358;')} 500
+                                        {decode('&#8358;')} {subtotalValue}
                                     </td>
                                 </tr>
                             </tbody>
