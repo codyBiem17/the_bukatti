@@ -1,18 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
-import {AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices } from '../Components'
+import { useHistory } from 'react-router-dom'
+import 
+{
+    AddToCartBtn, customers, foodMenu, HomePageBookTable, ourServices 
+} from '../Components'
 import Waiter from '../assets/images/waiter.jfif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { decode } from 'html-entities'
 
 import { 
     Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
-     Form, Input, InputGroup, InputGroupAddon, InputGroupText,
+     Form, Input, InputGroup, InputGroupAddon, FormText,
  } from 'reactstrap'
 
 
 
 const HomePage = () => {
+    const [email, setEmail] = useState('')
+
+    const handleChange = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handleSubmitEmail = (e) => {
+        e.preventDefault()
+        if (email === ''){
+            alert('Please enter your email')
+        }
+        else{
+            alert('Thank you for subscribing for our weekly newsletters')
+            setEmail('')
+        }
+    }
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/order')
+    }
   
     const servicesSection = ourServices.map( service => {
         return (
@@ -96,7 +122,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Container fluid={true} className="containers container-2" >
+            <Container fluid={true} className="containers container-bg-white" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Now You Are Here!</p> 
@@ -122,7 +148,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-3" >
+            <Container fluid={true} className="containers container-3 container-bg-ash" >
                 <Row> 
                     <Col xs="12">
                         <p className="para-header">Our Services</p> 
@@ -138,20 +164,26 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers container-4">
-                <Row>
-                    <Col className="order-section">
+            <Container fluid={true}  className="containers bgImg-container1 containersImg">
+                <div className="overlay"></div>
+                <Row className="inner-section">
+                    <Col>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <Button className="mt-2 order">Order Now</Button>
+                        {/* <Link to='/order'> */}
+                            <Button type="button" onClick={handleClick} className="mt-2 order">
+                                Order Now
+                            </Button>
+                        {/* </Link> */}
+                        {/* <Button tag={link} to='/order' className="mt-2 order">Order Now</Button> */}
                     </Col>
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-5">
+            <Container fluid={true} className="containers container-bg-white">
                 <HomePageBookTable />
             </Container>
 
-            <Container fluid={true} className="containers container-6">
+            <Container fluid={true} className="containers container-bg-ash">
                 <Row>
                     <Col xs="12"> 
                         <p className="para-header"> Our Food Menu </p>
@@ -196,22 +228,24 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container  className="containers container-7">
-                <Row>
+            <Container fluid={true}  className="containers bgImg-container2 containersImg" id="newsletter-section">
+                <div className="overlay"></div>
+                <Row className="inner-section">
                     <Col xs="12">
                         <p>Subscribe for NewsLetter to get upcoming events and our special recipes</p>
                     </Col>
                     <Col xs="12" md="8" className="mx-auto">
-                        <Form id="newsletter-form">
+                        <Form id="newsletter-form" onSubmit={handleSubmitEmail}>
                             <Row>
                                 <Col>
+                                    <FormText id="newsletter-caption">Please enter a valid email account</FormText>
                                     <InputGroup>
-                                        <InputGroupAddon addonType="prepend">
-                                            <InputGroupText>
+                                        <Input type="email" value={email} onChange={handleChange} placeholder="Enter your email" />
+                                        <InputGroupAddon addonType="append">
+                                            <Button type="submit" id="envelope-button">
                                                 <FontAwesomeIcon icon={['far', 'envelope']} />
-                                            </InputGroupText>
+                                            </Button>
                                         </InputGroupAddon>
-                                        <Input type="email" placeholder="Enter your email" />
                                     </InputGroup>
                                 </Col>
                             </Row>
@@ -220,7 +254,7 @@ const HomePage = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-8">
+            <Container fluid={true} className="containers container-bg-white">
                 <Row> 
                     <Col xs="12">
                         <p className="para-header"> Testimonies </p> 

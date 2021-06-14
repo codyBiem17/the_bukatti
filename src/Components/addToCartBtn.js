@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import {Button} from'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
+
 
 
 const AddToCartBtn = () =>{
@@ -31,7 +32,7 @@ const AddToCartBtn = () =>{
             <Button className="p-3 added-btn" style={style}>
                 {showBtnText.text} {showBtnText.icon} 
             </Button>
-            <span> <NavLink to="#" className="view-cart">{showMessage}</NavLink></span>
+            <span> <NavLink to="/view-cart-page" className="view-cart">{showMessage}</NavLink></span>
         </> : 
         <Button id="btn-cart" onClick={handleAddToCart} className="p-3">
             {showBtnText.text}

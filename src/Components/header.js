@@ -1,47 +1,78 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { HashLink as Link } from 'react-router-hash-link'
 import { heroImages } from '../Components'
 import { 
-        Container, Row, Col, 
+        Button, Container, Row, Col, 
         Navbar, NavbarBrand, NavbarToggler,
         Nav, NavItem, NavLink, Collapse, 
         UncontrolledCarousel,
-           
         } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Header = () => {
     const [collapsed, setCollapsed] = useState(false)
-    // const [currentImage, setCurrentImage] = useState(0)
+    const [scrolled, setScrolled] = useState(false)
 
+    const mediaMatch = window.matchMedia('(min-width: 992px)')
+
+    
+    const signupBtn = () => {
+        if(collapsed){
+            setCollapsed(false)
+        }
+    }
+   
     const toggleNavbar = () => {
         setCollapsed(!collapsed)
     }
+ 
+    const handleScroll = () => {
+        const pageYOffset = window.pageYOffset
+
+        if(pageYOffset > 200 ){
+            setScrolled(true)
+        }
+        else{
+            setScrolled(false)
+        }
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    })
    
 
     return (
         <>
             <Container fluid={true} className="d-none d-lg-block container-topbar nav-container">
                 <Row>
-                    <Col lg="8">
+                    <Col lg="8" xl="9">
                         <p>
-                            Phone no: +2348088376911 or Email us: eat_here@bukattee.com
+                            Phone no: +234-8088376911 or Email us: eat_here@dabukatti.com
                         </p>
                     </Col>
-                    <Col lg="4" className="topbar-socials">
+                    <Col lg="4" xl="3" className="topbar-socials">
                         <span> Mon - Fri / 8am - 9pm / </span>
                         <span className="social-icons">
-                            <a href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
+                            <NavLink href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
                                 <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
-                            </a>
-                            <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
-                            <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
+                            </NavLink>
+                            <NavLink href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </NavLink>
+                            <NavLink href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </NavLink>
                         </span>
                     </Col>
                 </Row>
             </Container>
             
-            <Container fluid={true}  className="nav-container">
+            <Container 
+                fluid={true}  
+                className={ 
+                    scrolled && mediaMatch.matches ? 'sticky' : 
+                    scrolled && mediaMatch.matches === false ? 'navbar-container' :
+                    'navbar-container'
+                }
+            >
                 <Row>
                     <Col>
                         <Navbar color="dark" dark expand="md">
@@ -50,19 +81,27 @@ const Header = () => {
                             <Collapse isOpen={collapsed} navbar>
                                 <Nav className="ml-auto" navbar>
                                     <NavItem>
-                                        <NavLink href="/">Home</NavLink>
+                                        <NavLink  href="/">Home</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="/about">About</NavLink>
+                                        <NavLink  href="/about">About</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="/order">Order</NavLink>
+                                        <NavLink  href="/order">Order</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Faq</NavLink>
+                                        <NavLink  href="/reservation">Reservation</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink href="#">Reservation</NavLink>
+                                        <NavLink  href="/faq">Faq</NavLink>
+                                    </NavItem>
+                                     {/* <NavItem>
+                                        <NavLink  href="/auth" id="signin">Sign in</NavLink>
+                                    </NavItem> */}
+                                    <NavItem>
+                                        <Button type="button" onClick={signupBtn} tag={Link} smooth to="/#newsletter-section" id="signup" >
+                                            Sign Up
+                                        </Button>
                                     </NavItem>
                                 </Nav>
                             </Collapse>
@@ -71,13 +110,14 @@ const Header = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true}  className="homepage-container">
+            <Container fluid={true}  className="homepage-container carousel-container">
                 <Row id="heroImg-wrapper">
-                    <Col className="imageSlider" id="heroImg">
+                    <Col xs="12" className="imageSlider" id="heroImg">
                         <UncontrolledCarousel items={heroImages} interval={4000} indicators={false} controls={false} />
                     </Col>
+                    <Col xs="12" className="wavyPattern"></Col>
                 </Row>
-            </Container>
+            </Container> 
         </>
     )
 }

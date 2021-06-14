@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    Container, Row, Col
+    Container, Row, Col, NavLink
 } from 'reactstrap'
 
 const Footer = () => {
@@ -26,11 +26,11 @@ const Footer = () => {
                 <Col xs="12" md="6">
                     <p>CONNECT WITH US</p>
                     <p className="social-icons">
-                        <a href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
+                        <NavLink href="https://wa.me/send?phone=2348088376911&amp;text=Hi there!, I love your bukattee app"> 
                                 <FontAwesomeIcon icon={['fab', 'whatsapp']} /> 
-                        </a>
-                        <a href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </a>
-                        <a href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </a>
+                        </NavLink>
+                        <NavLink href="https://www.linkedin.com/in/bellomaryam/"> <FontAwesomeIcon icon={['fab', 'linkedin-in']} /> </NavLink>
+                        <NavLink href="https://twitter.com/codyBiem"> <FontAwesomeIcon icon={['fab', 'twitter']} /> </NavLink>
                     </p>
                 </Col>
             </Row>   
