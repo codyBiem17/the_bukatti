@@ -663,11 +663,16 @@ button.close-modal span{
 td.plus-or-minus span:nth-child(2) svg{
   margin: 0 10px;
 }
-.hide-show-th-tb p:nth-child(2){
+.hide-show-th-tb p:nth-child(2), .hide-at-md p:nth-child(2){
   color: tomato;
 }
-.hide-show-th-tb p:nth-child(2), .hide-show-th-tb p:nth-child(3){
+.hide-show-th-tb p:nth-child(2), .hide-show-th-tb p:nth-child(3),
+.hide-at-md p:nth-child(2){
   line-height: .5em
+}
+.order-summary{
+  border: 1px solid #ced4da;
+  border-radius: 5px;
 }
 
 
