@@ -29,7 +29,7 @@ const ViewCart = () => {
     const plusIcon = () => {
         if(value < 25){
             nextVal = value + 1
-            newSubtotal = 500 * nextVal
+            newSubtotal = (500 * nextVal)
             setValue(nextVal)
             setSubtotalValue(newSubtotal)
 
@@ -46,6 +46,8 @@ const ViewCart = () => {
             alert('Daily food order can not be more than 25')
         }
     }
+
+    
 
     const minusIcon = () => {
         if(value > 1){
@@ -74,17 +76,25 @@ const ViewCart = () => {
         if(fullname !== "" && phone !== "" && location !== ""){
             setDisabled(false)
         }
-        locations.filter(filterLocation => 
-            filterLocation.location === location).map(bm => {
-                return(
-                    setDeliveryFee(bm.deliveryFee)
-                )
-            })
+
+      const deliveryCharge = locations.filter(data => data.location === e.target.value)
+      console.log(deliveryCharge[0].deliveryFee)
+      setDeliveryFee(deliveryCharge[0].deliveryFee)
+      setTotal(total + deliveryCharge[0].deliveryFee)
+        // locations.filter(filterLocation => 
+        //     filterLocation.location === location).map(bm => {
+        //         return(
+        //             setDeliveryFee(bm.deliveryFee)
+        //         )
+        //     })
+            // console.log(filterLocation.deliveryFee)
+            // console.log('>>>>>', location)
     }
 
     
 
     const recipientLocation = locations.map((filterLocation, index) => {
+        // console.log(filterLocation.deliveryFee)
         return(
             <option key={index} value={filterLocation.location}> {filterLocation.location} </option>
         )
