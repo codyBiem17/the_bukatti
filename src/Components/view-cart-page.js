@@ -16,7 +16,7 @@ const ViewCart = () => {
     const [subtotalValue, setSubtotalValue] = useState(500)
     const [total, setTotal] = useState(500)
     const [deliveryFee, setDeliveryFee] = useState(0)
-    const [disabled, setDisabled] = useState(true)
+  
     const [orderDetails, setOrderDetails] = useState({
         fullname: "",
         phone: "",
@@ -32,14 +32,7 @@ const ViewCart = () => {
             newSubtotal = (500 * nextVal)
             setValue(nextVal)
             setSubtotalValue(newSubtotal)
-
-            // const delivery = locations.filter(filterLocation => 
-            //     filterLocation.location === location).map(bm => {
-            //         return(
-            //             setDeliveryFee(bm.deliveryFee)
-            //         )
-            //     })
-        setTotal( newSubtotal )    
+            setTotal( newSubtotal + deliveryFee )    
 
         }
         else{
@@ -67,34 +60,27 @@ const ViewCart = () => {
             alert("Please enter details of the form")
         }
         else{
-            setDisabled(false)
+            alert("Your food is on the way")
         }
     }
 
     const handleChange = (e) => {
         setOrderDetails({...orderDetails, [e.target.name]: e.target.value})
-        if(fullname !== "" && phone !== "" && location !== ""){
-            setDisabled(false)
-        }
+     
+        const deliveryCharge = locations.filter(data => data.location === e.target.value)
+        console.log(deliveryCharge[0].deliveryFee)
+        // if(deliveryCharge[0].deliveryFee !== 0){
+            // setTotal(total)
 
-      const deliveryCharge = locations.filter(data => data.location === e.target.value)
-      console.log(deliveryCharge[0].deliveryFee)
-      setDeliveryFee(deliveryCharge[0].deliveryFee)
-      setTotal(total + deliveryCharge[0].deliveryFee)
-        // locations.filter(filterLocation => 
-        //     filterLocation.location === location).map(bm => {
-        //         return(
-        //             setDeliveryFee(bm.deliveryFee)
-        //         )
-        //     })
-            // console.log(filterLocation.deliveryFee)
-            // console.log('>>>>>', location)
+        // }
+        setDeliveryFee(deliveryCharge[0].deliveryFee)
+        setTotal(total + deliveryCharge[0].deliveryFee)
+        
     }
 
     
 
     const recipientLocation = locations.map((filterLocation, index) => {
-        // console.log(filterLocation.deliveryFee)
         return(
             <option key={index} value={filterLocation.location}> {filterLocation.location} </option>
         )
@@ -192,60 +178,61 @@ const ViewCart = () => {
                 </Row>
                 <Row className="mt-4">
                     <Col xs="12">
-                        <Form onSubmit={handleSubmit}>
-                            <FormGroup>
-                                <Label for="recipient">Recipient's name</Label>
-                                <Input 
-                                    type="text" 
-                                    value={fullname} 
-                                    name="fullname" 
-                                    id="recipient" 
-                                    onChange={handleChange}
-                                 />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="phone">Recipient's Phone no.</Label>
-                                <Input 
-                                    type="number" 
-                                    value={phone} 
-                                    name="phone" 
-                                    id="phone"
-                                    onChange={handleChange} 
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="location">Select Delivery location</Label>
-                                <Input type="select" value={location} name="location" id="location" onChange={handleChange}>
-                                    {/* <option value="VI">VI</option>
-                                    <option value="Ikorodu">Ikorodu</option>
-                                    <option value="Yaba">Yaba</option>
-                                    <option value="Lekki">Lekki</option> */}
-                                    {recipientLocation}
-                                </Input>
-                            </FormGroup>
+                        <Form row onSubmit={handleSubmit}>
+                            <Col xs="12">
+                                <FormGroup>
+                                    <Label for="recipient">Recipient's name</Label>
+                                    <Input 
+                                        type="text" 
+                                        value={fullname} 
+                                        name="fullname" 
+                                        id="recipient" 
+                                        onChange={handleChange}
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="phone">Recipient's Phone no.</Label>
+                                    <Input 
+                                        type="number" 
+                                        value={phone} 
+                                        name="phone" 
+                                        id="phone"
+                                        onChange={handleChange} 
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="location">Select Delivery location</Label>
+                                    <Input type="select" value={location} name="location" id="location" onChange={handleChange}>
+                                        {recipientLocation}
+                                    </Input>
+                                </FormGroup>
+                            </Col>
+                            
+                            <Col xs="11" xl="6" className="order-summary my-4 mx-auto">
+                                <Table borderless>
+                                    <tbody>
+                                        <p className="mt-2">Food Order Details for {fullname}</p>
+                                        <tr>
+                                            <th scope="row">Food Item</th>
+                                            <td>{subtotalValue}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Delivery Fee</th>
+                                            <td> {deliveryFee} </td>
+                                        </tr> 
+                                        <tr>  
+                                            <th scope="row">Total</th>
+                                            <td> {total} </td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </Col>
+                            <Col xs="12">
+                                <Button className="mt-2 payment-btn">
+                                    Proceed To Checkout 
+                                </Button>
+                            </Col>
                         </Form>
-                    </Col>
-                    <Col xs="11" className="order-summary my-4 mx-auto">
-                        <Table borderless>
-                            <tbody>
-                                <p className="mt-2">Food Order Details for xyz</p>
-                                <tr>
-                                    <th scope="row">Food Item</th>
-                                    <td>{subtotalValue}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Delivery Fee</th>
-                                    <td> {deliveryFee} </td>
-                                </tr> 
-                                <tr>  
-                                    <th scope="row">Total</th>
-                                    <td> {total} </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    </Col>
-                    <Col xs="12">
-                        <Button disabled={disabled}> Checkout </Button>
                     </Col>
                 </Row>
             </Container>
