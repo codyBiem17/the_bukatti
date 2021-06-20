@@ -16,6 +16,8 @@ const ViewCart = () => {
     const [subtotalValue, setSubtotalValue] = useState(500)
     const [total, setTotal] = useState(500)
     const [deliveryFee, setDeliveryFee] = useState(0)
+    const [isDelete, setIsDelete] = useState(true)
+    const [isEmpty, setIsEmpty] = useState(false)
   
     const [orderDetails, setOrderDetails] = useState({
         fullname: "",
@@ -39,8 +41,6 @@ const ViewCart = () => {
             alert('Daily food order can not be more than 25')
         }
     }
-
-    
 
     const minusIcon = () => {
         if(value > 1){
@@ -69,16 +69,16 @@ const ViewCart = () => {
      
         const deliveryCharge = locations.filter(data => data.location === e.target.value)
         console.log(deliveryCharge[0].deliveryFee)
-        // if(deliveryCharge[0].deliveryFee !== 0){
-            // setTotal(total)
-
-        // }
         setDeliveryFee(deliveryCharge[0].deliveryFee)
-        setTotal(total + deliveryCharge[0].deliveryFee)
+        let oldTotal = subtotalValue
+        setTotal(oldTotal + deliveryCharge[0].deliveryFee)
         
     }
 
-    
+    const handleDelete = () => {
+        setIsDelete(false)
+        setIsEmpty(true)
+    }
 
     const recipientLocation = locations.map((filterLocation, index) => {
         return(
@@ -101,7 +101,7 @@ const ViewCart = () => {
                 </Row>
             </Container>
 
-            <Container fluid={true} className="containers container-bg-white">
+            <Container fluid={true} className={isDelete ? "containers container-bg-white" : "remove-container-item"}>
                 <Row>
                     <Col xs="12">
                         <Table>
@@ -116,8 +116,11 @@ const ViewCart = () => {
                                 </tr>
                             </thead>
                             <tbody className="hide-show-th-tb">
-                                <td> 
-                                    <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
+                                <td class="trash-icon" onClick={handleDelete}> 
+                                    {
+                                        isDelete &&
+                                        <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
+                                    }
                                 </td>
                                 <td>
                                     <p>Jollof Rice + Coke</p>
@@ -132,18 +135,21 @@ const ViewCart = () => {
                                     {decode('&#8358;')} 500
                                 </td>
                                 <td className="plus-or-minus">
+                                    <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
                                     <span> {value} </span>
-                                    <span>
-                                        <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} />
-                                        <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} />
-                                    </span>
+                                    <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
                                 </td>
                                 <td>{decode('&#8358;')} {subtotalValue}</td>
                             </tbody>
 
                             <tbody className="d-md-none hide-at-md">
                                 <tr>
-                                    <th scope="row">FoodItem</th>
+                                    <th scope="row">
+                                        <span>
+                                            <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
+                                        </span>
+                                        FoodItem
+                                    </th>
                                     <td>
                                         <p>Jollof Rice + Coke</p>
                                         <p> Expect: </p> 
@@ -159,11 +165,9 @@ const ViewCart = () => {
                                 <tr>
                                     <th scope="row">Quantity</th>
                                     <td className="plus-or-minus">
+                                        <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
                                         <span> {value} </span>
-                                        <span>
-                                            <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} />
-                                            <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} />
-                                        </span>
+                                        <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -236,6 +240,17 @@ const ViewCart = () => {
                     </Col>
                 </Row>
             </Container>
+
+            {
+                isEmpty &&
+                <Container className="containers container-bg-white empty-cart">
+                    <Row>
+                        <Col xs="12">
+                            No food item in your cart
+                        </Col>
+                    </Row>
+                </Container>
+            }
         </>
     )
 }

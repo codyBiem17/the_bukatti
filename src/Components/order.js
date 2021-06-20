@@ -74,7 +74,7 @@ const Order = () => {
                                     </Input>
                                     <InputGroupAddon addonType="append">
                                         <Button type="submit" id="search-button">
-                                            <FontAwesomeIcon icon="search" />
+                                            Search
                                         </Button>
                                     </InputGroupAddon>
                                 </InputGroup>

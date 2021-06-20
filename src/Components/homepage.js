@@ -11,7 +11,7 @@ import { decode } from 'html-entities'
 
 import { 
     Button, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col, 
-     Form, Input, InputGroup, InputGroupAddon, FormText,
+     Form, Input, InputGroup, InputGroupAddon, InputGroupText, FormText,
  } from 'reactstrap'
 
 
@@ -240,10 +240,15 @@ const HomePage = () => {
                                 <Col>
                                     <FormText id="newsletter-caption">Please enter a valid email account</FormText>
                                     <InputGroup>
+                                        <InputGroupAddon addonType="prepend">
+                                            <InputGroupText>
+                                                <FontAwesomeIcon icon={['far', 'envelope']} />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
                                         <Input type="email" value={email} onChange={handleChange} placeholder="Enter your email" />
                                         <InputGroupAddon addonType="append">
                                             <Button type="submit" id="envelope-button">
-                                                <FontAwesomeIcon icon={['far', 'envelope']} />
+                                                Submit
                                             </Button>
                                         </InputGroupAddon>
                                     </InputGroup>
