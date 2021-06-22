@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 
 
 
-const AddToCartBtn = () =>{
+const AddToCartBtn = () => {
     const [isClicked, setIsClicked] = useState(false)
     const [showBtnText, setShowBtn] = useState({text: 'Add to cart'})
     const [showMessage, setShowMessage] = useState('')
@@ -16,8 +16,20 @@ const AddToCartBtn = () =>{
         const checkIcon = <FontAwesomeIcon icon="check" />
         setShowBtn({text: 'Added', icon: checkIcon})
         setShowMessage('View Cart')
+
+        setTimeout(()=>{
+            setShowBtn({text: 'Add to cart'})
+        }, 3000)
     }
     
+    // const cartItems = (items) => {
+    //     let food_items = []
+    //     food_items.push(items)
+    //     return food_items
+    // }
+
+    // let added_items = cartItems({id: 1, id: 2})
+    // localStorage.setItem('food_items', added_items)
 
     const style = {
         backgroundColor: '#198754',
@@ -29,7 +41,7 @@ const AddToCartBtn = () =>{
         
        isClicked ? 
        <>
-            <Button className="p-3 added-btn" style={style}>
+            <Button className="p-3 added-btn" style={style} >
                 {showBtnText.text} {showBtnText.icon} 
             </Button>
             <span> <NavLink to="/view-cart-page" className="view-cart">{showMessage}</NavLink></span>

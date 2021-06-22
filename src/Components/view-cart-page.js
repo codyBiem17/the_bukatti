@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { locations } from '../Components'
 import {
     Container, Row, Col, Breadcrumb, BreadcrumbItem, Button,
-    Label, Input, Form, FormGroup, Table
+    Label, Input, Form, FormGroup, Modal, ModalBody, Table
 } from 'reactstrap'
 import Jelof from '../assets/images/jollof_rice_dodo.jpg'
 import PetCoke from '../assets/images/coke-pet-trans.png'
 import { decode } from 'html-entities'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 
@@ -18,6 +19,8 @@ const ViewCart = () => {
     const [deliveryFee, setDeliveryFee] = useState(0)
     const [isDelete, setIsDelete] = useState(true)
     const [isEmpty, setIsEmpty] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+    const [successMsg, setSuccessMsg] = useState('')
   
     const [orderDetails, setOrderDetails] = useState({
         fullname: "",
@@ -54,24 +57,31 @@ const ViewCart = () => {
         }   
     }
 
-    const handleSubmit = (e) => {
+    const toggleCheckout = (e) => {
         e.preventDefault()
         if(fullname === "" || phone === "" || location === ""){
             alert("Please enter details of the form")
         }
         else{
-            alert("Your food is on the way")
+            // alert("Your food is on the way")
+            setIsOpen(!isOpen)
         }
+    }
+
+    const handleFinalCheckout = (e) => {
+        e.preventDefault()
+        setSuccessMsg('Yaaay!!! Food order successful. Your food is on the way')
     }
 
     const handleChange = (e) => {
         setOrderDetails({...orderDetails, [e.target.name]: e.target.value})
      
-        const deliveryCharge = locations.filter(data => data.location === e.target.value)
-        console.log(deliveryCharge[0].deliveryFee)
-        setDeliveryFee(deliveryCharge[0].deliveryFee)
-        let oldTotal = subtotalValue
-        setTotal(oldTotal + deliveryCharge[0].deliveryFee)
+        if(e.target.name === "location"){
+            const deliveryCharge = locations.filter(data => data.location === e.target.value)
+            setDeliveryFee(deliveryCharge[0].deliveryFee)
+            let oldTotal = subtotalValue
+            setTotal(oldTotal + deliveryCharge[0].deliveryFee)
+        }
         
     }
 
@@ -79,6 +89,7 @@ const ViewCart = () => {
         setIsDelete(false)
         setIsEmpty(true)
     }
+
 
     const recipientLocation = locations.map((filterLocation, index) => {
         return(
@@ -182,7 +193,7 @@ const ViewCart = () => {
                 </Row>
                 <Row className="mt-4">
                     <Col xs="12">
-                        <Form row onSubmit={handleSubmit}>
+                        <Form row onSubmit={toggleCheckout}>
                             <Col xs="12">
                                 <FormGroup>
                                     <Label for="recipient">Recipient's name</Label>
@@ -232,7 +243,7 @@ const ViewCart = () => {
                                 </Table>
                             </Col>
                             <Col xs="12">
-                                <Button className="mt-2 payment-btn">
+                                <Button type="submit" className="mt-2 payment-btn">
                                     Proceed To Checkout 
                                 </Button>
                             </Col>
@@ -240,6 +251,28 @@ const ViewCart = () => {
                     </Col>
                 </Row>
             </Container>
+
+            <Modal isOpen={isOpen} toggle={toggleCheckout} className="checkout">
+                <ModalBody>
+                    <Form onClick={handleFinalCheckout}>
+                        <p className="success-msg">{successMsg}</p>
+                        <FormGroup>
+                            <Label for="card-number">Card Number</Label>
+                            <Input disabled type="number" value="2244243242" id="card-number" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="card-expiry">Card Expiry</Label>
+                            <Input disabled type="text" value="06 / 12" id="card-expiry" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="cvv">CVV</Label>
+                            <Input disabled type="number" value="243" id="cvv" />
+                        </FormGroup>
+
+                        <Button className="checkout">Checkout</Button>
+                    </Form>
+                </ModalBody>
+            </Modal>
 
             {
                 isEmpty &&

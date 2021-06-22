@@ -599,8 +599,7 @@ button.close:not(.close-modal):hover{
   background-color: #28a745;
   border-color: #28a745;
 }
-.reschedule-modal, .cancel-modal{
-  color: black;
+.reschedule-modal, .cancel-modal, .checkout .modal-content{
   color: #D66D75;
   /* padding: 10px; */
 }
@@ -686,8 +685,15 @@ td.plus-or-minus span:first-child, td.plus-or-minus span:last-child,
   text-align: center;
   color: red;
 }
-
-
+p.success-msg{
+  color: tomato;
+}
+button.checkout{
+  font-weight: 700;
+  color: white;
+  background-color: #28a745;
+  border-color: #28a745;
+}
 
 /* -------------------media queries----------------
 ----------------------------------------------- */

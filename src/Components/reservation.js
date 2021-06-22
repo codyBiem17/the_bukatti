@@ -12,6 +12,8 @@ const Reservation = () => {
     const [isRescheduleOpen, setIsRescheduleOpen] = useState(false)
     const [isCancelOpen, setIsCancelOpen] = useState(false)
     const [isClicked, setIsClicked] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
+    const [successMsg, setSuccessMsg] = useState('')
     const [modalFields, setModalFields] = useState({
         fullname: "",
         ticketNo: "",
@@ -52,6 +54,18 @@ const Reservation = () => {
                 reason: ""
             })
         }
+    }
+
+    const toggleCheckout = (e) => {
+        e.preventDefault()    
+        setIsOpen(!isOpen)
+        
+    }
+
+    const handleFinalCheckout = (e) => {
+        e.preventDefault()
+        setSuccessMsg('Thank you for booking a table with us.' + 
+        'Check your email for a summary of your booking')
     }
 
     
@@ -136,11 +150,34 @@ const Reservation = () => {
                                 </tr>
                             </tbody>
                         </Table>
-                        <Button type="button"  className="mt-2 payment-btn">
+                        <Button type="button" onClick={toggleCheckout} className="mt-2 payment-btn">
                             Make Payment Now
                         </Button>
                     </Col>
                 </Row>
+
+                <Modal isOpen={isOpen} toggle={toggleCheckout} className="checkout">
+                    <ModalBody>
+                        <Form onClick={handleFinalCheckout}>
+                            <p className="success-msg">{successMsg}</p>
+                            <FormGroup>
+                                <Label for="card-number">Card Number</Label>
+                                <Input disabled type="number" value="2244243242" id="card-number" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="card-expiry">Card Expiry</Label>
+                                <Input disabled type="text" value="06 / 12" id="card-expiry" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="cvv">CVV</Label>
+                                <Input disabled type="number" value="243" id="cvv" />
+                            </FormGroup>
+
+                            <Button className="checkout">Checkout</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
+
                 <Row className="mt-4">
                     <Col xs="12" className="reservation-buttons mt-5">
                         <Row>
