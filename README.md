@@ -1,10 +1,11 @@
-## Available for viewing on: https://da-bukatti.netlify.app/ 
+### Available for viewing on: https://da-bukatti.netlify.app/ 
 
-## Additional features in view (NO ETA)
+### Additional features in view (NO ETA)
 
 1. Email notification sent to users with table reservation details and ticket ID
 2. Text message/Phone call to recipients of food order
 3. Payment API integration
+4. Weather/Map API
 
 # Getting Started with Create React App
 
