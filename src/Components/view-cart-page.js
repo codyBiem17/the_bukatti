@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { locations } from '../Components'
 import {
     Container, Row, Col, Breadcrumb, BreadcrumbItem, Button,
     Label, Input, Form, FormGroup, Modal, ModalBody, Table
 } from 'reactstrap'
-import Jelof from '../assets/images/jollof_rice_dodo.jpg'
-import PetCoke from '../assets/images/coke-pet-trans.png'
+// import Jelof from '../assets/images/jollof_rice_dodo.jpg'
+// import PetCoke from '../assets/images/coke-pet-trans.png'
 import { decode } from 'html-entities'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -13,6 +14,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const ViewCart = () => {
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+      }, [pathname]);
+
+    console.log(JSON.parse(localStorage.getItem('food')))
+    const viewMyCart = JSON.parse(localStorage.getItem('food'))
+
     const [value, setValue] = useState(1)
     const [subtotalValue, setSubtotalValue] = useState(500)
     const [total, setTotal] = useState(500)
@@ -97,6 +110,7 @@ const ViewCart = () => {
         )
     })
 
+    
     return (
         <>
             <Container fluid={true} className="breadcrumbs">
@@ -127,30 +141,50 @@ const ViewCart = () => {
                                 </tr>
                             </thead>
                             <tbody className="hide-show-th-tb">
-                                <td class="trash-icon" onClick={handleDelete}> 
-                                    {
-                                        isDelete &&
-                                        <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
-                                    }
-                                </td>
-                                <td>
-                                    <p>Jollof Rice + Coke</p>
-                                    <p> Expect: </p> 
-                                    <p>(JollofRice, Chicken and Pet Coke) </p>
-                                </td>
-                                <td className="foodItemImg">
-                                    <img src={Jelof} alt="jollof-rice" />
-                                    <img src={PetCoke} alt="pet-coke" />
-                                </td>
-                                <td>
-                                    {decode('&#8358;')} 500
-                                </td>
-                                <td className="plus-or-minus">
-                                    <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
-                                    <span> {value} </span>
-                                    <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
-                                </td>
-                                <td>{decode('&#8358;')} {subtotalValue}</td>
+                                <tr>
+                                    <td className="trash-icon" onClick={handleDelete}> 
+                                        {
+                                            isDelete &&
+                                            <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
+                                        }
+                                    </td>
+                                    <td>
+                                        <p>{viewMyCart.foodItemName}</p>
+                                        <p> Expect: </p> 
+                                        <p>({viewMyCart.foodItemMakeUp}) </p>
+                                    </td>
+                                    <td className="foodItemImg">
+                                        {
+                                            viewMyCart.hasOwnProperty('foodImg') && viewMyCart.hasOwnProperty('drinkImg') ?
+                                            <span>
+                                                <img src={viewMyCart.foodImg.src} alt={viewMyCart.foodImg.altText} />
+                                                <img src={viewMyCart.drinkImg.src} alt={viewMyCart.drinkImg.altText} />
+                                            </span>
+                                            :
+                                            viewMyCart.hasOwnProperty('foodImg') && !viewMyCart.hasOwnProperty('drinkImg') ?
+                                            <span>
+                                                <img src={viewMyCart.foodImg.src} alt={viewMyCart.foodImg.altText} />
+                                            </span>
+                                            :
+                                            null
+                                        }
+                                        {
+                                            viewMyCart.hasOwnProperty('drinkImg') ?
+                                            <img src={viewMyCart.drinkImg.src} alt={viewMyCart.drinkImg.altText} />
+                                            :
+                                            null
+                                        }
+                                    </td>
+                                    <td>
+                                        {decode('&#8358;')} 500
+                                    </td>
+                                    <td className="plus-or-minus">
+                                        <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
+                                        <span> {value} </span>
+                                        <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
+                                    </td>
+                                    <td>{decode('&#8358;')} {subtotalValue}</td>
+                                </tr>
                             </tbody>
 
                             <tbody className="d-md-none hide-at-md">
@@ -162,9 +196,9 @@ const ViewCart = () => {
                                         FoodItem
                                     </th>
                                     <td>
-                                        <p>Jollof Rice + Coke</p>
+                                        <p>{viewMyCart.foodItemName}</p>
                                         <p> Expect: </p> 
-                                        <p>(JollofRice, Chicken and Pet Coke) </p>
+                                        <p>({viewMyCart.foodItemMakeUp}) </p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -193,60 +227,66 @@ const ViewCart = () => {
                 </Row>
                 <Row className="mt-4">
                     <Col xs="12">
-                        <Form row onSubmit={toggleCheckout}>
-                            <Col xs="12">
-                                <FormGroup>
-                                    <Label for="recipient">Recipient's name</Label>
-                                    <Input 
-                                        type="text" 
-                                        value={fullname} 
-                                        name="fullname" 
-                                        id="recipient" 
-                                        onChange={handleChange}
-                                    />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="phone">Recipient's Phone no.</Label>
-                                    <Input 
-                                        type="number" 
-                                        value={phone} 
-                                        name="phone" 
-                                        id="phone"
-                                        onChange={handleChange} 
-                                    />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="location">Select Delivery location</Label>
-                                    <Input type="select" value={location} name="location" id="location" onChange={handleChange}>
-                                        {recipientLocation}
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                            
-                            <Col xs="11" xl="6" className="order-summary my-4 mx-auto">
-                                <Table borderless>
-                                    <tbody>
-                                        <p className="mt-2">Food Order Details for {fullname}</p>
-                                        <tr>
-                                            <th scope="row">Food Item</th>
-                                            <td>{subtotalValue}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Delivery Fee</th>
-                                            <td> {deliveryFee} </td>
-                                        </tr> 
-                                        <tr>  
-                                            <th scope="row">Total</th>
-                                            <td> {total} </td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                            </Col>
-                            <Col xs="12">
-                                <Button type="submit" className="mt-2 payment-btn">
-                                    Proceed To Checkout 
-                                </Button>
-                            </Col>
+                        <Form onSubmit={toggleCheckout}>
+                            <Row> 
+                                <Col xs="12">
+                                    <FormGroup>
+                                        <Label for="recipient">Recipient's name</Label>
+                                        <Input 
+                                            type="text" 
+                                            value={fullname} 
+                                            name="fullname" 
+                                            id="recipient" 
+                                            onChange={handleChange}
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="phone">Recipient's Phone no.</Label>
+                                        <Input 
+                                            type="number" 
+                                            value={phone} 
+                                            name="phone" 
+                                            id="phone"
+                                            onChange={handleChange} 
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="location">Select Delivery location</Label>
+                                        <Input type="select" value={location} name="location" id="location" onChange={handleChange}>
+                                            {recipientLocation}
+                                        </Input>
+                                    </FormGroup>
+                                </Col>
+                                
+                                <Col xs="11" xl="6" className="order-summary my-4 mx-auto">
+                                    <Table borderless>
+                                        <tbody>
+                                            <tr className="mt-2">
+                                                <td>
+                                                    Food Order Details for {fullname}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Food Item</th>
+                                                <td>{subtotalValue}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Delivery Fee</th>
+                                                <td> {deliveryFee} </td>
+                                            </tr> 
+                                            <tr>  
+                                                <th scope="row">Total</th>
+                                                <td> {total} </td>
+                                            </tr>
+                                        </tbody>
+                                    </Table>
+                                </Col>
+                                <Col xs="12">
+                                    <Button type="submit" className="mt-2 payment-btn">
+                                        Proceed To Checkout 
+                                    </Button>
+                                </Col>
+                            </Row>
                         </Form>
                     </Col>
                 </Row>

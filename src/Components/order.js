@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import { useLocation } from 'react-router-dom'
 import { Breakfast, Lunch, Dinner } from '../Components'
 import { 
     Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, Container, Row, Col,
@@ -10,6 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Order = () => {
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+      }, [pathname]);
 
     const [value, setValue] = useState('Breakfast')
     const [visibleFoodMenu, setVisibleFoodMenu] = useState(false)

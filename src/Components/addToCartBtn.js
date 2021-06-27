@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 
 
 
-const AddToCartBtn = () => {
+const AddToCartBtn = (props) => {
     const [isClicked, setIsClicked] = useState(false)
     const [showBtnText, setShowBtn] = useState({text: 'Add to cart'})
     const [showMessage, setShowMessage] = useState('')
@@ -19,17 +19,22 @@ const AddToCartBtn = () => {
 
         setTimeout(()=>{
             setShowBtn({text: 'Add to cart'})
-        }, 3000)
-    }
-    
-    // const cartItems = (items) => {
-    //     let food_items = []
-    //     food_items.push(items)
-    //     return food_items
-    // }
+        }, 4000)
 
-    // let added_items = cartItems({id: 1, id: 2})
-    // localStorage.setItem('food_items', added_items)
+
+      
+        const filterAddedItem = props.isAdded
+        const addToCart = filterAddedItem.filter(filterById => filterById.id === props.id)
+        // const getItem = JSON.parse(localStorage.getItem('food')) || []
+        // getItem.push(addToCart[0])
+        // console.log(showThis[0])
+        const emptyCart = []
+        emptyCart.push(addToCart[0])
+
+        localStorage.setItem('food', JSON.stringify(addToCart[0]))
+        console.log(JSON.parse(localStorage.getItem('food')))
+    }
+
 
     const style = {
         backgroundColor: '#198754',
@@ -43,8 +48,15 @@ const AddToCartBtn = () => {
        <>
             <Button className="p-3 added-btn" style={style} >
                 {showBtnText.text} {showBtnText.icon} 
-            </Button>
-            <span> <NavLink to="/view-cart-page" className="view-cart">{showMessage}</NavLink></span>
+            </Button> &nbsp; &nbsp;
+            <span> 
+                <NavLink
+                    to="/view-cart-page"
+                    className="view-cart"
+                >
+                    {showMessage}
+                </NavLink>
+            </span>
         </> : 
         <Button id="btn-cart" onClick={handleAddToCart} className="p-3">
             {showBtnText.text}
