@@ -43,7 +43,7 @@ const Dinner = () => {
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">{foodMenuDetails.foodItemMakeUp}</CardSubtitle>
                                                     <CardText>{decode(foodMenuDetails.amount)}</CardText>
                                                     <p className="text-justify">
-                                                        <AddToCartBtn />
+                                                        <AddToCartBtn isAdded={filteredFoodType.foodDetails} id={foodMenuDetails.id} />
                                                     </p>
                                                 </CardBody>
                                             </Card>
@@ -81,7 +81,7 @@ const Dinner = () => {
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">{foodMenuDetails.foodItemMakeUp}</CardSubtitle>
                                                     <CardText>{decode(foodMenuDetails.amount)}</CardText>
                                                     <p className="text-justify">
-                                                        <AddToCartBtn />
+                                                        <AddToCartBtn isAdded={filteredFoodType.foodDetails} id={foodMenuDetails.id} />
                                                     </p>
                                                 </CardBody>
                                             </Card>
@@ -119,7 +119,7 @@ const Dinner = () => {
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">{foodMenuDetails.foodItemMakeUp}</CardSubtitle>
                                                     <CardText>{decode(foodMenuDetails.amount)}</CardText>
                                                     <p className="text-justify">
-                                                        <AddToCartBtn />
+                                                        <AddToCartBtn isAdded={filteredFoodType.foodDetails} id={foodMenuDetails.id} />
                                                     </p>
                                                 </CardBody>
                                             </Card>
@@ -158,7 +158,7 @@ const Dinner = () => {
                                                     <CardText>{decode(foodMenuDetails.amount)}</CardText>
                                                     
                                                     <p className="text-justify">
-                                                        <AddToCartBtn />
+                                                        <AddToCartBtn isAdded={filteredFoodType.foodDetails} id={foodMenuDetails.id} />
                                                     </p>
                                                 </CardBody>
                                             </Card>

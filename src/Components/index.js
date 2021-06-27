@@ -19,5 +19,5 @@ export {default as Order} from './order'
 export {default as Reservation} from './reservation'
 export {default as SingleFaq} from './singleFaq'
 export {default as ViewCart} from './view-cart-page'
-export * from './images';
+export * from './arrayOfObjects';
 export * from './locations'

@@ -1,18 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { locations } from '../Components'
 import {
     Container, Row, Col, Breadcrumb, BreadcrumbItem, Button,
     Label, Input, Form, FormGroup, Modal, ModalBody, Table
 } from 'reactstrap'
-import Jelof from '../assets/images/jollof_rice_dodo.jpg'
-import PetCoke from '../assets/images/coke-pet-trans.png'
+// import Jelof from '../assets/images/jollof_rice_dodo.jpg'
+// import PetCoke from '../assets/images/coke-pet-trans.png'
 import { decode } from 'html-entities'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
 
-const ViewCart = () => {
+const ViewCart = (props) => {
+    const pathname = props.location.state.cartProps
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+      }, [pathname]);
+    
+
     const [value, setValue] = useState(1)
     const [subtotalValue, setSubtotalValue] = useState(500)
     const [total, setTotal] = useState(500)
@@ -97,6 +107,106 @@ const ViewCart = () => {
         )
     })
 
+    const cartItems = props.location.state.cartProps.props.isAdded
+    const cartItemId = props.location.state.cartProps.props.id
+    const myCartItems = cartItems.filter(filterCartItem => filterCartItem.id === cartItemId )
+    .map(cartItem => {
+        return (
+            <Table key={cartItem.id}>
+                <thead className="hide-show-th-tb">
+                    <tr>
+                        <th></th>
+                        <th>FoodItem</th>
+                        <th className="foodItemImg">FoodItem Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody className="hide-show-th-tb">
+                    <td className="trash-icon" onClick={handleDelete}> 
+                        {
+                            isDelete &&
+                            <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
+                        }
+                    </td>
+                    <td>
+                        <p>{cartItem.foodItemName}</p>
+                        <p> Expect: </p> 
+                        <p>({cartItem.foodItemMakeUp}) </p>
+                    </td>
+                    <td className="foodItemImg">
+                        {
+                            cartItem.hasOwnProperty('foodImg') && cartItem.hasOwnProperty('drinkImg') ?
+                            <span>
+                                <img src={cartItem.foodImg.src} alt={cartItem.foodImg.altText} />
+                                <img src={cartItem.drinkImg.src} alt={cartItem.drinkImg.altText} />
+                            </span>
+                            :
+                            cartItem.hasOwnProperty('foodImg') && !cartItem.hasOwnProperty('drinkImg') ?
+                            <span>
+                                <img src={cartItem.foodImg.src} alt={cartItem.foodImg.altText} />
+                            </span>
+                            :
+                            null
+                        }
+                        {
+                            cartItem.hasOwnProperty('drinkImg') ?
+                            <img src={cartItem.drinkImg.src} alt={cartItem.drinkImg.altText} />
+                            :
+                            null
+                        }
+                    </td>
+                    <td>
+                        {decode('&#8358;')} 500
+                    </td>
+                    <td className="plus-or-minus">
+                        <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
+                        <span> {value} </span>
+                        <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
+                    </td>
+                    <td>{decode('&#8358;')} {subtotalValue}</td>
+                </tbody>
+
+                <tbody className="d-md-none hide-at-md">
+                    <tr>
+                        <th scope="row">
+                            <span>
+                                <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
+                            </span>
+                            FoodItem
+                        </th>
+                        <td>
+                            <p>{cartItem.foodItemName}</p>
+                            <p> Expect: </p> 
+                            <p>({cartItem.foodItemMakeUp}) </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price</th>
+                        <td>
+                            {decode('&#8358;')} 500
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Quantity</th>
+                        <td className="plus-or-minus">
+                            <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
+                            <span> {value} </span>
+                            <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Subtotal</th>
+                        <td>
+                            {decode('&#8358;')} {subtotalValue}
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
+        )
+    })
+
     return (
         <>
             <Container fluid={true} className="breadcrumbs">
@@ -115,138 +225,71 @@ const ViewCart = () => {
             <Container fluid={true} className={isDelete ? "containers container-bg-white" : "remove-container-item"}>
                 <Row>
                     <Col xs="12">
-                        <Table>
-                            <thead className="hide-show-th-tb">
-                                <tr>
-                                    <th></th>
-                                    <th>FoodItem</th>
-                                    <th className="foodItemImg">FoodItem Image</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody className="hide-show-th-tb">
-                                <td class="trash-icon" onClick={handleDelete}> 
-                                    {
-                                        isDelete &&
-                                        <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
-                                    }
-                                </td>
-                                <td>
-                                    <p>Jollof Rice + Coke</p>
-                                    <p> Expect: </p> 
-                                    <p>(JollofRice, Chicken and Pet Coke) </p>
-                                </td>
-                                <td className="foodItemImg">
-                                    <img src={Jelof} alt="jollof-rice" />
-                                    <img src={PetCoke} alt="pet-coke" />
-                                </td>
-                                <td>
-                                    {decode('&#8358;')} 500
-                                </td>
-                                <td className="plus-or-minus">
-                                    <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
-                                    <span> {value} </span>
-                                    <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
-                                </td>
-                                <td>{decode('&#8358;')} {subtotalValue}</td>
-                            </tbody>
-
-                            <tbody className="d-md-none hide-at-md">
-                                <tr>
-                                    <th scope="row">
-                                        <span>
-                                            <FontAwesomeIcon style={{"color": "red"}} icon={["far", "trash-alt"]} />
-                                        </span>
-                                        FoodItem
-                                    </th>
-                                    <td>
-                                        <p>Jollof Rice + Coke</p>
-                                        <p> Expect: </p> 
-                                        <p>(JollofRice, Chicken and Pet Coke) </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Price</th>
-                                    <td>
-                                        {decode('&#8358;')} 500
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Quantity</th>
-                                    <td className="plus-or-minus">
-                                        <span> <FontAwesomeIcon icon="plus-circle" onClick={plusIcon} /> </span>
-                                        <span> {value} </span>
-                                        <span>  <FontAwesomeIcon icon="minus-circle" onClick={minusIcon} /> </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Subtotal</th>
-                                    <td>
-                                        {decode('&#8358;')} {subtotalValue}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        {myCartItems}
                     </Col>
                 </Row>
                 <Row className="mt-4">
                     <Col xs="12">
-                        <Form row onSubmit={toggleCheckout}>
-                            <Col xs="12">
-                                <FormGroup>
-                                    <Label for="recipient">Recipient's name</Label>
-                                    <Input 
-                                        type="text" 
-                                        value={fullname} 
-                                        name="fullname" 
-                                        id="recipient" 
-                                        onChange={handleChange}
-                                    />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="phone">Recipient's Phone no.</Label>
-                                    <Input 
-                                        type="number" 
-                                        value={phone} 
-                                        name="phone" 
-                                        id="phone"
-                                        onChange={handleChange} 
-                                    />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="location">Select Delivery location</Label>
-                                    <Input type="select" value={location} name="location" id="location" onChange={handleChange}>
-                                        {recipientLocation}
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                            
-                            <Col xs="11" xl="6" className="order-summary my-4 mx-auto">
-                                <Table borderless>
-                                    <tbody>
-                                        <p className="mt-2">Food Order Details for {fullname}</p>
-                                        <tr>
-                                            <th scope="row">Food Item</th>
-                                            <td>{subtotalValue}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Delivery Fee</th>
-                                            <td> {deliveryFee} </td>
-                                        </tr> 
-                                        <tr>  
-                                            <th scope="row">Total</th>
-                                            <td> {total} </td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                            </Col>
-                            <Col xs="12">
-                                <Button type="submit" className="mt-2 payment-btn">
-                                    Proceed To Checkout 
-                                </Button>
-                            </Col>
+                        <Form onSubmit={toggleCheckout}>
+                            <Row> 
+                                <Col xs="12">
+                                    <FormGroup>
+                                        <Label for="recipient">Recipient's name</Label>
+                                        <Input 
+                                            type="text" 
+                                            value={fullname} 
+                                            name="fullname" 
+                                            id="recipient" 
+                                            onChange={handleChange}
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="phone">Recipient's Phone no.</Label>
+                                        <Input 
+                                            type="number" 
+                                            value={phone} 
+                                            name="phone" 
+                                            id="phone"
+                                            onChange={handleChange} 
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="location">Select Delivery location</Label>
+                                        <Input type="select" value={location} name="location" id="location" onChange={handleChange}>
+                                            {recipientLocation}
+                                        </Input>
+                                    </FormGroup>
+                                </Col>
+                                
+                                <Col xs="11" xl="6" className="order-summary my-4 mx-auto">
+                                    <Table borderless>
+                                        <tbody>
+                                            <tr className="mt-2">
+                                                <td>
+                                                    Food Order Details for {fullname}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Food Item</th>
+                                                <td>{subtotalValue}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Delivery Fee</th>
+                                                <td> {deliveryFee} </td>
+                                            </tr> 
+                                            <tr>  
+                                                <th scope="row">Total</th>
+                                                <td> {total} </td>
+                                            </tr>
+                                        </tbody>
+                                    </Table>
+                                </Col>
+                                <Col xs="12">
+                                    <Button type="submit" className="mt-2 payment-btn">
+                                        Proceed To Checkout 
+                                    </Button>
+                                </Col>
+                            </Row>
                         </Form>
                     </Col>
                 </Row>
