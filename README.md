@@ -1,3 +1,5 @@
+[![Build status](https://dev.azure.com/ReactOnAzDevOps/first-react-devops-proj/_apis/build/status/first-react-devops-proj-CI)](https://dev.azure.com/ReactOnAzDevOps/first-react-devops-proj/_build/latest?definitionId=1)
+
 ### Available for viewing on: https://da-bukatti.netlify.app/ 
 
 ### Additional features in view (NO ETA)
